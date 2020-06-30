@@ -1,6 +1,6 @@
 ### Task: Create a notification
 
-To inform the user about the success of the operation, or any errors, websites usually use messages that appear for a while on the screen.``
+To inform the user about the success of the operation, or any errors, websites usually use messages that appear for a while on the screen.
 
 Your task: Create function function `pushNotification`, which takes coords of future message, title, description and type (warning, success or error), appends it to the document and remove it after 2 seconds.
 You no need to write any styles or HTML code in this task. Change only `main.js` file.
