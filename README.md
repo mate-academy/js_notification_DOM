@@ -1,3 +1,8 @@
+1. Replace `<your_account>` with your Github username in the link
+    - [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
+    - There are no tests for this task so use `npm run lint` command instead of `npm test` 
+
 ### Task: Create a notification
 
 To inform the user about the success of the operation, or any errors, websites usually use messages that appear for a while on the screen.
