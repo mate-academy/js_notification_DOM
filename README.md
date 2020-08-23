@@ -1,5 +1,5 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
+    - [DEMO LINK](https://SerhiiAntonyshyn.github.io/js_notification_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - There are no tests for this task so use `npm run lint` command instead of `npm test` 
 
@@ -20,3 +20,4 @@ Hint: use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOr
 
 It's an expected result of your job:
 ![Result](./src/images/result.png)
+war
