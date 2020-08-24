@@ -1,7 +1,7 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
+    - [DEMO LINK](https://varseniuk.github.io/js_notification_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-    - There are no tests for this task so use `npm run lint` command instead of `npm test` 
+    - There are no tests for this task so use `npm run lint` command instead of `npm test`
 
 ### Task: Create a notification
 
@@ -11,7 +11,7 @@ Your task: Create function `pushNotification`, which takes coords of future mess
 You no need to write any styles or HTML code in this task. Change only `main.js` file.
 
 Implementation tips:
-- The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`). 
+- The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`).
 - The message should have a title with class `title` (prefer `h2` element)
 - The message should have description (prefer tag `p`)
 - Set coordinates of the message (top and right) rely on values from parameters.
