@@ -1,8 +1,7 @@
 'use strict';
 
-const body = document.querySelector('body');
-
 const pushNotification = (top, right, title, description, type) => {
+  const body = document.querySelector('body');
   const messageBlock = document.createElement('div');
   const messageTitle = document.createElement('h2');
   const messageDescription = document.createElement('p');
@@ -29,4 +28,4 @@ const pushNotification = (top, right, title, description, type) => {
 pushNotification('10px', '10px', 'Title',
   `This is example of result.
   Notification should contain title and description`,
-  'warning');
+  'error');
