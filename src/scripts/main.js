@@ -8,15 +8,16 @@ const pushNotification = (top, right, title, description, type) => {
   const messageDescription = document.createElement('p');
 
   messageBlock.className = `notification ${type}`;
-  messageBlock.style.top = `${top}`;
-  messageBlock.style.right = `${right}`;
+
+  messageBlock.style.top = top;
+  messageBlock.style.right = right;
 
   messageTitle.className = 'title';
-  messageTitle.innerText = `${title}`;
+  messageTitle.innerText = title;
 
   messageBlock.append(messageTitle);
 
-  messageDescription.innerText = `${description}`;
+  messageDescription.innerText = description;
 
   messageBlock.append(messageDescription);
 
