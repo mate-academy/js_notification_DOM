@@ -3,9 +3,7 @@
 const pushNotification = (top, right, title, description, type) => {
   const notification = document.createElement('div');
 
-  notification.classList.add('notification');
-  notification.classList.add(type);
-  notification.style.right = right;
+  notification.className = (`notification ${type}`);
   notification.style.top = top;
 
   notification.innerHTML = (
@@ -15,7 +13,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   document.body.append(notification);
 
-  setTimeout(() => notification.remove(), 2000);
+  // setTimeout(() => notification.remove(), 2000);
 };
 
 pushNotification('50px', '50px', 'Title',
