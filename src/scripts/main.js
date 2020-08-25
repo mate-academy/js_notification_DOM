@@ -9,7 +9,7 @@ const pushNotification = (top, right, title, description, type) => {
   message.style.right = right + 'px';
 
   message.innerHTML = `
-  <h2>${title}</h2>
+  <h2 class="title">${title}</h2>
   <p>${description}</p>
   `;
 
