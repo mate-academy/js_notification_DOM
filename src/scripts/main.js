@@ -20,7 +20,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   body.append(message);
 
-  setTimeout(() => message.remove(), 20000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification('25px', '25px', 'Title',
