@@ -15,7 +15,7 @@ const pushNotification = (top, right, title, description, type) => {
     </div>
   `);
 
-  setTimeout(() => document.querySelector('.warning').remove(), 2000);
+  setTimeout(() => document.querySelector('.notification').remove(), 2000);
 };
 
 setTimeout(() => {
