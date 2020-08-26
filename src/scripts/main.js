@@ -21,5 +21,6 @@ pushNotification(
   '100px',
   '50px',
   'Title',
-  'Notication should contain title and description'
+  'Notification should contain title and description',
+  'error'
 );
