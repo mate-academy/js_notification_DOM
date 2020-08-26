@@ -9,9 +9,9 @@ const pushNotification = (top, right, title, description, type) => {
   warning.style.top = top;
   warning.style.right = right;
 
-  warning.innerHTML = `
-    <h2 class="title">${title}</h2>
-    <p>${description}</p>`;
+  warning.insertAdjacentHTML('afterbegin',
+    `<h2 class="title">${title}</h2>
+    <p>${description}</p>`);
 
   body.append(warning);
 
