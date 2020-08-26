@@ -12,6 +12,6 @@ const pushNotification = (top, right, title, description, type) => {
     </div>`);
 };
 
-setTimeout(() => {
-  pushNotification('20px', '20px', 'Hi!', 'Have a nice day:)', 'success');
-}, 2000);
+setTimeout(() => document.querySelector('div').remove(), 2000);
+
+pushNotification('20px', '20px', 'Hi!', 'Have a nice day:)', 'success');
