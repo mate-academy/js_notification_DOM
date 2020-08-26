@@ -15,7 +15,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   document.body.append(notification);
 
-  setTimeout(() => notification.remove(), 3000);
+  setTimeout(() => notification.remove(), 2000);
 };
 
 const customDescription = 'Notification will disappear in a few seconds';
