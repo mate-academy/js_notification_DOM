@@ -10,10 +10,12 @@ const pushNotification = (top, right, title, description, type) => {
       class="notification ${type}"
       style="position: absolute; top: ${top}; right: ${right}"
     >
-      <h2 class="${title}">${title}</h2>
+      <h2 class="title">${title}</h2>
       <p>${description}</p>
     </div>
   `);
+
+  setTimeout(() => document.querySelector('.warning').remove(), 2000);
 };
 
 setTimeout(() => {
@@ -24,4 +26,4 @@ setTimeout(() => {
     'Спасибо за внимание!',
     'warning'
   );
-}, 2000);
+}, 1000);
