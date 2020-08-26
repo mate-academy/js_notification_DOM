@@ -21,7 +21,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   setTimeout(() => {
     div.remove();
-  }, 2000);
+  }, 3000);
 };
 
 setTimeout(
@@ -29,7 +29,7 @@ setTimeout(
   300,
   10,
   10,
-  'Notification',
-  'You have one message',
+  'Warning',
+  'Your internet connection is unstable',
   'error'
 );
