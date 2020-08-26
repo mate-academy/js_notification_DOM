@@ -16,3 +16,9 @@ pushNotification(10, 10, 'Warning', `My dear friend,
 be carefull!<br>
 There is a very interesting content.
 You can lose all day here!`, 'warning');
+
+setTimeout(() => {
+  const notification = document.querySelector('.notification');
+
+  notification.hidden = true;
+}, 4000);
