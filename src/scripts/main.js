@@ -30,4 +30,4 @@ function deleteNotification() {
   toDelete.remove();
 }
 
-pushNotification('5px', '5px', 'Title', 'this is a description', 'alert');
+pushNotification('5px', '5px', 'Title', 'this is a description', 'success');
