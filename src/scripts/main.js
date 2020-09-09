@@ -19,6 +19,10 @@ const pushNotification = (top, right, title, description, type) => {
 
   elemDiv.style.top = `${top}px`;
   elemDiv.style.right = `${right}px`;
+
+  setTimeout(() => {
+    elemDiv.remove();
+  }, 1000);
 };
 
 pushNotification(0, 100, 'Warning!', 'Fatal error', 'warning');
