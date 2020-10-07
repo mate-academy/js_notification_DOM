@@ -16,6 +16,14 @@ function pushNotification(top, right, title, description, type) {
   notification.append(titleOfMessage);
   notification.append(descriptionOfMessage);
   document.body.append(notification);
+
+  window.setTimeout(() => notification.remove(), 2000);
 }
 
-pushNotification();
+pushNotification(
+  '200px',
+  '200px',
+  'Yeeey success!',
+  'You are checking it',
+  'success'
+);
