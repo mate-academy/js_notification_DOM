@@ -1,8 +1,6 @@
 'use strict';
 
 const pushNotification = (top, right, title, description, type) => {
-  const body = document.querySelector('body');
-
   const notification = document.createElement('div');
   const notificationTitle = document.createElement('h2');
   const notificationDescription = document.createElement('p');
@@ -19,7 +17,7 @@ const pushNotification = (top, right, title, description, type) => {
   notification.append(notificationTitle);
   notification.append(notificationDescription);
 
-  body.append(notification);
+  document.body.append(notification);
 
   setTimeout(() => notification.remove(), 2000);
 };
