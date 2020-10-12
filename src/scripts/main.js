@@ -18,4 +18,4 @@ const pushNotification = (top, right, title, description, type) => {
   setTimeout(() => notification.remove(), 2000);
 };
 
-pushNotification(30, 50, 'title', 'wow', 'success');
+pushNotification(30, 50, 'success', 'great job!', 'success');
