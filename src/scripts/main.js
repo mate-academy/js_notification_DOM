@@ -6,7 +6,7 @@ const pushNotification = (top, right, title, description, type) => {
   notification.classList.add('notification', type);
 
   notification.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class="title">${title}</h2>
     <p>${description}</p>
   `;
 
