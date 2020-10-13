@@ -30,6 +30,6 @@ const pushNotification = (top, right, title, description, type) => {
   }
 };
 
-setTimeout(() => div.remove(), 200000);
+setTimeout(() => div.remove(), 2000);
 
 pushNotification(10, 100, 'Success', 'Your result is Success', 'success');
