@@ -1,15 +1,14 @@
 'use strict';
 
-const body = document.querySelector('body');
-const div = document.createElement('div');
-const header = document.createElement('h2');
-const descript = document.createElement('p');
-
-body.append(div);
-div.append(header);
-div.append(descript);
-
 const pushNotification = (top, right, title, description, type) => {
+  const body = document.querySelector('body');
+  const div = document.createElement('div');
+  const header = document.createElement('h2');
+  const descript = document.createElement('p');
+
+  body.append(div);
+  div.append(header);
+  div.append(descript);
   div.classList.add(`notification-${type}`);
   header.innerHTML = title;
   descript.innerHTML = description;
@@ -28,8 +27,8 @@ const pushNotification = (top, right, title, description, type) => {
   if (type === 'warning') {
     div.style.backgroundColor = '#dd7538';
   }
-};
 
-setTimeout(() => div.remove(), 2000);
+  setTimeout(() => div.remove(), 2000);
+};
 
 pushNotification(10, 100, 'Success', 'Your result is Success', 'success');
