@@ -16,7 +16,7 @@ const pushNotification = (top, right, title, description, type) => {
   setTimeout(() => message.remove(), 2000);
 };
 
-setTimeout(
+
   pushNotification(
     '50px', '50px', 'My banner', 'Zzzz', 'success'
-  ), 2000);
+  )
