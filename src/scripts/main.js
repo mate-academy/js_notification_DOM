@@ -21,4 +21,10 @@ const pushNotification = (top, right, title, description, type) => {
   }, 2000);
 };
 
-pushNotification();
+pushNotification(
+  '20px',
+  '20px',
+  'Title',
+  'This is example of result',
+  'succes'
+);
