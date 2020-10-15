@@ -20,3 +20,5 @@ const pushNotification = (top, right, title, description, type) => {
     notification.remove();
   }, 2000);
 };
+
+pushNotification();
