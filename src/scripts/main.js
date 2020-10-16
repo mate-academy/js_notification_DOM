@@ -21,9 +21,7 @@ const pushNotification = (top, right, title, description, type) => {
   container.style.right = right + 'px';
   container.style.display = 'block';
 
-  const body = document.querySelector('body');
-
-  body.append(container);
+  document.body.append(container);
 
   setInterval(() => {
     container.style.display = 'none';
