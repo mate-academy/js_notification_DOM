@@ -39,5 +39,5 @@ window.setTimeout(pushNotification, 2100,
   'Congratulations',
   'You\'ve just spent 2 seconds of your life',
   'success',
-  5000
+  4000
 );
