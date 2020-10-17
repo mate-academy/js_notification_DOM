@@ -6,7 +6,17 @@ const pushNotification = (top, right, title, description, type = 'warning') => {
   const messageTitle = document.createElement('h2');
   const messageDescription = document.createElement('p');
   const showWhile = 2000;
-  const showafter = 1000;
+  const showAfter = 1000;
+
+  message.classList.add('notification');
+  message.classList.add(type);
+  message.style.top = `${top}px`;
+  message.style.right = `${right}px`;
+
+  messageTitle.classList.add('title');
+  messageTitle.textContent = title;
+
+  messageDescription.textContent = description;
 
   const displayContent = () => {
     body.append(message);
@@ -14,40 +24,16 @@ const pushNotification = (top, right, title, description, type = 'warning') => {
     message.append(messageDescription);
   };
 
-  setTimeout(() => displayContent(), showafter);
+  setTimeout(() => displayContent(), showAfter);
 
   setTimeout(() => {
     message.style.display = 'none';
-  }, showafter + showWhile);
-
-  message.classList.add('.notification');
-  message.style.position = 'absolute';
-  message.style.maxWidth = '230px';
-  message.style.top = top;
-  message.style.right = right;
-  message.style.padding = '15px';
-  message.style.borderRadius = '10px';
-
-  type === 'success'
-    ? message.style.backgroundColor = '#8BE78C'
-    : type === 'error'
-      ? message.style.backgroundColor = '#F8655E'
-      : message.style.backgroundColor = '#F4E5BA';
-
-  messageTitle.classList.add('.title');
-  messageTitle.style.margin = '0';
-  messageTitle.style.fontSize = '16px';
-  messageTitle.textContent = title;
-
-  messageDescription.textContent = description;
-  messageDescription.style.fontSize = '14px';
-  messageDescription.style.margin = '15px 0 0 0';
-  messageDescription.style.lineHeight = '1.3rem';
+  }, showAfter + showWhile);
 };
 
-pushNotification('10px',
-  '10px',
+pushNotification(10,
+  10,
   'Title',
-  `This is example of result. 
+  `This is example of result.
   Notofication should contain title and description.`,
   'success');
