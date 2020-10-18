@@ -19,7 +19,7 @@ const pushNotification = (top, right, title, description, type) => {
 
 pushNotification(
   '20px',
-  '20gpx',
+  '20px',
   'Just relax!',
   'Nothing is so broken that it can not be fixed.',
   'success'
