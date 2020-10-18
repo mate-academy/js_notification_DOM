@@ -1,10 +1,8 @@
 'use strict';
 
 const pushNotification = (top, right, title, description, type) => {
-  const body = document.querySelector('body');
-
-  body.innerHTML = `
-    <div>
+  document.body.innerHTML = `
+    <div class="notification">
       <h2 class="title">${title}</h2>
       <p>${description}</p>
     </div>
@@ -14,8 +12,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   const notification = document.querySelector('div');
 
-  notification.classList.add('notification');
-  notification.classList.add(`${type}`);
+  notification.classList.add(type);
   notification.style.top = `${top}px`;
   notification.style.right = `${right}px`;
 
