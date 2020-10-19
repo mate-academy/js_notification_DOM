@@ -18,7 +18,7 @@ const pushNotification = (top, right, title, description, type) => {
   notification.style.top = `${top}px`;
 
   setTimeout(function() {
-    notification.style.display = 'none';
+    notification.remove();
   }, 2000);
 };
 
