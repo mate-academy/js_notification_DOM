@@ -10,7 +10,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   bannerText.innerText = description;
 
-  banner.setAttribute('class', `banner ${type}`);
+  banner.setAttribute('class', `notification ${type}`);
   banner.append(bannerTitle);
   banner.append(bannerText);
 
@@ -18,7 +18,6 @@ const pushNotification = (top, right, title, description, type) => {
   banner.style.top = top + 'px';
   banner.style.right = right + 'px';
   banner.style.padding = '0 20px';
-  banner.style.backgroundColor = '#f4e5ba';
   banner.style.borderRadius = '5px';
 
   document.body.append(banner);
@@ -29,4 +28,4 @@ const pushNotification = (top, right, title, description, type) => {
 };
 
 pushNotification(10, 20, 'Some banner',
-  'This is example of banner description');
+  'This is example of banner description', 'error');
