@@ -16,11 +16,9 @@ const pushNotification = (top, right, title, description, type) => {
 
   notification.style.right = `${right}px`;
   notification.style.top = `${top}px`;
-  notification.style.opacity = '0';
 
   setTimeout(function() {
-    notification.style.transition = 'opacity 0.8s';
-    notification.style.opacity = '1';
+    notification.style.display = 'none';
   }, 2000);
 };
 
