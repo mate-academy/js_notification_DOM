@@ -18,9 +18,7 @@ const pushNotification = (top, right, title, description, type) => {
 
   document.body.append(banner);
 
-  setInterval(() => {
-    banner.style.display = 'none';
-  }, 2000);
+  setTimeout(() => banner.remove(), 2000);
 };
 
 pushNotification(10, 20, 'Some banner',
