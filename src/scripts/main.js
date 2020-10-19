@@ -4,7 +4,7 @@ const pushNotification = (top, right, title, description, type) => {
   const notification = document.createElement('div');
 
   notification.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class="title">${title}</h2>
     <p>${description}</p>
   `;
 
