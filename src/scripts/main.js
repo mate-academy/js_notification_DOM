@@ -6,16 +6,15 @@ const pushNotification = (top, right, title, description, type) => {
   notificationBlock.className = `notification ${type}`;
 
   notificationBlock.innerHTML = (`
-  <h2>
-    ${title}
-  </h2>
-  <p>
-    ${description}
-  </p>
+    <h2>${title}</h2>
+    <p>${description}</p>
   `);
+  
   notificationBlock.style.cssText = `top: ${top}; right: ${right};`;
+  
   document.body.append(notificationBlock);
-  setTimeout(() => notificationBlock.setAttribute('hidden', true), 2000);
+  
+  setTimeout(() => notificationBlock.remove(), 2000);
 };
 
 pushNotification(
