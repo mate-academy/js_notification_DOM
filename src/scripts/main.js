@@ -5,7 +5,7 @@ const pushNotification = (top, right, title, description, type) => {
   const notificationTitle = document.createElement('h2');
   const notificationText = document.createElement('p');
 
-  notificationBlock.classList.add(`notification`);
+  notificationBlock.classList.add(`notification`, type);
   notificationBlock.style.cssText = `top: ${top}; right: ${right}`;
 
   document.body.append(notificationBlock);
