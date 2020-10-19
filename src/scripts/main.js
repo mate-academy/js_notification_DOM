@@ -2,9 +2,9 @@
 
 const pushNotification = (top, right, title, description, type) => {
   const body = document.querySelector('body');
-  const notificationBlock = document.createElement('div');
+  const blockNotification = document.createElement('div');
 
-  notificationBlock.insertAdjacentHTML('afterbegin', `
+  blockNotification.insertAdjacentHTML('afterbegin', `
     <div class='notification ${type}' style='top=${top} right=${right}'>
       <h2 class='title'>
         ${title}
@@ -15,9 +15,9 @@ const pushNotification = (top, right, title, description, type) => {
     </div>
   `);
 
-  body.append(notificationBlock);
+  body.append(blockNotification);
 
-  setTimeout(() => notificationBlock.remove(), 2000);
+  setTimeout(() => blockNotification.remove(), 2000);
 };
 
 pushNotification('10px', '10px', 'Title',
