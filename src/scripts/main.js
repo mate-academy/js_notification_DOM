@@ -1,24 +1,23 @@
 'use strict';
 
 const pushNotification = (top, right, title, description, type) => {
-  const errorMessage = document.createElement('div');
-  const errorMessageTitle = document.createElement('h2');
-  const errorMessageDescription = document.createElement('p');
+  const message = document.createElement('div');
+  const messageTitle = document.createElement('h2');
+  const messageDescription = document.createElement('p');
 
-  errorMessage.className = `notification ${type}`;
-  errorMessage.style.top = `${top}px`;
-  errorMessage.style.right = `${right}px`;
+  message.className = `notification ${type}`;
+  message.style.top = `${top}px`;
+  message.style.right = `${right}px`;
 
-  errorMessageTitle.className = 'title';
-  errorMessageTitle.textContent = title;
+  messageTitle.className = 'title';
+  messageTitle.textContent = title;
 
-  errorMessageDescription.textContent = description;
+  messageDescription.textContent = description;
 
-  errorMessage.append(errorMessageTitle);
-  errorMessage.append(errorMessageDescription);
-  document.body.append(errorMessage);
+  message.append(messageTitle, messageDescription);
+  document.body.append(message);
 
-  setTimeout(() => errorMessage.remove(), 2000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(
