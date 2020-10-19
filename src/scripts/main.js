@@ -7,18 +7,14 @@ const pushNotification = (top, right, title, description, type) => {
 
   bannerTitle.setAttribute('class', 'title');
   bannerTitle.innerText = title;
-
   bannerText.innerText = description;
 
   banner.setAttribute('class', `notification ${type}`);
   banner.append(bannerTitle);
   banner.append(bannerText);
 
-  banner.style.position = 'absolute';
   banner.style.top = top + 'px';
   banner.style.right = right + 'px';
-  banner.style.padding = '0 20px';
-  banner.style.borderRadius = '5px';
 
   document.body.append(banner);
 
