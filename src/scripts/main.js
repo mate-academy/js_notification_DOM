@@ -19,7 +19,7 @@ const pushNotification = (top, right, title, description, type) => {
   document.body.append(notificationBlock);
 
   setTimeout(() => {
-    notificationBlock.style.display = 'none';
+    notificationBlock.remove();
   },
   2000);
 };
