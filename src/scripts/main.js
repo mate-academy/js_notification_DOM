@@ -8,8 +8,7 @@ const pushNotification = (top, right, title, description, type = 'warning') => {
   const showWhile = 2000;
   const showAfter = 1000;
 
-  message.classList.add('notification');
-  message.classList.add(type);
+  message.classList.add('notification', type);
   message.style.top = `${top}px`;
   message.style.right = `${right}px`;
 
@@ -27,7 +26,7 @@ const pushNotification = (top, right, title, description, type = 'warning') => {
   setTimeout(() => displayContent(), showAfter);
 
   setTimeout(() => {
-    message.style.display = 'none';
+    message.remove();
   }, showAfter + showWhile);
 };
 
