@@ -1,16 +1,15 @@
 'use strict';
+    const pushNotification = (top, right, title, description, type) => {
+    const main = document.querySelector('body');
+    const message = document.createElement('div');
+    const titleMessage = document.createElement('h2');
+    const descriptionMessage = document.createElement('p');
 
-const pushNotification = (top, right, title, description, type) => {
-const main = document.querySelector('body');
-	  const message = document.createElement('div');
-      const titleMessage = document.createElement('h2');
-      const descriptionMessage = document.createElement('p');
-    
-      message.classList.add('notification', type);
-      message.style.cssText = `top: ${top}px; right: ${right}px`;
-      titleMessage.classList.add('title');
-      titleMessage.innerText = title;
-      descriptionMessage.innerText = description;
+    message.classList.add('notification', type);
+    message.style.cssText = `top: ${top}px; right: ${right}px`;
+    titleMessage.classList.add('title');
+    titleMessage.innerText = title;
+    descriptionMessage.innerText = description;
       message.append(titleMessage, descriptionMessage);
       main.append(message);
     
@@ -30,3 +29,4 @@ const main = document.querySelector('body');
     pushNotification(290, 10, 'Title of Warning message',
       'This example of result.\n '
     + 'Notification should contain title and description.', 'warning');
+    
