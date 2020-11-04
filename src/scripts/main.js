@@ -25,8 +25,8 @@ setTimeout(() =>
 
 setTimeout(() =>
   pushNotification(80, 100, 'Notification', 'Warning warning warning',
-    'warning'), 7000);
+    'warning'), 6000);
 
 setTimeout(() =>
   pushNotification(80, 100, 'Notification', 'Info info info'),
-11000);
+10000);
