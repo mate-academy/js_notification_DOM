@@ -8,8 +8,8 @@ const pushNotification = (top, right, title, description, type) => {
 
   notification.className = 'notification';
   notification.classList.add(type);
-  notification.style.top = top;
-  notification.style.right = right;
+  notification.style.top = top + 'px';
+  notification.style.right = right + 'px';
   h2.textContent = title;
   p.textContent = description;
   notification.append(h2);
