@@ -24,7 +24,7 @@ describe('Tests for your notifications.', () => {
     cy.get('[class = "notification warning"]').children('p');
   });
 
-  it('Messages should disappear in 2 seconds..', () => {
+  it('Messages should disappear in 2 seconds.', () => {
     cy.wait(2000).then(() => {
       return cy.get('[class = "notification success"]').should('not.visible');
     });
