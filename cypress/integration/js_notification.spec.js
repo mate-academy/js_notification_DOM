@@ -26,9 +26,9 @@ describe('Tests for your notifications.', () => {
 
   it('Messages should disappear in 2 seconds.', () => {
     cy.wait(2000).then(() => {
-      return cy.get('[class = "notification success"]').should('not.visible');
+      cy.get('[class = "notification success"]').should('not.visible');
+      cy.get('[class = "notification error"]').should('not.visible');
+      cy.get('[class = "notification warning"]').should('not.visible');
     });
-    cy.get('[class = "notification error"]').should('not.visible');
-    cy.get('[class = "notification warning"]').should('not.visible');
   });
 });
