@@ -1,5 +1,12 @@
 'use strict';
 
+Cypress.Commands.add('hasNotification', (selector, atop, aright) => {
+  cy.get(selector)
+    .should('have.attr', 'style', `top: ${atop}px; right: ${aright}px;`);
+  cy.get(selector).children('h2').should('have.attr', 'class', 'title');
+  cy.get(selector).children('p');
+});
+
 describe('Notifications app', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -9,21 +16,15 @@ describe('Notifications app', () => {
   });
 
   it('should print `success` message', () => {
-    cy.get('@success').should('have.attr', 'style', 'top: 10px; right: 10px;');
-    cy.get('@success').children('h2').should('have.attr', 'class', 'title');
-    cy.get('@success').children('p');
+    cy.hasNotification('@success', 10, 10);
   });
 
   it('should print `error` message', () => {
-    cy.get('@error').should('have.attr', 'style', 'top: 150px; right: 10px;');
-    cy.get('@error').children('h2').should('have.attr', 'class', 'title');
-    cy.get('@error').children('p');
+    cy.hasNotification('@error', 150, 10);
   });
 
   it('should print `warning` message', () => {
-    cy.get('@warning').should('have.attr', 'style', 'top: 290px; right: 10px;');
-    cy.get('@warning').children('h2').should('have.attr', 'class', 'title');
-    cy.get('@warning').children('p');
+    cy.hasNotification('@warning', 290, 10);
   });
 
   it('messages should disappear in 2 seconds', () => {
