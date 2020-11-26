@@ -14,15 +14,10 @@ Your task: Create function `pushNotification`, which takes coordinates of the me
 Do not write any CSS styles or HTML code in this task. You should modify only `main.js` file.
 
 Implementation tips:
-- Print three messages: `success`, `error`, `warning` (see image below);
+- Print three messages: `success`, `error`, `warning` (call methods already exist in `main.js` file);
 - The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`); 
 - The message should have a title with class `title` (prefer `h2` element);
-- The message should have description (prefer tag `p`);
-- Set coordinates of the message (`top` and `right`) rely on values from parameters. Use this coordinates for your
-messages: 
-        - `success`: 10, 10; 
-        - `error`: 150, 10; 
-        - `warning`: 290, 10. 
+- The message should have description (prefer tag `p`).
 
 Hint: use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) for execute a function or specified piece of code once the timer expires.
 
