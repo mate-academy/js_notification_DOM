@@ -1,6 +1,6 @@
 'use strict';
 
-const pushNotification = (topPst, rightPst, title, description, type) => {
+const pushNotification = (topPos, rightPos, title, description, type) => {
   // write code here
 };
 

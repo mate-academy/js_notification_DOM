@@ -1,8 +1,8 @@
 'use strict';
 
-Cypress.Commands.add('hasNotification', (selector, atop, aright) => {
+Cypress.Commands.add('hasNotification', (selector, topPos, rightPos) => {
   cy.get(selector)
-    .should('have.attr', 'style', `top: ${atop}px; right: ${aright}px;`);
+    .should('have.attr', 'style', `top: ${topPos}px; right: ${rightPos}px;`);
   cy.get(selector).children('h2').should('have.attr', 'class', 'title');
   cy.get(selector).children('p');
 });
