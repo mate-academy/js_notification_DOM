@@ -24,6 +24,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.append(el);
 };
 
+const notifications = document.querySelectorAll('.notification');
+
+setTimeout(notifications.forEach(message => message.remove()), 2000);
+
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'success');
