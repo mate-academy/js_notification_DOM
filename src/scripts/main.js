@@ -1,7 +1,6 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-
   const body = document.querySelector('body');
   const message = document.createElement('div');
 
@@ -17,7 +16,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   setTimeout(() => {
     message.style.display = 'none';
   }, 2000);
-
 };
 
 pushNotification(10, 10, 'Title of Success message',
