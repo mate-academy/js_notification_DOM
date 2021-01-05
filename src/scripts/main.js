@@ -9,18 +9,23 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.style.top = `${posTop}px`;
   message.style.right = `${posRight}px`;
 
-  const header = document.createElement('h2');
+  message.insertAdjacentHTML('afterbegin', `
+    <h2 class='title'>${title}</h2>
+    <p>${description}</p>
+  `);
 
-  header.classList.add('title');
-  header.innerText = title;
+  // const header = document.createElement('h2');
 
-  const text = document.createElement('p');
+  // header.classList.add('title');
+  // header.innerText = title;
 
-  text.innerText = description;
+  // const text = document.createElement('p');
+
+  // text.innerText = description;
 
   loc.append(message);
-  message.append(header);
-  message.append(text);
+  // message.append(header);
+  // message.append(text);
 
   setTimeout(() => message.remove(), 2000);
 };
