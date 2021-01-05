@@ -1,7 +1,23 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const noticing = document.createElement('div');
+  const bodyPos = document.querySelector('body');
+
+  noticing.className = `notification ${type}`;
+  noticing.style.top = `${posTop}px`;
+  noticing.style.right = `${posRight}px`;
+
+  noticing.insertAdjacentHTML('afterbegin', `
+    <h2 class="title">${title}</h2>
+    <p class="description">${description}</p>
+  `);
+
+  bodyPos.append(noticing);
+
+  setTimeout(() => {
+    noticing.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
