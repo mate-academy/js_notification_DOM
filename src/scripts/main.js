@@ -23,9 +23,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   el.append(text);
 
   body.append(el);
-};
 
-setTimeout(body.remove(), 2000);
+  setTimeout(body.remove(), 2000);
+};
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
