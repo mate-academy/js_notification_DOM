@@ -1,6 +1,5 @@
 'use strict';
 
-
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
 
