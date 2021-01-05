@@ -1,8 +1,9 @@
 'use strict';
 
-const body = document.querySelector('body');
 
 const pushNotification = (posTop, posRight, title, description, type) => {
+  const body = document.querySelector('body');
+
   const el = document.createElement('div');
 
   el.classList.add('notification', type);
@@ -23,6 +24,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   body.append(el);
 };
+
+setTimeout(body.remove(), 2000);
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
