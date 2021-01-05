@@ -1,6 +1,8 @@
 'use strict';
 
-// const list = document.querySelector('.notification')
+const body = document.querySelector('body');
+
+body.append(pushNotification);
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const el = document.createElement('div');
