@@ -26,7 +26,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
 const notifications = document.querySelectorAll('.notification');
 
-setTimeout(notifications.forEach(message => message.remove()), 2000);
+setTimeout(() => notifications.forEach(message => message.remove()), 2000);
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
