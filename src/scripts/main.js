@@ -2,8 +2,6 @@
 
 const body = document.querySelector('body');
 
-body.append(pushNotification);
-
 const pushNotification = (posTop, posRight, title, description, type) => {
   const el = document.createElement('div');
 
@@ -22,6 +20,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   el.append(header);
   el.append(text);
+
+  body.append(el);
 };
 
 pushNotification(10, 10, 'Title of Success message',
