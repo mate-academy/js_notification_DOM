@@ -14,19 +14,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description}</p>
   `);
 
-  // const header = document.createElement('h2');
-
-  // header.classList.add('title');
-  // header.innerText = title;
-
-  // const text = document.createElement('p');
-
-  // text.innerText = description;
-
   loc.append(message);
-  // message.append(header);
-  // message.append(text);
-
   setTimeout(() => message.remove(), 2000);
 };
 
