@@ -6,7 +6,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   div.className = `notification ${type}`;
 
-  div.insertAdjacentHTML("afterbegin",
+  div.insertAdjacentHTML('afterbegin',
     `<h2 class="title">${title}</h2>
     <p>${description}</p>`);
 
@@ -20,7 +20,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }, 2000);
 
   return div;
-
 };
 
 pushNotification(10, 10, 'Title of Success message',
