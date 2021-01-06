@@ -5,8 +5,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   block.classList.add('notification', type);
 
-  block.style.cssText = `top: ${posTop}px; right: ${posRight}px`;
-
   block.insertAdjacentHTML('afterbegin',
     `
     <h2 class="title">${title}</h2>
@@ -14,6 +12,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     `);
 
   document.body.append(block);
+
+  block.style.top = `${posTop}px`;
+  block.style.right = `${posRight}px`;
 
   setTimeout(() => block.remove(), 2000);
 };
