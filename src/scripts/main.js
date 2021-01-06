@@ -9,13 +9,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notific.append(header);
   notific.append(descr);
 
-  notific.className = 'notification';
+  notific.classList.add('notification');
   notific.classList.add(type);
   notific.style.top = `${posTop}px`;
   notific.style.right = `${posRight}px`;
-  notific.style.width = '332px';
 
   header.innerText = `${title}`;
+  header.className = 'title';
 
   descr.innerText = `${description}`;
 
@@ -35,3 +35,4 @@ pushNotification(150, 10, 'Title of Error message',
 pushNotification(290, 10, 'Title of Warning message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'warning');
+
