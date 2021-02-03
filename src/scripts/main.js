@@ -4,7 +4,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
   const tagBody = document.body;
 
-  const el = document.createElement('div');
+  const el = document.createElement('msg');
 
   el.innerHTML = `
   <div class="notification ${type}" 
@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   tagBody.append(el);
 
   setTimeout(function rem() {
-    tagBody.remove();
+    el.remove();
   }, 2000);
 };
 
