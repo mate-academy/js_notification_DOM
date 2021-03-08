@@ -12,17 +12,18 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notificationElement.style.top = `${posTop}px`;
   notificationElement.style.right = `${posRight}px`;
-
-  notificationTitle.style.fontSize = '18px';
+  notificationTitle.style.fontStyle = 'normal';
 
   notificationElement.append(notificationTitle, notificationDescription);
+  notificationTitle.className = 'title';
 
   notificationTitle.innerText = title;
-  notificationDescription.textContent = description;
+
+  notificationDescription.innerText = description;
 
   bodyElemnt.append(notificationElement);
 
-  setTimeout(() => notificationElement.remove(), 2000);
+  setTimeout(() => notificationElement.remove(), 1999);
 };
 
 pushNotification(10, 10, 'Title of Success message',
