@@ -2,28 +2,27 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
-  // console.log(posTop, posRight, title, description, type);
-  const place = document.querySelector('body');
-  const element = document.createElement('div');
+  const body = document.querySelector('body');
+  const notification = document.createElement('div');
   const titleText = document.createElement('h2');
   const messageText = document.createElement('p');
 
-  element.classList.add('notification');
-  element.classList.add(type);
-  element.style.top = posTop + 'px';
-  element.style.right = posRight + 'px';
+  notification.classList.add('notification');
+  notification.classList.add(type);
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
 
   titleText.classList.add('title');
   titleText.textContent = `${title}`;
 
   messageText.textContent = `${description}`;
 
-  place.append(element);
-  element.append(titleText);
-  element.append(messageText);
+  body.append(notification);
+  notification.append(titleText);
+  notification.append(messageText);
 
   setTimeout(() => {
-    element.remove();
+    notification.remove();
   }, 2000);
 };
 
