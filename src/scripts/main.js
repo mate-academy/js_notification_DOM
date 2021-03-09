@@ -16,8 +16,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.querySelector('body').append(message);
 
   setTimeout(() => {
-    [...document.querySelectorAll('.notification')].map(notification =>
-      notification.remove());
+    message.remove();
   }, 2000);
 };
 
