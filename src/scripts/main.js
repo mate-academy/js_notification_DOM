@@ -1,21 +1,21 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const blockError = document.createElement('div');
+  const notification = document.createElement('div');
 
-  blockError.className = `notification ${type}`;
-  blockError.style.top = `${posTop}px`;
-  blockError.style.right = `${posRight}px`;
+  notification.className = `notification ${type}`;
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
-  blockError.insertAdjacentHTML('afterbegin', `
+  notification.insertAdjacentHTML('afterbegin', `
     <h2 class="title">${title}</h2>
     <p>${description}</p>
   `);
 
-  document.querySelector('.logo').after(blockError);
+  document.querySelector('.logo').after(notification);
 
   setTimeout(() => {
-    blockError.style.display = 'none';
+    notification.remove();
   }, 2000);
 };
 
