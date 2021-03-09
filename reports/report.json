@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2021-03-09T14:30:12.210Z",
-    "end": "2021-03-09T14:30:12.679Z",
-    "duration": 412,
+    "start": "2021-03-09T16:32:11.981Z",
+    "end": "2021-03-09T16:32:12.416Z",
+    "duration": 389,
     "testsRegistered": 4,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d2a5b31f-5121-4835-a1ed-c5a22d56c77f",
+      "uuid": "533f343a-c5fd-4840-bf02-749e795b043a",
       "title": "",
       "fullFile": "cypress/integration/notificationDom.spec.js",
       "file": "cypress/integration/notificationDom.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "cc410ea2-5294-4e95-8e11-8ddcdeb355ec",
+          "uuid": "4b08664d-e15e-4836-b513-644ff4289b2b",
           "title": "Notifications app",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "should print `success` message",
               "fullTitle": "Notifications app should print `success` message",
               "timedOut": null,
-              "duration": 412,
+              "duration": 389,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Notifications app`\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157791:25\n    at visitFailedByErr (http://localhost:8080/__cypress/runner/cypress_runner.js:157162:12)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157771:13\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:4911:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/notificationDom.spec.js:106:8)",
                 "diff": null
               },
-              "uuid": "f6355d65-2229-4ed1-b272-6102aebdef23",
-              "parentUUID": "cc410ea2-5294-4e95-8e11-8ddcdeb355ec",
+              "uuid": "234f8fb5-c908-4afb-9d1c-06311b27fdd3",
+              "parentUUID": "4b08664d-e15e-4836-b513-644ff4289b2b",
               "isHook": false,
               "skipped": false
             },
@@ -69,8 +69,8 @@
               "context": null,
               "code": "cy.hasNotification('@error', 150, 10);",
               "err": {},
-              "uuid": "1d2dc7d6-a204-4c5f-83cc-30e20239895d",
-              "parentUUID": "cc410ea2-5294-4e95-8e11-8ddcdeb355ec",
+              "uuid": "6fb49471-179a-4857-a5fd-9d3206899e1f",
+              "parentUUID": "4b08664d-e15e-4836-b513-644ff4289b2b",
               "isHook": false,
               "skipped": true
             },
@@ -87,8 +87,8 @@
               "context": null,
               "code": "cy.hasNotification('@warning', 290, 10);",
               "err": {},
-              "uuid": "0dff15b6-5753-4602-bfe2-47806c98a316",
-              "parentUUID": "cc410ea2-5294-4e95-8e11-8ddcdeb355ec",
+              "uuid": "107135a3-3399-41f7-9ccc-9b00022e0949",
+              "parentUUID": "4b08664d-e15e-4836-b513-644ff4289b2b",
               "isHook": false,
               "skipped": true
             },
@@ -105,8 +105,8 @@
               "context": null,
               "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
               "err": {},
-              "uuid": "a262f02d-069f-4950-b840-3d35cb8f27bf",
-              "parentUUID": "cc410ea2-5294-4e95-8e11-8ddcdeb355ec",
+              "uuid": "1ad94395-9ebf-41d5-ba21-a773c6801f8a",
+              "parentUUID": "4b08664d-e15e-4836-b513-644ff4289b2b",
               "isHook": false,
               "skipped": true
             }
@@ -114,15 +114,15 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "f6355d65-2229-4ed1-b272-6102aebdef23"
+            "234f8fb5-c908-4afb-9d1c-06311b27fdd3"
           ],
           "pending": [],
           "skipped": [
-            "1d2dc7d6-a204-4c5f-83cc-30e20239895d",
-            "0dff15b6-5753-4602-bfe2-47806c98a316",
-            "a262f02d-069f-4950-b840-3d35cb8f27bf"
+            "6fb49471-179a-4857-a5fd-9d3206899e1f",
+            "107135a3-3399-41f7-9ccc-9b00022e0949",
+            "1ad94395-9ebf-41d5-ba21-a773c6801f8a"
           ],
-          "duration": 412,
+          "duration": 389,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
