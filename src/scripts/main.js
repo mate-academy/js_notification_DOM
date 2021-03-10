@@ -38,14 +38,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   setTimeout(() => notification.content.remove(), 2000);
 };
 
-pushNotification(10, 10, 'Title of Success notification',
-  'notification example.\n '
+pushNotification(10, 10, 'Title of Success message',
+  'message example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(150, 10, 'Title of Error notification',
-  'notification example.\n '
+pushNotification(150, 10, 'Title of Error message',
+  'message example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(290, 10, 'Title of Warning notification',
-  'notification example.\n '
+pushNotification(290, 10, 'Title of Warning message',
+  'message example.\n '
   + 'Notification should contain title and description.', 'warning');
