@@ -22,7 +22,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     message.remove();
-  }, 1500);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
