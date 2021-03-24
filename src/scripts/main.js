@@ -2,21 +2,17 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const block = document.createElement('div');
-  const heading = document.createElement('h2');
-  const text = document.createElement('p');
+
+  block.insertAdjacentHTML('beforeend', `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `);
 
   block.classList.add(`notification`);
   block.classList.add(type);
   block.style.top = `${posTop}px`;
   block.style.right = `${posRight}px`;
 
-  heading.classList.add('title');
-  heading.innerText = title;
-  text.classList.add('description');
-  text.innerText = description;
-
-  block.appendChild(heading);
-  block.appendChild(text);
   document.body.appendChild(block);
 
   setTimeout(() => {
