@@ -2,15 +2,15 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.body;
-  const notification = document.createElement('div');
 
-  notification.className = `notification ${type}`;
-
-  notification.innerHTML = `
+  body.insertAdjacentHTML('afterbegin', `
+  <div class="notification ${type}">
     <h2 class="title">${title}</h2>
-    <p>${description}</p>`;
+    <p>${description}</p>
+  </div>
+  `);
 
-  body.append(notification);
+  const notification = document.querySelector('.notification');
 
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
