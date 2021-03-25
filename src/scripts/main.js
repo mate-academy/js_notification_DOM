@@ -1,7 +1,36 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const body = document.body;
+  const div = document.createElement('div');
+
+  div.classList.add('notification');
+
+  switch (type) {
+    case 'success':
+      div.classList.add('success');
+      break;
+    case 'warning':
+      div.classList.add('warning');
+      break;
+    default:
+      div.classList.add('error');
+  }
+
+  div.innerHTML = `
+    <h2 class = "title">${title}</h2>
+    <p>${description}</p>
+  `;
+
+  div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
+  div.querySelector('.title').style.fontSize = '16px';
+
+  body.prepend(div);
+
+  setTimeout(() => {
+    div.hidden = true;
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
@@ -14,4 +43,4 @@ pushNotification(150, 10, 'Title of Error message',
 
 pushNotification(290, 10, 'Title of Warning message',
   'Message example.\n '
-  + 'Notification should contain title and description.', 'warning');
++ 'Notification should contain title and description.', 'warning');
