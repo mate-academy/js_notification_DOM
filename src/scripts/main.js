@@ -43,4 +43,4 @@ pushNotification(150, 10, 'Title of Error message',
 
 pushNotification(290, 10, 'Title of Warning message',
   'Message example.\n '
-+ 'Notification should contain title and description.', 'warning');
+  + 'Notification should contain title and description.', 'warning');
