@@ -13,10 +13,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = posRight + 'px';
   notification.append(titleOfNotification);
   notification.append(descriptionOfNotification);
-  document.getElementsByTagName('body')[0].appendChild(notification);
+  document.querySelector('body').appendChild(notification);
 
   setTimeout(
-    () => document.getElementsByClassName('notification')[0].remove(), 2000);
+    () => notification.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
