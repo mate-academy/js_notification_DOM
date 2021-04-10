@@ -12,11 +12,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description}</p>
   `;
 
-  document.body.append(notification);
-
   setTimeout(() => {
     notification.remove();
   }, 2000);
+
+  document.body.append(notification);
 };
 
 pushNotification(10, 10, 'Title of Success message',
