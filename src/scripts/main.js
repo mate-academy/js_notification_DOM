@@ -1,7 +1,20 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const logo = document.body.querySelector('.logo');
+
+  logo.insertAdjacentHTML('afterend',
+    `<div class="notification ${type}">`
+    + `<h2 class="title">${title}</h2>`
+    + `<p>${description}</p>`
+    + '</div>');
+
+  const div = document.body.querySelector(`.${type}`);
+
+  div.style.marginTop = `${posTop}px`;
+  div.style.marginRight = `${posRight}px`;
+
+  setTimeout(() => div.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
