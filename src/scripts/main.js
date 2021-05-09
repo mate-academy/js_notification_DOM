@@ -2,10 +2,11 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.insertAdjacentHTML('beforeend', `
-  <div style="top: ${posTop}px" class="notification ${type}">
-    <h2 class="title">${title}</h2>
-    <p>${description}</p>
-  </div>
+    <div style="top: ${posTop}px; right: ${posRight}px;" 
+    class="notification ${type}">
+      <h2 class="title">${title}</h2>
+      <p>${description}</p>
+    </div>
 `);
 
   setTimeout(() => {
