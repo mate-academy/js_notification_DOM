@@ -4,12 +4,12 @@ const body = document.querySelector('body');
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const block = document.createElement('div');
+  const paragraph = document.createElement('p');
 
+  paragraph.innerText = description;
   block.className = `notification ${type}`;
-
-  block.innerHTML = `
-  <h3 class="title">${title}</h3>
-  <p>${description}</p>`;
+  block.innerHTML = `<h3 class="title">${title}</h3>`;
+  block.append(paragraph);
 
   block.style.cssText = `
   top: ${posTop}px;
@@ -17,9 +17,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   body.append(block);
 
-  window.setTimeout(function() {
-    block.remove();
-  }, 2000);
+  window.setTimeout(() => block.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
