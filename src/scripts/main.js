@@ -8,7 +8,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.className = `notification ${type}`;
 
   block.innerHTML = `
-  <h3>${title}</h3>
+  <h3 class="title">${title}</h3>
   <p>${description}</p>`;
 
   block.style.cssText = `
