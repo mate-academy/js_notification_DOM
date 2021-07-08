@@ -12,8 +12,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(paragraph);
 
   block.style.cssText = `
-  top: ${posTop}px;
-  right: ${posRight}px;`;
+    top: ${posTop}px;
+    right: ${posRight}px;
+  `;
 
   body.append(block);
 
