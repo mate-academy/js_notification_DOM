@@ -10,12 +10,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     </div>`
   );
 
-  const div = document.querySelector(`.${type}`);
+  const notification = document.querySelector(`.${type}`);
 
-  div.style.marginTop = `${posTop}px`;
-  div.style.marginRight = `${posRight}px`;
+  notification.style.marginTop = `${posTop}px`;
+  notification.style.marginRight = `${posRight}px`;
 
-  setTimeout(() => div.remove(), 2000);
+  setTimeout(() => notification.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
