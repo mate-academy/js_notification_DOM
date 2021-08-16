@@ -5,8 +5,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const messageTitle = document.createElement('h2');
   const messageDescription = document.createElement('p');
 
-  document.body.append(messageBlock);
-
   messageBlock.append(messageTitle);
   messageBlock.append(messageDescription);
   messageBlock.className = `notification ${type}`;
@@ -17,6 +15,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageTitle.style.fontSize = '18px';
 
   messageDescription.innerText = description;
+
+  document.body.append(messageBlock);
 
   setTimeout(() => {
     messageBlock.remove();
