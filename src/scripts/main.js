@@ -1,7 +1,46 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const element = document.querySelector('body');
+
+  const card = document.createElement('div');
+
+  card.style.top = `${posTop}px`;
+  card.style.right = `${posRight}px`;
+  card.classList.add('notification');
+
+  if (type === 'success') {
+    card.classList.add('success');
+
+    card.innerHTML = `
+    <h2 class='title'>${title}</h2>
+    <p>${description}</p>
+  `;
+  }
+
+  if (type === 'error') {
+    card.classList.add('error');
+
+    card.innerHTML = `
+    <h2 class='title'>${title}</h2>
+    <p>${description}</p>
+  `;
+  }
+
+  if (type === 'warning') {
+    card.classList.add('warning');
+
+    card.innerHTML = `
+    <h2 class='title'>${title}</h2>
+    <p>${description}</p>
+  `;
+  }
+
+  element.append(card);
+
+  setTimeout(() => {
+    card.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
