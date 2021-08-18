@@ -13,6 +13,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description.replace('\n ', '<br>')}</p>
   `);
 
+  setTimeout(() => message.remove(), 2000);
+
   return document.body.append(message);
 };
 
