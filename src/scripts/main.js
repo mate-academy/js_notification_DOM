@@ -8,33 +8,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   card.style.top = `${posTop}px`;
   card.style.right = `${posRight}px`;
   card.classList.add('notification');
-
-  if (type === 'success') {
-    card.classList.add('success');
-
-    card.innerHTML = `
+  card.classList.add(type);
+  card.innerHTML = `
     <h2 class='title'>${title}</h2>
     <p>${description}</p>
   `;
-  }
-
-  if (type === 'error') {
-    card.classList.add('error');
-
-    card.innerHTML = `
-    <h2 class='title'>${title}</h2>
-    <p>${description}</p>
-  `;
-  }
-
-  if (type === 'warning') {
-    card.classList.add('warning');
-
-    card.innerHTML = `
-    <h2 class='title'>${title}</h2>
-    <p>${description}</p>
-  `;
-  }
 
   element.append(card);
 
