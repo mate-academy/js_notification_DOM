@@ -23,8 +23,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.append(elementMessage);
 
-  // console.log(parseFloat(getComputedStyle(elementMessage).right));
-
   elementMessage.style.right
     = `${parseFloat(getComputedStyle(elementMessage).right) + posRight}px`;
 
