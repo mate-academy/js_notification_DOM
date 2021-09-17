@@ -1,5 +1,5 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
+    - [DEMO LINK](https://tumann21.github.io/js_notification_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
@@ -15,7 +15,7 @@ Do not write any CSS styles or HTML code in this task. You should modify only `m
 
 Implementation tips:
 - Print three messages: `success`, `error`, `warning` (call methods already exist in `main.js` file);
-- The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`); 
+- The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`);
 - The message should have a title with class `title` (prefer `h2` element);
 - The message should have description (prefer tag `p`).
 
