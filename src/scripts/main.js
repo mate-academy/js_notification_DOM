@@ -23,8 +23,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       div.remove();
     }, 6000);
   }
-
-  p.className = 'title';
+  
+  h2.innerText = title;
+  h2.className = 'title';
   p.innerText = description;
   div.className = type;
   div.classList.add('notification');
