@@ -2,47 +2,36 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
-
   const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
 
   if (type === 'success') {
-    div.className = 'success';
-    div.style.backgroundColor = '#c0ddb6';
-
     setTimeout(() => {
-      div.style.display = 'none';
+      div.remove();
     }, 2000);
   }
 
   if (type === 'error') {
-    div.className = 'error';
-    div.style.backgroundColor = '#ecb5b1';
-
     setTimeout(() => {
-      div.style.display = 'none';
+      div.remove();
     }, 4000);
   }
 
   if (type === 'warning') {
-    div.className = 'warning';
-    div.style.backgroundColor = '#f1e5bf';
-
     setTimeout(() => {
-      div.style.display = 'none';
+      div.remove();
     }, 6000);
   }
 
-  div.style.borderRadius = '10px';
-  div.style.padding = '10px';
-  div.style.display = 'block';
-  div.style.position = 'fixed';
+  p.className = 'title';
+  p.innerText = description;
+  div.className = type;
+  div.classList.add('notification');
+  div.append(h2);
+  div.append(p);
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
-
-  div.innerHTML = `
-    <h2>${title}</h2>
-    <p>${description}</p>
-  `;
 
   body.append(div);
 };
