@@ -33,9 +33,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 };
 
 setTimeout(() => {
-  const div = document.querySelector('div');
+  const div = document.querySelectorAll('div');
 
-  div.remove();
+  [...div].forEach(item => item.remove());
 }, 2000);
 
 pushNotification(10, 10, 'Title of Success message',
