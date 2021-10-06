@@ -4,17 +4,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
   const div = document.createElement('div');
 
-  switch (type) {
-    case 'success' :
-      div.classList = 'notification success';
-      break;
-    case 'warning' :
-      div.classList = 'notification warning';
-      break;
-    case 'error' :
-      div.classList = 'notification error';
-      break;
-  }
+  div.classList.add('notification', type);
   body.append(div);
 
   const h2 = document.createElement('h2');
@@ -30,13 +20,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
+
+  setTimeout(() => {
+    div.remove();
+  }, 2000);
 };
-
-setTimeout(() => {
-  const div = document.querySelectorAll('div');
-
-  [...div].forEach(item => item.remove());
-}, 2000);
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
