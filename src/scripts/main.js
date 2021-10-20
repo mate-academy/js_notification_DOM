@@ -8,7 +8,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <h3>${title}</h3>
     <p>${description}</p>
   `);
-  console.log(div.textContent);
   div.classList.add('notification', `${type}`);
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
