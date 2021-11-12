@@ -1,7 +1,23 @@
+/* eslint-disable no-console */
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const div = document.createElement('div');
+  const titleMessage = document.createElement('h2');
+  const message = document.createElement('p');
+
+  titleMessage.innerText = title;
+  message.innerText = description;
+
+  div.classList.add('notification', `${type}`);
+
+  div.style.right = `${posRight}px`;
+  div.style.top = `${posTop}px`;
+
+  div.append(titleMessage, message);
+  document.body.append(div);
+
+  setTimeout(() => div.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
