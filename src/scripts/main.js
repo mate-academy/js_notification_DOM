@@ -15,17 +15,29 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.append(notification);
 
-  setTimeout(() => notification.remove(), 2000);
+  setTimeout(() => notification.remove(), 4000);
 };
 
-pushNotification(10, 10, 'Title of Success message',
-  'Message example.\n '
-  + 'Notification should contain title and description.', 'success');
+pushNotification(
+  10,
+  10,
+  'Success',
+  'You hacked the pentagon successfully.',
+  'success'
+);
 
-pushNotification(150, 10, 'Title of Error message',
-  'Message example.\n '
-  + 'Notification should contain title and description.', 'error');
+pushNotification(
+  150,
+  10,
+  'Error',
+  'Hacking of the pentagon was unsuccessful.',
+  'error'
+);
 
-pushNotification(290, 10, 'Title of Warning message',
-  'Message example.\n '
-  + 'Notification should contain title and description.', 'warning');
+pushNotification(
+  290,
+  10,
+  'Warning',
+  'FBI is coming for you!',
+  'warning'
+);
