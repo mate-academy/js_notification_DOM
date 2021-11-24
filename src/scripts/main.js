@@ -6,17 +6,18 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationDescription = document.createElement('p');
   const page = document.querySelector('body');
 
-  notification.className = `notification ${type}`;
+  notification.classList.add('notification', type);
   notificationTitle.textContent = title;
   notificationTitle.className = 'title';
   notificationDescription.textContent = description;
 
-  page.append(notification);
   notification.append(notificationTitle);
   notification.append(notificationDescription);
 
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
+
+  page.append(notification);
 
   setTimeout(() => notification.remove(), 2000);
 };
