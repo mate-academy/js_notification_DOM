@@ -1,20 +1,8 @@
 'use strict';
 
-// const ma = document.querySelector('.logo');
-// ma.style.all = 'none';
-// ma.style.backgroundColor = '#d8634e';
-// ma.style.color = 'white';
-// ma.style.width = '100px';
-// ma.style.height = '100px';
-// ma.style.borderRadius = '20px';
-// ma.style.paddingLeft = '40px 40px';
-
 const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.insertAdjacentHTML('afterbegin', `<div class="notification">
     <h2 class="${title}">${title}</h2><p>${description}</p></div>`);
-
-  // const titleStyle = document.querySelector('title');
-  // titleStyle.style.margin = '';
 
   const box = document.querySelector('.notification');
 
