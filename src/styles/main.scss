@@ -2,12 +2,6 @@ body {
   background: #eee;
   font-family: Roboto, sans-serif;
   margin: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 100vh;
 }
 
 .logo {
@@ -15,12 +9,8 @@ body {
   background-color: #fc4b3b;
   color: white;
   border-radius: 16px;
-  user-select: none;
   width: 70px;
   height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .notification {
