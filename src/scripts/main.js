@@ -25,6 +25,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   if (type === 'warning') {
     box.style.backgroundColor = '#eee5c3';
   }
+
+  setTimeout(() => {
+    box.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message', 'Message example.\n '
