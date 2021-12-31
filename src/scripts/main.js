@@ -14,16 +14,16 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   box.style.borderRadius = '10px';
   box.style.paddingLeft = '20px';
 
-  if (type === 'success') {
-    box.style.backgroundColor = '#c5dcba';
-  }
-
-  if (type === 'error') {
-    box.style.backgroundColor = '#e3b7b3';
-  }
-
-  if (type === 'warning') {
-    box.style.backgroundColor = '#eee5c3';
+  switch (type) {
+    case 'success':
+      box.style.backgroundColor = '#c5dcba';
+      break;
+    case 'error':
+      box.style.backgroundColor = '#e3b7b3';
+      break;
+    case 'warning':
+      box.style.backgroundColor = '#eee5c3';
+      break;
   }
 
   setTimeout(() => {
