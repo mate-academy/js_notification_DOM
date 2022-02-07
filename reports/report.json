@@ -1,0 +1,175 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2022-02-07T20:28:32.975Z",
+    "end": "2022-02-07T20:28:56.672Z",
+    "duration": 23437,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8ca435c7-9226-450f-a816-fbfcd9525e60",
+      "title": "",
+      "fullFile": "cypress\\integration\\notificationDom.spec.js",
+      "file": "cypress\\integration\\notificationDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7fe86a60-a39c-47e6-92cc-73cf2e0a2ad9",
+          "title": "Notifications app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should print `success` message",
+              "fullTitle": "Notifications app should print `success` message",
+              "timedOut": null,
+              "duration": 6974,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@success', 10, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `.notification.success`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `.notification.success`, but never found it.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": null
+              },
+              "uuid": "e1932562-5385-4364-91e7-9105c9ae1c87",
+              "parentUUID": "7fe86a60-a39c-47e6-92cc-73cf2e0a2ad9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `error` message",
+              "fullTitle": "Notifications app should print `error` message",
+              "timedOut": null,
+              "duration": 6977,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@error', 150, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `.notification.error`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `.notification.error`, but never found it.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": null
+              },
+              "uuid": "18312c03-fba6-44b3-9aa8-44d236fc72ef",
+              "parentUUID": "7fe86a60-a39c-47e6-92cc-73cf2e0a2ad9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `warning` message",
+              "fullTitle": "Notifications app should print `warning` message",
+              "timedOut": null,
+              "duration": 6898,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@warning', 290, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `.notification.warning`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `.notification.warning`, but never found it.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": null
+              },
+              "uuid": "ffffdb99-0dcb-4a9a-a136-65b59c300190",
+              "parentUUID": "7fe86a60-a39c-47e6-92cc-73cf2e0a2ad9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "messages should disappear in 2 seconds",
+              "fullTitle": "Notifications app messages should disappear in 2 seconds",
+              "timedOut": null,
+              "duration": 2588,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
+              "err": {},
+              "uuid": "4f092a47-7b07-4c25-a7fd-9f080a618e9a",
+              "parentUUID": "7fe86a60-a39c-47e6-92cc-73cf2e0a2ad9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f092a47-7b07-4c25-a7fd-9f080a618e9a"
+          ],
+          "failures": [
+            "e1932562-5385-4364-91e7-9105c9ae1c87",
+            "18312c03-fba6-44b3-9aa8-44d236fc72ef",
+            "ffffdb99-0dcb-4a9a-a136-65b59c300190"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23437,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
