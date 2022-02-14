@@ -11,10 +11,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   h2.className = 'title';
   h2.textContent = title;
   content.textContent = description;
-  div.append(h2);
-  div.append(content);
+  div.append(h2, content);
   document.body.append(div);
-  setTimeout(() => div.remove(),2000);
+  setTimeout(() => div.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
