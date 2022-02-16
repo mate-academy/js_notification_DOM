@@ -1,7 +1,25 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const body = document.querySelector('body');
+  const message = document.createElement('div');
+  const titleOfMessage = document.createElement('h2');
+  const text = document.createElement('p');
+
+  message.className = `notification + ${type}`;
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
+  titleOfMessage.className = 'title';
+  titleOfMessage.textContent = title;
+  text.textContent = description;
+
+  body.append(message);
+  message.append(titleOfMessage);
+  message.append(text);
+
+  setTimeout(() => {
+    message.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
