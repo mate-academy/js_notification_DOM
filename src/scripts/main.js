@@ -16,8 +16,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationTitle.textContent = title;
   notificationDescription.textContent = description;
 
-  notificationBlock.style.top = posTop;
-  notificationBlock.style.right = posRight;
+  notificationBlock.style.top = `${posTop}px`;
+
+  notificationBlock.style.right = `${posRight}px`;
 
   const pageBody = document.querySelector('body');
 
@@ -25,10 +26,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notificationBlock.append(notificationTitle, notificationDescription);
 
-  /* setTimeout(() => {
+  setTimeout(() => {
     notificationBlock.style.display = 'none';
   },
-  2000); */
+  2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
