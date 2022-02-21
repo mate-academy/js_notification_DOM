@@ -8,11 +8,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.classList.add('notification', `${type}`);
   h2.textContent = title;
   h2.classList.add('title');
-  p.innerHTML = description;
+  p.textContent = description;
   div.append(h2, p);
 
   div.style.cssText = `position: absolute; 
-  top: ${posTop}px; right: ${posRight}px;`;
+                       top: ${posTop}px; 
+                       right: ${posRight}px`;
+
   document.body.appendChild(div);
 
   setTimeout(() => {
