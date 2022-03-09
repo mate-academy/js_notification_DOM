@@ -17,12 +17,16 @@ mess.style.cssText = `
 const pushNotification = (posTop, posRight, title, description, type) => {
   let bgc = '';
 
-  if (type === 'success') {
-    bgc = 'green';
-  } else if (type === 'error') {
-    bgc = 'red';
-  } else if (type === 'warning') {
-    bgc = 'yellow';
+  switch (type) {
+    case 'success':
+      bgc = 'green';
+      break;
+    case 'error':
+      bgc = 'red';
+      break;
+    case 'warning':
+      bgc = 'yellow';
+      break;
   }
 
   setTimeout(() => {
