@@ -17,9 +17,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.right = posRight + 'px';
   document.body.append(div);
 
-  // setTimeout(() => {
-  //   div.remove();
-  // }, 2000);
+  setTimeout(() => {
+    div.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
