@@ -22,8 +22,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(function() {
     const hide = document.querySelectorAll('.notification');
+
     for (let i = 0; i < hide.length; i++) {
-      hide[i].style.visibility = 'hidden';
+      hide[i].remove();
     }
   }, 2000);
 };
