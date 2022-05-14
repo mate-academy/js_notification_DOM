@@ -13,9 +13,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.style.top = `${posTop}px`;
   block.style.right = `${posRight}px`;
   block.append(h2, paragraph);
+  body.append(block);
 
   setTimeout(() => {
-    body.append(block);
+    block.remove();
   }, 2000);
 };
 
