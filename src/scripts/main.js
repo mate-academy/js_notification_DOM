@@ -14,15 +14,20 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   newElement.append(h2, p);
   body.append(newElement);
 
-  if (type === 'success') {
-    newElement.style.top = `${posTop}px`;
-    newElement.style.right = `${posRight}px`;
-  } else if (type === 'error') {
-    newElement.style.top = `${posTop}px`;
-    newElement.style.right = `${posRight}px`;
-  } else {
-    newElement.style.top = `${posTop}px`;
-    newElement.style.right = `${posRight}px`;
+  switch (type) {
+    case 'success':
+      newElement.style.top = `${posTop}px`;
+      newElement.style.right = `${posRight}px`;
+      break;
+
+    case 'error':
+      newElement.style.top = `${posTop}px`;
+      newElement.style.right = `${posRight}px`;
+      break;
+
+    default:
+      newElement.style.top = `${posTop}px`;
+      newElement.style.right = `${posRight}px`;
   }
 
   setTimeout(() => {
