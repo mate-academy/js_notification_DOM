@@ -5,6 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   message.classList.add('notification');
   message.classList.add(type);
+
   message.style.top = posTop + 'px';
   message.style.right = posRight + 'px';
 
@@ -22,10 +23,10 @@ pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(170, 10, 'Title of Error message',
+pushNotification(150, 10, 'Title of Error message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(300, 10, 'Title of Warning message',
+pushNotification(290, 10, 'Title of Warning message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'warning');
