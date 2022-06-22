@@ -2,6 +2,23 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const body = document.querySelector('body');
+  const div = document.createElement('div');
+  const newTitle = document.createElement('title');
+  const p = document.createElement('p');
+
+  div.classList = 'notification' + ` ${type}`;
+  div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
+
+  newTitle.className = 'title';
+
+  newTitle.textContent = title;
+  p.innerText = description;
+
+  body.children[0].after(div);
+  div.append(newTitle);
+  div.append(p);
 };
 
 pushNotification(10, 10, 'Title of Success message',
