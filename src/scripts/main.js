@@ -3,13 +3,10 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
   const body = document.querySelector('body');
-  const id = Math.random();
   const message = document.createElement('div');
 
-  message.innerHTML
-    = `
+  message.innerHTML = `
     <div 
-      id="${id}"
       style="top: ${posTop}px; right: ${posRight}px;"
       class="notification ${type}">
       <h2 class="title">${title}</h2>
@@ -17,9 +14,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     </div>`;
   body.appendChild(message);
 
-  const currMessage = document.getElementById(`${id}`);
-
-  setTimeout(() => currMessage.remove(), 2000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
