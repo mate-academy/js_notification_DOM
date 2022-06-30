@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-30T21:09:22.071Z",
+    "end": "2022-06-30T21:09:24.810Z",
+    "duration": 2632,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "949143b4-5434-4083-bba4-644d49f09823",
+      "title": "",
+      "fullFile": "cypress\\integration\\notificationDom.spec.js",
+      "file": "cypress\\integration\\notificationDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c8a113d4-0add-4a75-9ba4-8d073b8de324",
+          "title": "Notifications app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should print `success` message",
+              "fullTitle": "Notifications app should print `success` message",
+              "timedOut": null,
+              "duration": 237,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@success', 10, 10);",
+              "err": {},
+              "uuid": "8edab252-c680-4a7e-a898-a5332b24d7e3",
+              "parentUUID": "c8a113d4-0add-4a75-9ba4-8d073b8de324",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `error` message",
+              "fullTitle": "Notifications app should print `error` message",
+              "timedOut": null,
+              "duration": 114,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@error', 150, 10);",
+              "err": {},
+              "uuid": "aa68fe7d-5432-40b4-a21a-32f6f7d4d2ef",
+              "parentUUID": "c8a113d4-0add-4a75-9ba4-8d073b8de324",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `warning` message",
+              "fullTitle": "Notifications app should print `warning` message",
+              "timedOut": null,
+              "duration": 115,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@warning', 290, 10);",
+              "err": {},
+              "uuid": "1445d494-ad76-48fc-ae31-7e195723d625",
+              "parentUUID": "c8a113d4-0add-4a75-9ba4-8d073b8de324",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "messages should disappear in 2 seconds",
+              "fullTitle": "Notifications app messages should disappear in 2 seconds",
+              "timedOut": null,
+              "duration": 2166,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
+              "err": {},
+              "uuid": "8a11e763-7810-4b7a-84e1-788b7c46ff18",
+              "parentUUID": "c8a113d4-0add-4a75-9ba4-8d073b8de324",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8edab252-c680-4a7e-a898-a5332b24d7e3",
+            "aa68fe7d-5432-40b4-a21a-32f6f7d4d2ef",
+            "1445d494-ad76-48fc-ae31-7e195723d625",
+            "8a11e763-7810-4b7a-84e1-788b7c46ff18"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2632,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
