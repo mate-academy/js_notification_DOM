@@ -4,9 +4,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const element = document.createElement('div');
 
   element.innerHTML = `
-
      <div class ='notification ${type}' style = 'top: ${posTop}px; 
-     right: ${posRight}px; width: 300px'>
+     right: ${posRight}px; width: 320px'>
        <h2 class='title'>${title}</h2>
        <p>${description}</p>
      </div>`;
@@ -17,20 +16,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }, 2000);
 };
 
-setTimeout(() => {
-  pushNotification(10, 10, 'Title of Success message',
-    `Message example. \n `
-  + `Notification should contain title and description.`, 'success');
-}, 2000);
+pushNotification(10, 10, 'Title of Success message',
+  `Message example.\n `
++ 'Notification should contain title and description.', 'success');
 
-setTimeout(() => {
-  pushNotification(150, 10, 'Title of Error message',
-    `Message example.\n `
-  + `Notification should contain title and description.`, 'error');
-}, 4000);
+pushNotification(150, 10, 'Title of Error message',
+  `Message example.\n `
++ `Notification should contain title and description.`, 'error');
 
-setTimeout(() => {
-  pushNotification(290, 10, 'Title of Warning message',
-    'Message example.\n '
-  + 'Notification should contain title and description.', 'warning');
-}, 6000);
+pushNotification(290, 10, 'Title of Warning message',
+  'Message example.\n '
++ 'Notification should contain title and description.', 'warning');
