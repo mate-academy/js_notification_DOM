@@ -17,6 +17,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.append(titleElement);
   notification.append(descriptionElement);
   document.querySelector('body').append(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
