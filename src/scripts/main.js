@@ -26,7 +26,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(p);
 
   setTimeout(() => {
-    block.remov();
+    block.remove();
   }, 2000);
 };
 
