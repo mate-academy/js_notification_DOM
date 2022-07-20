@@ -12,6 +12,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.querySelector('body').append(notification);
 
   notification.classList.add('notification');
+  notification.classList.add(type);
   notification.style.top = '0px';
   notification.style.right = posRight + 'px';
   notification.style.opacity = 0;
@@ -22,19 +23,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.insertAdjacentElement('afterbegin', notificationTitle);
 
   notificationText.textContent = description;
-
   notification.insertAdjacentElement('beforeend', notificationText);
-
-  switch (type) {
-    case 'success' :
-      notification.classList.add('success');
-      break;
-    case 'warning' :
-      notification.classList.add('warning');
-      break;
-    default :
-      notification.classList.add('error');
-  }
 
   function appearance(element) {
     const currentTop = parseFloat(notification.style.top);
