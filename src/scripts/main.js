@@ -29,7 +29,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.append(notification);
 
   function hideElem() {
-    notification.style.opacity = '0';
+    notification.remove();
   }
 
   setTimeout(hideElem, 2000);
