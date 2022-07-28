@@ -24,7 +24,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(paragraph);
 
   setTimeout(function() {
-    body.remove(block);
+    block.style.display = 'none';
   }, 2000);
 };
 
