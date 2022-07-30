@@ -11,6 +11,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   <p>${description}</p>
   `;
 
+  message.style.boxSizing = 'content-box';
+
   message.style.top = `${posTop}px`; // does not work
   message.style.right = `${posRight}px`;
 
