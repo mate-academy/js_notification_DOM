@@ -8,7 +8,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     core.className = `notification ${type}`;
 
     core.innerHTML = `
-    <h3 class: "title">${title}</h3>
+    <h2 class: "title">${title}</h2>
     <p>${description}</p>
     `;
     document.body.append(core);
