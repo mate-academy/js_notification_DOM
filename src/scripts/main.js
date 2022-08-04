@@ -2,6 +2,35 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  function message() {
+    const core = document.createElement('div');
+
+    core.className = `notification ${type}`;
+
+    core.innerHTML = `
+    <h2 class: "title">${title}</h2>
+    <p>${description}</p>
+    `;
+    document.body.append(core);
+
+    const alarmPosition = document.querySelector(`.${type}`);
+
+    alarmPosition.style.position = 'fixed';
+    alarmPosition.style.top = `${posTop}px`;
+    alarmPosition.style.right = `${posRight}px`;
+    alarmPosition.style.height = '135px';
+    alarmPosition.style.width = '300px';
+    alarmPosition.style.borderRadius = '10px';
+    alarmPosition.style.paddingLeft = '10px';
+
+    const clear = () => {
+      alarmPosition.remove(core);
+    };
+
+    setTimeout(clear, 4000);
+  }
+
+  setTimeout(message, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
