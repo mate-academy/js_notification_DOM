@@ -3,20 +3,22 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
 
-  const body = document.querySelector('body');
-  const message = document.querySelector('div');
+  const message = document.createElement('div');
 
-  message.innerHTML = `
-<div>
-  style="top: ${posTop}px; right: ${posRight}px;"
-  class="notification ${type}">
-  <h2 class="title">${title}</h2>
-  <p>${description}</p>
-</div>
-`;
-  body.appendChild(message);
+  message.classList.add('notification', type);
 
-  setTimeout(() => message.remove(), 2000);
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
+
+  message.insertAdjacentHTML('afterbegin', `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `);
+  document.body.append(message);
+
+  setTimeout(() => {
+    message.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
