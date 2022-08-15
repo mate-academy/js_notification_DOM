@@ -15,8 +15,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationDescription.textContent = description;
 
   document.body.append(notification);
-  notification.append(notificationTitle);
-  notification.append(notificationDescription);
+  notification.append(notificationTitle, notificationDescription);
 
   setTimeout(() => {
     notification.remove();
