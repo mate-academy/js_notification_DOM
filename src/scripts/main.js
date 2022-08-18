@@ -5,7 +5,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   messageBlock.style.top = `${posTop}px`;
   messageBlock.style.right = `${posRight}px`;
-  // messageBlock.style.boxSizing = 'content-box';
   messageBlock.classList.add('notification', type);
 
   const titleMessage = document.createElement('h2');
