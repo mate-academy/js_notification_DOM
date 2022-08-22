@@ -17,7 +17,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.append(h2);
   div.append(desc);
 
-  const block = setTimeout(() => {
+  const massageBlock = setTimeout(() => {
     body.append(div);
 
     setTimeout(() => {
@@ -25,7 +25,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     }, 2000);
   }, 2000);
 
-  return block;
+  return massageBlock;
 };
 
 pushNotification(10, 10, 'Title of Success message',
