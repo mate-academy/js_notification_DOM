@@ -3,21 +3,7 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const note = document.createElement('div');
 
-  note.classList = 'notification';
-
-  switch (type) {
-    case 'success':
-      note.classList.add('success');
-      break;
-
-    case 'error':
-      note.classList.add('error');
-      break;
-
-    case 'warning':
-      note.classList.add('warning');
-      break;
-  }
+  note.classList.add('notification', type);
 
   note.style.top = posTop + 'px';
   note.style.right = posRight + 'px';
