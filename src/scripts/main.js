@@ -1,7 +1,21 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  document.body.insertAdjacentHTML('afterbegin', `
+    <div
+      class="notification ${type}"
+      style="box-sizing: content-box; right: ${posRight}px; top: ${posTop}px;"
+    >
+      <h2>${title}</h2>
+      <p>${description}</p>
+    </div>
+  `);
+
+  const needToDelete = document.querySelector(`.${type}`);
+
+  setTimeout(() => {
+    needToDelete.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
