@@ -1,7 +1,7 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const body = document.querySelector('body');
+  const body = document.body;
   const div = document.createElement('div');
 
   div.className = `notification ${type}`;
