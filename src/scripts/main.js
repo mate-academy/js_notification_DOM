@@ -17,13 +17,16 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
-  notification.style.transition = `opacity .3s, visibility .3s`;
+  notification.style.transition = `opacity .3s`;
 
   document.body.insertAdjacentElement('beforeend', notification);
 
   setTimeout(() => {
     notification.style.opacity = '0';
-    notification.style.visibility = 'hidden';
+  }, 1700);
+
+  setTimeout(() => {
+    notification.remove();
   }, 2000);
 };
 
