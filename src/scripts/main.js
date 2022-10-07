@@ -2,7 +2,7 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
-  const asd = description.split('\n');
+  const descriptionTransfers = description.split('\n');
   const notificationBlock = `
     <div class="notification ${type}" style="
       position: absolute; 
@@ -10,8 +10,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       right: ${posRight}px;
     ">
       <h2>${title}</h2>
-      <p>${asd[0]}
-      <br>${asd[1]}
+      <p>${descriptionTransfers[0]}
+      <br>${descriptionTransfers[1]}
       </br>
     </div>
   `;
