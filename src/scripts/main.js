@@ -10,17 +10,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       right: ${posRight}px;
     ">
       <h2>${title}</h2>
-      <p>${descriptionTransfers[0]}
-      <br>${descriptionTransfers[1]}
+      <p>${descriptionTransfers[0]} 
+      \n ${descriptionTransfers[1]}</p>
       </br>
     </div>
   `;
 
   body.insertAdjacentHTML('afterend', notificationBlock);
 
-  setTimeout(() => [...document.querySelectorAll('.notification')]
-    .forEach(elem => elem.remove()),
-  2000);
+  setTimeout(() => document.querySelector('.notification').remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
