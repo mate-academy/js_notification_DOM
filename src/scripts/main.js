@@ -2,21 +2,24 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
-  const descriptionTransfers = description.split('\n');
   const notificationBlock = `
-    <div class="notification ${type}" style="
-      position: absolute; 
-      top: ${posTop}px; 
-      right: ${posRight}px;
-    ">
       <h2>${title}</h2>
-      <p>${descriptionTransfers[0]} 
-      \n ${descriptionTransfers[1]}</p>
+      <p>${description}</p>
       </br>
-    </div>
   `;
 
-  body.insertAdjacentHTML('afterend', notificationBlock);
+  const notificationElement = document.createElement('div');
+
+  notificationElement.classList.add(`notification`);
+  notificationElement.classList.add(`${type}`);
+
+  notificationElement.style.position = 'absolute';
+  notificationElement.style.top = `${posTop}px`;
+  notificationElement.style.right = `${posRight}px`;
+
+  notificationElement.innerHTML = notificationBlock;
+
+  body.append(notificationElement);
 
   setTimeout(() => document.querySelector('.notification').remove(), 2000);
 };
