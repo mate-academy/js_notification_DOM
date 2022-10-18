@@ -7,7 +7,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const messageParagraph = document.createElement('p');
 
   message.className = `notification ${type}`;
-  // message.style.position = 'absolute';
   message.style.boxSizing = 'content-box';
   message.style.top = `${posTop}px`;
   message.style.right = `${posRight}px`;
