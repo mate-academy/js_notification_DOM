@@ -1,0 +1,178 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2022-10-26T16:47:25.620Z",
+    "end": "2022-10-26T16:47:42.400Z",
+    "duration": 16641,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f933784-105b-4390-b552-b046d4a15603",
+      "title": "",
+      "fullFile": "cypress\\integration\\notificationDom.spec.js",
+      "file": "cypress\\integration\\notificationDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e8a7b250-95a2-4e19-831c-695fe811ee42",
+          "title": "Notifications app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should print `success` message",
+              "fullTitle": "Notifications app should print `success` message",
+              "timedOut": null,
+              "duration": 4622,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@success', 10, 10);",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at $Cy.ensureAttached (http://localhost:8080/__cypress/runner/cypress_runner.js:161173:24)\n    at applyChainers (http://localhost:8080/__cypress/runner/cypress_runner.js:154698:12)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:8080/__cypress/runner/cypress_runner.js:7599:29)\n    at Context.shouldFn (http://localhost:8080/__cypress/runner/cypress_runner.js:154730:23)\n    at Context.should (http://localhost:8080/__cypress/runner/cypress_runner.js:154748:23)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:150448:39\n    at assertions (http://localhost:8080/__cypress/runner/cypress_runner.js:150700:14)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Object.gotValue (http://localhost:8080/__cypress/runner/cypress_runner.js:9469:18)\n    at Object.gotAccum (http://localhost:8080/__cypress/runner/cypress_runner.js:9456:25)\n    at Object.tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromiseCtx (http://localhost:8080/__cypress/runner/cypress_runner.js:8354:10)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5036:12)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:101:35)",
+                "diff": null
+              },
+              "uuid": "bac85bfb-8bfd-42e5-90eb-daa809a7a2f5",
+              "parentUUID": "e8a7b250-95a2-4e19-831c-695fe811ee42",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `error` message",
+              "fullTitle": "Notifications app should print `error` message",
+              "timedOut": null,
+              "duration": 4832,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@error', 150, 10);",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at $Cy.ensureAttached (http://localhost:8080/__cypress/runner/cypress_runner.js:161173:24)\n    at applyChainers (http://localhost:8080/__cypress/runner/cypress_runner.js:154698:12)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:8080/__cypress/runner/cypress_runner.js:7599:29)\n    at Context.shouldFn (http://localhost:8080/__cypress/runner/cypress_runner.js:154730:23)\n    at Context.should (http://localhost:8080/__cypress/runner/cypress_runner.js:154748:23)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:150448:39\n    at assertions (http://localhost:8080/__cypress/runner/cypress_runner.js:150700:14)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Object.gotValue (http://localhost:8080/__cypress/runner/cypress_runner.js:9469:18)\n    at Object.gotAccum (http://localhost:8080/__cypress/runner/cypress_runner.js:9456:25)\n    at Object.tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromiseCtx (http://localhost:8080/__cypress/runner/cypress_runner.js:8354:10)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5036:12)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:101:35)",
+                "diff": null
+              },
+              "uuid": "9bb6deae-45a6-4799-aee1-90649ac0b55b",
+              "parentUUID": "e8a7b250-95a2-4e19-831c-695fe811ee42",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `warning` message",
+              "fullTitle": "Notifications app should print `warning` message",
+              "timedOut": null,
+              "duration": 4417,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@warning', 290, 10);",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: Timed out retrying: `cy.should()` failed because this element is detached from the DOM.\n\n`<h2>Title o...</h2>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at $Cy.ensureAttached (http://localhost:8080/__cypress/runner/cypress_runner.js:161173:24)\n    at applyChainers (http://localhost:8080/__cypress/runner/cypress_runner.js:154698:12)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:8080/__cypress/runner/cypress_runner.js:7599:29)\n    at Context.shouldFn (http://localhost:8080/__cypress/runner/cypress_runner.js:154730:23)\n    at Context.should (http://localhost:8080/__cypress/runner/cypress_runner.js:154748:23)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:150448:39\n    at assertions (http://localhost:8080/__cypress/runner/cypress_runner.js:150700:14)\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Object.gotValue (http://localhost:8080/__cypress/runner/cypress_runner.js:9469:18)\n    at Object.gotAccum (http://localhost:8080/__cypress/runner/cypress_runner.js:9456:25)\n    at Object.tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromiseCtx (http://localhost:8080/__cypress/runner/cypress_runner.js:8354:10)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5036:12)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:101:35)",
+                "diff": null
+              },
+              "uuid": "01fd06e8-4429-497c-a9c2-a8689efb3499",
+              "parentUUID": "e8a7b250-95a2-4e19-831c-695fe811ee42",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "messages should disappear in 2 seconds",
+              "fullTitle": "Notifications app messages should disappear in 2 seconds",
+              "timedOut": null,
+              "duration": 2770,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<div.notification.success>' not to be 'visible'",
+                "estack": "AssertionError: Timed out retrying: expected '<div.notification.success>' not to be 'visible'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:123:8)",
+                "diff": null
+              },
+              "uuid": "6c2bd6e1-28d8-46dd-a7b6-9bab8e9e4308",
+              "parentUUID": "e8a7b250-95a2-4e19-831c-695fe811ee42",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bac85bfb-8bfd-42e5-90eb-daa809a7a2f5",
+            "9bb6deae-45a6-4799-aee1-90649ac0b55b",
+            "01fd06e8-4429-497c-a9c2-a8689efb3499",
+            "6c2bd6e1-28d8-46dd-a7b6-9bab8e9e4308"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16641,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
