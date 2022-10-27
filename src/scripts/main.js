@@ -1,7 +1,6 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-
   const logo = document.querySelector('.logo');
 
   logo.insertAdjacentHTML('afterend', `
