@@ -1,8 +1,7 @@
 'use strict';
 
-const body = document.querySelector('body');
-
 const pushNotification = (posTop, posRight, title, description, type) => {
+  const body = document.querySelector('body');
   const elem = document.createElement('div');
   const messTitle = document.createElement('h2');
   const messDesc = document.createElement('p');
