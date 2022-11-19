@@ -19,6 +19,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   divMargin.style.marginTop = `${posTop}px`;
   divMargin.style.marginLeft = `${posRight}px`;
   divMargin.style.width = `max-content`;
+
+  setTimeout(() => {
+    divMargin.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
