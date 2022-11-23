@@ -1,7 +1,7 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  
 };
 
 pushNotification(10, 10, 'Title of Success message',
