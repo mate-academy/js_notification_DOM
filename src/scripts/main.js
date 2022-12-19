@@ -1,7 +1,32 @@
 'use strict';
 
+let count = 3;
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const wrapper = document.createElement('div');
+  const elementTitle = document.createElement('h2');
+  const elementMessage = document.createElement('p');
+
+  wrapper.style.top = `${posTop}px`;
+  wrapper.style.right = `${posRight}px`;
+  wrapper.classList = 'notification ' + type;
+
+  elementTitle.classList = 'title';
+
+  elementTitle.innerHTML = title;
+  elementMessage.innerHTML = description;
+
+  wrapper.append(elementTitle);
+  wrapper.append(elementMessage);
+
+  setTimeout(() => {
+    document.querySelector('body').append(wrapper);
+  }, 2000);
+  count++;
+
+  setTimeout(() => {
+    wrapper.remove();
+  }, count * 1000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
