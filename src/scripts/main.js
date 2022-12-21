@@ -16,19 +16,19 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.appendChild(notificationBox);
 
-  // setTimeout(() => {
-  //   notificationBox.remove();
-  // }, 2000);
+  setTimeout(() => {
+    notificationBox.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success notification',
   'notification example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(150, 10, 'Title of Error notification',
+pushNotification(170, 10, 'Title of Error notification',
   'notification example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(290, 10, 'Title of Warning notification',
+pushNotification(330, 10, 'Title of Warning notification',
   'notification example.\n '
   + 'Notification should contain title and description.', 'warning');
