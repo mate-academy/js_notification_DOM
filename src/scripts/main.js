@@ -16,13 +16,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   element.append(elTitle, elPar);
 
-  setTimeout(() => {
-    document.body.append(element);
-  }, 1000);
+  document.body.append(element);
 
   setTimeout(() => {
     element.remove();
-  }, 3000);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
