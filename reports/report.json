@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-24T01:48:44.498Z",
+    "end": "2022-12-24T01:48:45.184Z",
+    "duration": 594,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "85f0b61e-1188-45d9-96df-4844b70acb72",
+      "title": "",
+      "fullFile": "cypress/integration/notificationDom.spec.js",
+      "file": "cypress/integration/notificationDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f01c58c4-b7d9-448f-a728-6f2449cce01b",
+          "title": "Notifications app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should print `success` message",
+              "fullTitle": "Notifications app should print `success` message",
+              "timedOut": null,
+              "duration": 594,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@success', 10, 10);",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Notifications app`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Notifications app`\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157791:25\n    at visitFailedByErr (http://localhost:8080/__cypress/runner/cypress_runner.js:157162:12)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157771:13\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:4911:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/notificationDom.spec.js:106:8)",
+                "diff": null
+              },
+              "uuid": "ff3518fc-1d6a-45a6-9989-0927af2b757b",
+              "parentUUID": "f01c58c4-b7d9-448f-a728-6f2449cce01b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `error` message",
+              "fullTitle": "Notifications app should print `error` message",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@error', 150, 10);",
+              "err": {},
+              "uuid": "9bc1336f-39ea-42b0-9e0f-7b7ea05832f4",
+              "parentUUID": "f01c58c4-b7d9-448f-a728-6f2449cce01b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should print `warning` message",
+              "fullTitle": "Notifications app should print `warning` message",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@warning', 290, 10);",
+              "err": {},
+              "uuid": "67a60565-19df-46e7-917f-03b907e755a5",
+              "parentUUID": "f01c58c4-b7d9-448f-a728-6f2449cce01b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "messages should disappear in 2 seconds",
+              "fullTitle": "Notifications app messages should disappear in 2 seconds",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
+              "err": {},
+              "uuid": "843bba61-a3bb-4453-aba2-bc83a8776300",
+              "parentUUID": "f01c58c4-b7d9-448f-a728-6f2449cce01b",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ff3518fc-1d6a-45a6-9989-0927af2b757b"
+          ],
+          "pending": [],
+          "skipped": [
+            "9bc1336f-39ea-42b0-9e0f-7b7ea05832f4",
+            "67a60565-19df-46e7-917f-03b907e755a5",
+            "843bba61-a3bb-4453-aba2-bc83a8776300"
+          ],
+          "duration": 594,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
