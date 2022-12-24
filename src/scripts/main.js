@@ -8,22 +8,25 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.style.top = `${posTop}px`;
   block.style.right = `${posRight}px`;
 
-  const h2 = document.createElement('h2');
+  const notificationTitle = document.createElement('h2');
 
-  h2.textContent = title;
-  h2.classList.add('title');
+  notificationTitle.textContent = title;
+  notificationTitle.classList.add('title');
 
-  const message = document.createElement('p');
+  const notificationMessage = document.createElement('p');
 
   setTimeout(() => {
     block.remove();
   }, 2000);
 
-  message.textContent = description;
+  notificationMessage.textContent = description;
 
-  block.append(h2);
-  block.append(message);
-  body.append(block);
+  block.insertAdjacentHTML('beforeend', `
+  <h2 class="title">${notificationTitle.textContent}e</h2>
+  <p>${notificationMessage.textContent}</p>
+  `);
+
+  body.insertBefore(block, body.children[0]);
 };
 
 pushNotification(10, 10, 'Title of Success message',
