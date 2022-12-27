@@ -18,8 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     div.remove();
-  }
-  , 2000);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
