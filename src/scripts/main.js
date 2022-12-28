@@ -1,7 +1,24 @@
 'use strict';
 
+const body = document.querySelector('body');
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const massage = document.createElement('div');
+
+  massage.className = 'notification' + ' ' + type;
+  massage.style.top = posTop + 'px';
+  massage.style.right = posRight + 'px';
+
+  massage.innerHTML = `
+  <h2 class="title">${title}</h2>
+  <p>${description}</p>
+  `;
+
+  body.append(massage);
+
+  setTimeout(() => {
+    massage.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
