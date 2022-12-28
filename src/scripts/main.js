@@ -1,22 +1,22 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const massege = document.createElement('div');
-  const massegeTitle = document.createElement('h2');
+  const message = document.createElement('div');
+  const messageTitle = document.createElement('h2');
   const textDescription = document.createElement('p');
 
-  massege.style.top = `${posTop}px`;
-  massege.style.right = `${posRight}px`;
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
 
-  massege.className = `notification ${type}`;
-  massegeTitle.className = 'title';
-  massegeTitle.textContent = `${title}`;
+  message.className = `notification ${type}`;
+  messageTitle.className = 'title';
+  messageTitle.textContent = `${title}`;
   textDescription.textContent = `${description}`;
 
-  document.body.append(massege);
-  massege.append(massegeTitle, textDescription);
+  document.body.append(message);
+  message.append(messageTitle, textDescription);
 
-  setTimeout(() => massege.remove(), 2000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
