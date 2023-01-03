@@ -2,7 +2,6 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const page = document.querySelector('body');
-
   const message = document.createElement('div');
 
   message.style.cssText = ` margin-top: ${posTop}px; 
