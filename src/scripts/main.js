@@ -7,17 +7,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.style.cssText = ` margin-top: ${posTop}px; 
     margin-left: ${posRight}px`;
 
-  if (type === 'error') {
-    message.className = 'notification error';
-  }
-
-  if (type === 'success') {
-    message.className = 'notification success';
-  }
-
-  if (type === 'warning') {
-    message.className = 'notification warning';
-  }
+  message.className = `notification ${type}`;
 
   const messageTitle = document.createElement('h2');
 
