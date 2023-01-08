@@ -4,20 +4,26 @@ const htmlBody = document.querySelector('body');
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
+  const notificationTitle = document.createElement('h2');
+  const notificationDescription = document.createElement('p');
 
   notification.className = `notification ${type}`;
   notification.style.cssText = `top: ${posTop}px; right: ${posRight}px`;
 
-  notification.innerHTML = `
-    <h2 class='title'>${title}</h2>
-    <p>${description}</p>
-  `;
+  notificationTitle.className = 'title';
+  notificationTitle.innerText = title;
+  // seems like something wrong with font-size, so I decided to fix it a bit.
+  notificationTitle.style.fontSize = '18px';
+
+  notificationDescription.innerText = description;
+
+  notification.append(notificationTitle, notificationDescription);
 
   htmlBody.append(notification);
 
   setTimeout(() => {
     notification.remove();
-  }, 2000);
+  }, 1950);
 };
 
 pushNotification(10, 10, 'Title of Success message',
