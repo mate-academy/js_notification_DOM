@@ -1,7 +1,29 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const message = document.createElement('div');
+
+  message.classList.add('notification', type);
+  document.body.prepend(message);
+
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
+
+  const arrayFromDescription = description.split('\n ');
+
+  message.innerHTML = `
+    <h2 class="title" style="font-size: 18px">${title}</h2>
+    <p>
+      ${arrayFromDescription.map(item =>
+    `${item.trim()}
+      <br>`
+  ).join('')}
+    </p>
+  `;
+
+  setTimeout(() => {
+    message.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
