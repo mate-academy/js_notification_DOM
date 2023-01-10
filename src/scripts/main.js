@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(div);
 
   setTimeout(() => {
-    document.body.remove(div);
+    div.remove();
   }, 2000);
 };
 
