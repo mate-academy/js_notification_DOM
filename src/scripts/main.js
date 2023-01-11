@@ -5,7 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const h2 = document.createElement('h2');
   const paragraph = document.createElement('p');
 
-  block.classList.add('notification');
+  block.classList.add('notification', type);
   h2.classList.add('title');
   h2.style.fontSize = '16px';
   block.style.top = `${posTop}px`;
@@ -15,23 +15,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   h2.innerText = title;
   paragraph.innerText = description;
-
-  switch (type) {
-    case 'success':
-      block.classList.add('success');
-      break;
-
-    case 'error':
-      block.classList.add('error');
-      break;
-
-    case 'warning':
-      block.classList.add('warning');
-      break;
-
-    default:
-      break;
-  }
 
   document.body.append(block);
 
