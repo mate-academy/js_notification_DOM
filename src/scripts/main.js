@@ -10,9 +10,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   element.style.right = posRight + 'px';
   element.style.top = posTop + 'px';
-  element.style.display = 'none';
 
-  element.className = `${type} + notification`;
+  element.className = `notification + ${type}`;
 
   heading.textContent = title;
   heading.className = 'title';
@@ -22,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   heading.insertAdjacentElement('afterend', descr);
 
   setTimeout(function() {
-    element.style.display = 'block';
+    element.remove();
   }, 2000);
 };
 
