@@ -19,7 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.remove();
-  }, 10000);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
