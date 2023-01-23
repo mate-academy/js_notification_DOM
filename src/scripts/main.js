@@ -2,7 +2,7 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.insertAdjacentHTML('afterbegin', `
-    <div class="notification">
+    <div class="notification" style="top:${posTop}px; right:${posRight}px;">
       <h2 class="title">${title}</h2>
       <p>${description}</p>
     </div>
@@ -11,22 +11,18 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const div = document.querySelector('div');
 
   div.classList.add(type);
-  div.style.top = `${posTop}px`;
-  div.style.right = `${posRight}px`;
 
-  setTimeout(() => {
-    div.remove();
-  }, 2000);
+  setTimeout(() => div.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(175, 10, 'Title of Error message',
+pushNotification(150, 10, 'Title of Error message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(310, 10, 'Title of Warning message',
+pushNotification(290, 10, 'Title of Warning message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'warning');
