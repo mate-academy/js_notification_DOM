@@ -10,14 +10,17 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   paragraph.textContent = description;
   box.classList.add('notification', type);
 
-  document.body.append(box);
+  box.style.top = `${posTop}px`;
+  box.style.right = `${posRight}px`;
+  head.style.whiteSpace = 'nowrap';
+
   box.append(head);
   box.append(paragraph);
+  document.body.append(box);
 
-  box.style.top(`${posTop}px`);
-  box.style.right(`${posRight}px`);
-
-  setTimeout(() => box.remove(), 2000);
+  setTimeout(() => {
+    box.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
