@@ -3,7 +3,7 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const h1 = document.querySelector('h1');
 
-  h1.insertAdjacentHTML('afterbegin',
+  h1.insertAdjacentHTML('afterend',
     `<div class='notification ${type}'>
       <h2 class='title'>${title}</h2>
       <p>${description}</p>
