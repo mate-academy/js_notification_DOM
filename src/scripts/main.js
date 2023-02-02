@@ -2,6 +2,7 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const div = document.createElement('div');
+
   div.classList.add('notification');
   div.classList.add(type);
 
@@ -19,7 +20,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.right = posRight + 'px';
 
   document.body.append(div);
-  
+
   setTimeout(() => {
     div.remove();
   }, 2000);
