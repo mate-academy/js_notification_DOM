@@ -2,6 +2,23 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const div = document.createElement('div');
+
+  div.className = 'notification';
+  div.classList.add(type);
+
+  div.innerHTML = `
+  <h2 class=title>${title}</h2>
+  <p> ${description}
+  `;
+  div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
+
+  document.body.append(div);
+
+  setTimeout(() => {
+    div.setAttribute('hidden', true);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
