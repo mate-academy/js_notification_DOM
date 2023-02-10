@@ -4,7 +4,7 @@ const body = document.body;
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const messageElement = document.createElement('div');
-  const titleElement = document.createElement('h1');
+  const titleElement = document.createElement('h2');
 
   titleElement.textContent = title;
   titleElement.classList.add('title');
@@ -17,6 +17,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageElement.append(description);
 
   body.append(messageElement);
+
+  setTimeout(() => {
+    messageElement.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
