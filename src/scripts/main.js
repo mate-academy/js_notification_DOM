@@ -3,24 +3,24 @@
 const body = document.querySelector('body');
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const div = document.createElement('div');
-  const h2 = document.createElement('h2');
-  const p = document.createElement('p');
+  const notification = document.createElement('div');
+  const header = document.createElement('h2');
+  const paragraph = document.createElement('p');
 
-  body.append(div);
-  div.classList.value = `notification ${type}`;
-  div.style.top = posTop + 'px';
-  div.style.right = posRight + 'px';
-  div.append(h2);
-  div.append(p);
+  body.append(notification);
+  notification.classList.value = `notification ${type}`;
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
+  notification.append(header);
+  notification.append(paragraph);
 
-  h2.textContent = title;
-  h2.classList.add('title');
-  h2.style.fontSize = '18px';
+  header.textContent = title;
+  header.classList.add('title');
+  header.style.fontSize = '18px';
 
-  p.textContent = description;
+  paragraph.textContent = description;
 
-  setTimeout(() => div.remove(), 2000);
+  setTimeout(() => notification.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
