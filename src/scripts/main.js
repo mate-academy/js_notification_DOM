@@ -19,6 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
+  document.querySelector('h2').style.fontSize = '18px';
 
   setTimeout(() => {
     div.remove();
@@ -29,7 +30,7 @@ pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(160, 10, 'Title of Error message',
+pushNotification(150, 10, 'Title of Error message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'error');
 
