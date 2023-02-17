@@ -19,7 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.style.right = `${posRight}px`;
   message.style.width = '350px';
 
-  document.body.appendChild(message);
+  document.body.append(message);
 
   setTimeout(() => message.remove(), 2000);
 };
