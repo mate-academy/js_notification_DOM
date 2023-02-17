@@ -1,40 +1,31 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const message = document.createElement('div');
+  const notification = document.createElement('div');
 
-  message.classList.add('notification');
-  message.classList.add(type);
+  notification.className = `notification ${type}`;
 
-  const titleMessage = document.createElement('h2');
+  notification.insertAdjacentHTML('afterBegin',
+    `<h2 class = 'title'>${title}</h2><p>${description}</p>`);
 
-  titleMessage.classList.add('title');
-  titleMessage.textContent = title;
-  message.append(titleMessage);
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
 
-  const text = document.createElement('p');
-
-  text.textContent = description;
-
-  message.append(text);
-  message.style.top = posTop + 'px';
-  message.style.right = posRight + 'px';
-
-  document.body.append(message);
+  document.body.append(notification);
 
   setTimeout(() => {
-    message.style.display = 'none';
+    notification.style.display = 'none';
   }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
-  'Message example.\n '
+  'Message example.<br> '
   + 'Notification should contain title and description.', 'success');
 
 pushNotification(150, 10, 'Title of Error message',
-  'Message example.\n '
+  'Message example.<br> '
   + 'Notification should contain title and description.', 'error');
 
 pushNotification(290, 10, 'Title of Warning message',
-  'Message example.\n '
+  'Message example.<br> '
   + 'Notification should contain title and description.', 'warning');
