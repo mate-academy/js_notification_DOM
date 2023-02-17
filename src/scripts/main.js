@@ -2,7 +2,6 @@
 
 const content = document.querySelector('body');
 
-// eslint-disable-next-line max-len
 const pushNotification = (posTop, posRight, title, description, type) => {
   const element = document.createElement('div');
 
