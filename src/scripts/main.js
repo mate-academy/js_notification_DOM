@@ -16,11 +16,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description}</p>
   `;
   content.append(element);
-  setTimeout(removing, 2000);
 
-  function removing() {
+  setTimeout(function() {
     content.children[2].remove();
-  }
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
