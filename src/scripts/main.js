@@ -1,17 +1,24 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
+  const wrapper = document.createElement('div');
+
+  wrapper.style.position = 'absolute';
+
   const notification = document.createElement('div');
 
   notification.className = `notification ${type}`;
+  notification.style.position = 'relative';
 
   notification.insertAdjacentHTML('afterBegin',
     `<h2 class = 'title'>${title}</h2><p>${description}</p>`);
 
-  notification.style.top = posTop + 'px';
-  notification.style.right = posRight + 'px';
+  wrapper.append(notification);
+  document.body.append(wrapper);
+  wrapper.style.top = posTop + 'px';
+  wrapper.style.right = posRight + 'px';
 
-  document.body.append(notification);
+  notification.style.boxSizing = 'content-box;';
 
   setTimeout(() => {
     notification.style.display = 'none';
