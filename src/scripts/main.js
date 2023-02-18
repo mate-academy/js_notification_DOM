@@ -18,9 +18,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   wrapper.style.top = posTop + 'px';
   wrapper.style.right = posRight + 'px';
 
-  notification.style.paddingTop = '5px';
-  notification.style.paddingBottom = '1px';
-
   setTimeout(() => {
     notification.style.display = 'none';
   }, 2000);
