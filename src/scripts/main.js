@@ -24,7 +24,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   descriptMassege.textContent = description;
 
   divMassege.append(descriptMassege);
-
 };
 
 pushNotification(10, 10, 'Title of Success message',
