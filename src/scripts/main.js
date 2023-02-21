@@ -2,28 +2,30 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
-  const divMassege = document.createElement('div');
-  const titleMassege = document.createElement('h2');
+  const wrapperElement = document.createElement('div');
+  const titleElement = document.createElement('h2');
 
-  divMassege.className = 'notification';
-  divMassege.classList.add(type);
-
-  body.append(divMassege);
+  body.append(wrapperElement);
   body.style.position = 'relative';
-  divMassege.style.position = 'absolute';
-  divMassege.style.top = `${posTop}px`;
-  divMassege.style.right = `${posRight}px`;
 
-  titleMassege.className = 'title';
-  titleMassege.textContent = title;
+  wrapperElement.className = 'notification';
+  wrapperElement.classList.add(type);
 
-  divMassege.append(titleMassege);
 
-  const descriptMassege = document.createElement('p');
+  wrapperElement.style.position = 'absolute';
+  wrapperElement.style.top = `${posTop}px`;
+  wrapperElement.style.right = `${posRight}px`;
 
-  descriptMassege.textContent = description;
+  titleElement.className = 'title';
+  titleElement.textContent = title;
 
-  divMassege.append(descriptMassege);
+  wrapperElement.append(titleElement);
+
+  const descriptionElement = document.createElement('p');
+
+  descriptionElement.textContent = description;
+
+  wrapperElement.append(descriptionElement);
 };
 
 pushNotification(10, 10, 'Title of Success message',
