@@ -5,7 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const divMassege = document.createElement('div');
   const titleMassege = document.createElement('h2');
 
-  divMassege.className = 'notification ';
+  divMassege.className = 'notification';
   divMassege.classList.add(type);
 
   body.append(divMassege);
