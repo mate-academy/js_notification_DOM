@@ -4,19 +4,25 @@ const body = document.body;
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const message = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
 
-  message.classList.add('notification', type);
+  message.append(h2);
+  message.append(p);
+
+  message.className = 'notification';
+  message.style.width = '320px';
+  message.classList.add(type);
+
   message.style.top = `${posTop}px`;
   message.style.right = `${posRight}px`;
 
-  message.innerHTML = `
-  <h2 class='title'>${title}</h2>
-  <p>${description}</p>
-  `;
+  h2.innerText = title;
+  h2.className = 'title';
+  p.innerText = description;
 
   body.append(message);
-
-  setTimeout(() => message.remove(), 3000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
