@@ -6,6 +6,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   element.style.top = `${posTop}px`;
   element.style.right = `${posRight}px`;
+  element.className = `${type} notification`;
 
   const titleElem = document.createElement('h2');
 
@@ -22,14 +23,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
 
   body.append(element);
-
-  if (type === 'success') {
-    element.className = 'success notification';
-  } else if (type === 'error') {
-    element.className = 'error notification';
-  } else {
-    element.className = 'warning notification';
-  }
 
   setTimeout(() => {
     element.remove();
