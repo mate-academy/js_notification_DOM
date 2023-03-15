@@ -1,17 +1,50 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const block = document.createElement('div');
+  const titleBlock = document.createElement('h2');
+  const descriptionBlock = document.createElement('p');
+  const topToString = posTop + 'px';
+  const rightToString = posRight + 'px';
+
+  block.className = 'notification';
+
+  titleBlock.innerText = title;
+  descriptionBlock.innerText = description;
+
+  block.appendChild(titleBlock);
+  block.appendChild(descriptionBlock);
+
+  block.style.top = topToString;
+  block.style.right = rightToString;
+
+  if (type === 'success') {
+    block.className = 'notification success';
+  }
+
+  if (type === 'error') {
+    block.className = 'notification error';
+  }
+
+  if (type === 'warning') {
+    block.className = 'notification warning';
+  }
+
+  document.body.append(block);
+
+  setTimeout(function() {
+    block.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'success');
 
-pushNotification(150, 10, 'Title of Error message',
+pushNotification(200, 10, 'Title of Error message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(290, 10, 'Title of Warning message',
+pushNotification(360, 10, 'Title of Warning message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'warning');
