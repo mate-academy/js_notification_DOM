@@ -11,8 +11,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.append(titleEl);
   message.append(descriptionEl);
 
-  message.className = `notification`;
-  message.className += ` ${type}`;
+  message.className = `notification  ${type}`;
   titleEl.className = 'title';
   titleEl.textContent = title;
 
