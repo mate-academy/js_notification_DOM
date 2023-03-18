@@ -18,16 +18,30 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.style.top = topToString;
   block.style.right = rightToString;
 
-  if (type === 'success') {
-    block.className = 'notification success';
-  }
+  // if (type === 'success') {
+  //   block.className = 'notification success';
+  // }
 
-  if (type === 'error') {
-    block.className = 'notification error';
-  }
+  // if (type === 'error') {
+  //   block.className = 'notification error';
+  // }
 
-  if (type === 'warning') {
-    block.className = 'notification warning';
+  // if (type === 'warning') {
+  //   block.className = 'notification warning';
+  // }
+
+  switch (type) {
+    case 'success':
+      block.className = 'notification success';
+      break;
+
+    case 'error':
+      block.className = 'notification error';
+      break;
+
+    case 'warning':
+      block.className = 'notification warning';
+      break;
   }
 
   document.body.append(block);
