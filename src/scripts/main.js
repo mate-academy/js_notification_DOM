@@ -3,22 +3,22 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
 
-  body.insertAdjacentHTML('beforeend', 
-   `<div class="notification ${type}" style="top: ${posTop}px; right: ${posRight}px;">
+  body.insertAdjacentHTML('beforeend',
+    `<div class="notification ${type}"
+   style="top: ${posTop}px; right: ${posRight}px;">
   
 
    <h2 class="title">${title}</h2>
 
    <p>${description}</p>
    </div>`
-  )
+  );
 
-  const notif = document.querySelectorAll('.notification')
+  const notif = document.querySelectorAll('.notification');
 
   setTimeout(() => {
-    notif.forEach(elem => elem.setAttribute('hidden', ''))
-  }, 2000)
-
+    notif.forEach(elem => elem.setAttribute('hidden', ''));
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
