@@ -1,30 +1,28 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const body = document.querySelector('body');
+  const notifications = document.createElement('div');
 
-  body.insertAdjacentHTML('beforeend', `
-    <div class="notification ${type}">
-      <h2 class="title">
-        ${title}
-      </h2>
-      <p>
-        ${description}
-      </p>
-    </div>
+  notifications.classList.add('notification', type);
+
+  notifications.insertAdjacentHTML('beforeend', `
+    <h2 class="title">
+      ${title}
+    </h2>
+
+    <p>
+      ${description}
+    </p>
   `);
 
-  body.lastElementChild.style.top = `${posTop}px`;
+  notifications.style.top = `${posTop}px`;
 
-  body.lastElementChild.style.right = `${posRight}px`;
+  notifications.style.right = `${posRight}px`;
 
-  const notifications = document.querySelectorAll('div');
+  document.body.append(notifications);
 
-  for (const notification of notifications) {
-    setTimeout(() => {
-      notification.style.visibility = 'hidden';
-    }, 2000);
-  }
+  setTimeout(() =>
+    notifications.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
