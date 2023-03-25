@@ -18,18 +18,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.style.top = topToString;
   block.style.right = rightToString;
 
-  // if (type === 'success') {
-  //   block.className = 'notification success';
-  // }
-
-  // if (type === 'error') {
-  //   block.className = 'notification error';
-  // }
-
-  // if (type === 'warning') {
-  //   block.className = 'notification warning';
-  // }
-
   switch (type) {
     case 'success':
       block.className = 'notification success';
