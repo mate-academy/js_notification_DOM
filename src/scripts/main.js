@@ -6,17 +6,20 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationTitleElement = document.createElement('h2');
   const notificationDescriptionElement = document.createElement('p');
 
-  notificationElement.classList = `notification ${type}`;
-  notificationElement.style = `top: ${posTop}px; right: ${posRight}px;`;
+  notificationElement.classList.add('notification', type);
+  notificationElement.style.top = `${posTop}px`;
+  notificationElement.style.right = `${posRight}px`;
 
-  notificationTitleElement.classList = 'title';
-  notificationTitleElement.style = 'letter-spacing: -1px; ';
+  notificationTitleElement.classList.add('title');
+  notificationTitleElement.style.letterSpacing = '-1px';
 
   notificationTitleElement.innerText = title;
   notificationDescriptionElement.innerText = description;
 
-  notificationElement.append(notificationTitleElement);
-  notificationElement.append(notificationDescriptionElement);
+  notificationElement.append(
+    notificationTitleElement,
+    notificationDescriptionElement
+  );
   bodyElement.append(notificationElement);
 
   setTimeout(() => {
