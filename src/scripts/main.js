@@ -9,8 +9,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
   div.style.boxSizing = 'content-box';
-  div.className = 'notification';
-  div.classList.add(type);
+  div.className = `notification ${type}`;
   headline.className = 'title';
   headline.innerText = title;
   paragraph.innerText = description;
