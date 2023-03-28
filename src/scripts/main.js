@@ -1,24 +1,26 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
+  const body = document.querySelector('body');
+  const div = document.createElement('div');
+  const headline = document.createElement('h2');
+  const paragraph = document.createElement('p');
+
+  div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
+  div.style.boxSizing = 'content-box';
+  div.className = 'notification';
+  div.classList.add(type);
+  headline.className = 'title';
+  headline.innerText = title;
+  paragraph.innerText = description;
+
+  body.append(div);
+  div.append(headline);
+  div.append(paragraph);
+
   setTimeout(() => {
-    const body = document.querySelector('body');
-    const div = document.createElement('div');
-    const headline = document.createElement('h2');
-    const paragraph = document.createElement('p');
-
-    div.style.top = `${posTop}px`;
-    div.style.right = `${posRight}px`;
-    div.style.boxSizing = 'content-box';
-    div.className = 'notification';
-    div.classList.add(type);
-    headline.className = 'title';
-    headline.innerText = title;
-    paragraph.innerText = description;
-
-    body.append(div);
-    div.append(headline);
-    div.append(paragraph);
+    div.remove();
   }, '2000');
 };
 
