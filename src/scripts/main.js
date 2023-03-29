@@ -1,7 +1,6 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const body = document.body;
   const notification = document.createElement('div');
 
   notification.classList.add('notification', `${type}`);
@@ -9,15 +8,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = `${posRight}px`;
   notification.style.top = `${posTop}px`;
 
-  const h2 = document.createElement('h2');
-  const p = document.createElement('p');
+  const notificationTitle = document.createElement('h2');
+  const notificationDescription = document.createElement('p');
 
-  h2.innerText = `${title}`;
-  p.innerText = `${description}`;
+  notificationTitle.innerText = `${title}`;
+  notificationDescription.innerText = `${description}`;
 
-  notification.append(h2, p);
+  notification.append(notificationTitle, notificationDescription);
 
-  body.append(notification);
+  document.body.append(notification);
 
   const removeNotification = () => {
     notification.remove();
