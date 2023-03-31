@@ -3,21 +3,19 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
 
-  for (let i = 0; i < type[i].length; i++) {
-    if (type === 'success') {
-      helper(type[0]);
-    }
-
-    if (type === 'error') {
-      helper(type[1]);
-    }
-
-    if (type === 'warning') {
-      helper(type[2]);
-    }
+  if (type === 'success') {
+    helper(type[0]);
   }
 
-  function helper() {
+  if (type === 'error') {
+    helper(type[1]);
+  }
+
+  if (type === 'warning') {
+    helper(type[2]);
+  }
+
+  function helper(divs) {
     const element = document.createElement('div');
 
     element.classList = `notification ${type}`;
