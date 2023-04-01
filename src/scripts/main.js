@@ -3,17 +3,11 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
 
-  if (type === 'success') {
-    helper(type[0]);
-  }
+  helper(type[0]);
 
-  if (type === 'error') {
-    helper(type[1]);
-  }
+  helper(type[1]);
 
-  if (type === 'warning') {
-    helper(type[2]);
-  }
+  helper(type[2]);
 
   function helper(divs) {
     const element = document.createElement('div');
