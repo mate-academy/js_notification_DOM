@@ -10,6 +10,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.classList.add('notification', type);
   message.style.top = posTop + unit;
   message.style.right = posRight + unit;
+  message.style.boxSizing = 'content-box';
 
   messageTitle.className = 'title';
   messageTitle.textContent = title;
