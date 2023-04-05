@@ -5,8 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleBlock = document.createElement('h2');
   const messageBlock = document.createElement('p');
 
-  block.className = 'notification';
-  block.classList.add(`${type}`);
+  block.classList.add('notification', type);
 
   titleBlock.className = 'title';
   titleBlock.innerText = `${title}`;
@@ -16,7 +15,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(titleBlock);
   block.append(messageBlock);
 
-  block.style.position = 'absolute';
   block.style.top = `${posTop}px`;
   block.style.right = `${posRight}px`;
 
@@ -24,7 +22,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   parentElement.append(block);
 
-  setTimeout(() => block.remove(), 2000);
+  setTimeout(() => {
+    block.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
