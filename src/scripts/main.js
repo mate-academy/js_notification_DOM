@@ -12,9 +12,16 @@ const createNotificationDiv = (posTop, posRight, type) => {
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationDiv = createNotificationDiv(posTop, posRight, type);
+
+  const newLineIndex = description.indexOf('\n');
+
   const markup = `
     <h2 class='title' >${title}</h2>
-    <p>${description}</p>
+    <p>
+      ${description.slice(0, newLineIndex)}
+      <br>
+      ${description.slice(newLineIndex)}
+    </p>
   `;
 
   notificationDiv.insertAdjacentHTML('afterbegin', markup);
