@@ -1,0 +1,178 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2023-05-02T17:29:03.101Z",
+    "end": "2023-05-02T17:29:20.055Z",
+    "duration": 16820,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "984bc133-5132-4f22-8a32-ac66e16ccb84",
+      "title": "",
+      "fullFile": "cypress\\integration\\notificationDom.spec.js",
+      "file": "cypress\\integration\\notificationDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e20a3fc3-7796-4781-8696-652896f6df05",
+          "title": "Notifications app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should print `success` message",
+              "fullTitle": "Notifications app should print `success` message",
+              "timedOut": null,
+              "duration": 5082,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@success', 10, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<div.notification.success>' to have attribute 'style' with the value 'top: 10px; right: 10px;', but the value was 'top: 10px;'",
+                "estack": "AssertionError: Timed out retrying: expected '<div.notification.success>' to have attribute 'style' with the value 'top: 10px; right: 10px;', but the value was 'top: 10px;'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": "- 'top: 10px;'\n+ 'top: 10px; right: 10px;'\n"
+              },
+              "uuid": "3356ea14-9863-47b2-a7fc-a6613486ee2f",
+              "parentUUID": "e20a3fc3-7796-4781-8696-652896f6df05",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `error` message",
+              "fullTitle": "Notifications app should print `error` message",
+              "timedOut": null,
+              "duration": 4508,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@error', 150, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<div.notification.error>' to have attribute 'style' with the value 'top: 150px; right: 10px;', but the value was 'top: 150px;'",
+                "estack": "AssertionError: Timed out retrying: expected '<div.notification.error>' to have attribute 'style' with the value 'top: 150px; right: 10px;', but the value was 'top: 150px;'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": "- 'top: 150px;'\n+ 'top: 150px; right: 10px;'\n"
+              },
+              "uuid": "e7d67be9-d05d-457f-8e0e-30d2eec7f70c",
+              "parentUUID": "e20a3fc3-7796-4781-8696-652896f6df05",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should print `warning` message",
+              "fullTitle": "Notifications app should print `warning` message",
+              "timedOut": null,
+              "duration": 4490,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.hasNotification('@warning', 290, 10);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<div.notification.warning>' to have attribute 'style' with the value 'top: 290px; right: 10px;', but the value was 'top: 290px;'",
+                "estack": "AssertionError: Timed out retrying: expected '<div.notification.warning>' to have attribute 'style' with the value 'top: 290px; right: 10px;', but the value was 'top: 290px;'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:100:20)",
+                "diff": "- 'top: 290px;'\n+ 'top: 290px; right: 10px;'\n"
+              },
+              "uuid": "61972707-64a5-404c-bb67-5b5f9f03ff31",
+              "parentUUID": "e20a3fc3-7796-4781-8696-652896f6df05",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "messages should disappear in 2 seconds",
+              "fullTitle": "Notifications app messages should disappear in 2 seconds",
+              "timedOut": null,
+              "duration": 2740,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@success', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@error', {\n  timeout: 2000\n}).should('not.visible');\ncy.get('@warning', {\n  timeout: 2000\n}).should('not.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<div.notification.success>' not to be 'visible'",
+                "estack": "AssertionError: Timed out retrying: expected '<div.notification.success>' not to be 'visible'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\notificationDom.spec.js:123:8)",
+                "diff": null
+              },
+              "uuid": "a8c65e1c-0b24-4ab2-a105-4eaa19820a08",
+              "parentUUID": "e20a3fc3-7796-4781-8696-652896f6df05",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3356ea14-9863-47b2-a7fc-a6613486ee2f",
+            "e7d67be9-d05d-457f-8e0e-30d2eec7f70c",
+            "61972707-64a5-404c-bb67-5b5f9f03ff31",
+            "a8c65e1c-0b24-4ab2-a105-4eaa19820a08"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16820,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
