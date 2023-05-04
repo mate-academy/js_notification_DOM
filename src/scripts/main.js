@@ -9,8 +9,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   heading.classList.add('title');
   message.innerText = description;
 
-  messageNotification.style.top = posTop + 'px';
-  messageNotification.style.Right = posRight + 'px';
+  messageNotification.style.top = `${posTop}px`;
+  messageNotification.style.Right = `${posRight}px`;
   messageNotification.classList.add('notification', type);
   messageNotification.append(heading, message);
 
