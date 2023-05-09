@@ -1,6 +1,7 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
+
   const notification = document.createElement('div');
   const notificationTitle = document.createElement('h2');
   const notificationDescription = document.createElement('p');
