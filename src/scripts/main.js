@@ -13,9 +13,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationTitle.textContent = title;
   notificationDescription.textContent = description;
 
-  // додаємо повідомлення до сторінки
-  document.body.append(notification);
-
   // додаємо елементи до повідомлення
   notification.append(notificationTitle);
   notification.append(notificationDescription);
@@ -23,6 +20,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // встановлюємо позицію повідомлення
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
+
+  // додаємо повідомлення до сторінки
+  document.body.append(notification);
 
   // видаляємо повідомлення через 2 секунди
   setTimeout(() => notification.remove(), 2000);
