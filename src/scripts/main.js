@@ -1,7 +1,31 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  let topPosition = posTop;
+
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+
+  notification.innerHTML = `<h2 class="title">${title}</h2>
+  <p>${description}</p>`;
+
+  const lastNotification = document.querySelector('.notification:last-of-type');
+
+  if (lastNotification) {
+    topPosition = parseInt(lastNotification.style.top, 10)
+       + lastNotification.offsetHeight + 10;
+  }
+
+  Object.assign(notification.style, {
+    position: 'absolute',
+    right: `${posRight}px`,
+    top: `${topPosition}px`,
+  });
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => notification.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
