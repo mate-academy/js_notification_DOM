@@ -22,7 +22,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.style.boxSizing = 'content-box';
 
   setTimeout(() => {
-    block.style.display = 'none';
+    block.remove();
   }, 2000);
 };
 
