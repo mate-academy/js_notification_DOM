@@ -20,6 +20,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(descriptionEl);
 
   block.style.boxSizing = 'content-box';
+
+  setTimeout(() => {
+    block.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
