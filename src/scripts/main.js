@@ -1,9 +1,9 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const messageBlock = document.querySelector('div');
-  const messageTitle = document.querySelector('h2');
-  const messageDescription = document.querySelector('p');
+  const messageBlock = document.createElement('div');
+  const messageTitle = document.createElement('h2');
+  const messageDescription = document.createElement('p');
 
   messageBlock.classList.add('notification', type);
   messageBlock.style.top = `${posTop}px`;
