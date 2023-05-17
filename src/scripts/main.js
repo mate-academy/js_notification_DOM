@@ -4,8 +4,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const body = document.querySelector('body');
   const notification = document.createElement('div');
 
-  body.appendChild(notification);
-
   notification.classList.add(`notification`, type);
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
@@ -21,6 +19,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.appendChild(notificationTitle);
   notification.appendChild(notificationDesc);
+
+  body.appendChild(notification);
 
   setTimeout(() => {
     notification.remove();
