@@ -5,13 +5,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   const block = document.createElement('div');
 
-  block.setAttribute('class', `notification ${type}`);
+  block.classList.add('notification');
+  block.classList.add(`${type}`);
   block.style.top = posTop + 'px';
   block.style.right = posRight + 'px';
 
   const h2 = document.createElement('h2');
 
-  h2.setAttribute('class', 'title');
+  h2.classList.add('title');
   h2.style.fontSize = '19px';
   h2.innerText = title;
 
