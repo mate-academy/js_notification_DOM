@@ -2,20 +2,19 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const element = document.createElement('div');
+
   document.body.append(element);
   element.classList.add('notification', type);
 
   element.insertAdjacentHTML('beforeend', `
-  <h2 class='title'>${title}</h2>
-  <p>${description}</p>
-  `)
+    <h2 class='title'>${title}</h2>
+    <p>${description}</p>
+  `);
 
   element.style.top = `${posTop}px`;
   element.style.right = `${posRight}px`;
 
-  setTimeout(() => {
-    element.hidden = true;
-  }, 2000)
+  setTimeout(() => element.remove(), 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
