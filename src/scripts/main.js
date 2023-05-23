@@ -13,8 +13,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.append(header);
   message.append(content);
 
-  message.style.top = `${posTop}`;
-  message.style.right = `${posRight}`;
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
 
   document.body.append(message);
 
