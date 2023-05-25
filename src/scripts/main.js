@@ -1,22 +1,18 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const par = document.body;
+  const parentElem = document.body;
 
   const divElem = document.createElement('div');
 
   divElem.className = `notification ${type}`;
-  par.appendChild(divElem);
+  parentElem.appendChild(divElem);
 
-  divElem.setAttribute('style',
-    `top: ${
-      posTop
-    }px; right: ${
-      posRight
-    }px; box-sizing: content-box;`);
+  divElem.style.top = `${posTop}px`;
+  divElem.style.right = `${posRight}px`;
+  divElem.style.boxSizing = 'content-box';
 
   const titles = document.createElement('h2');
-
   titles.innerHTML = title;
   divElem.appendChild(titles);
 
@@ -25,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   paragraph.innerHTML = description;
   divElem.appendChild(paragraph);
 
-  setTimeout(function() {
+  setTimeout(() => {
     divElem.remove();
   }, 2000);
 };
