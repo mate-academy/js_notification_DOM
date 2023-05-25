@@ -24,7 +24,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   paragraph.innerHTML = description;
   divElem.appendChild(paragraph);
-  setTimeout(function() {divElem.remove();}, 1000);
+
+  setTimeout(function() {
+    divElem.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
