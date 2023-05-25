@@ -9,11 +9,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   par.appendChild(divElem);
 
   divElem.setAttribute('style',
-   `top: ${
-    posTop
-  }px; right: ${
-    posRight
-  }px; box-sizing: content-box;`);
+    `top: ${
+      posTop
+    }px; right: ${
+      posRight
+    }px; box-sizing: content-box;`);
 
   const titles = document.createElement('h2');
 
@@ -24,6 +24,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   paragraph.innerHTML = description;
   divElem.appendChild(paragraph);
+  setTimeout(function() {divElem.remove();}, 1000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
