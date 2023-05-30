@@ -4,7 +4,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
   notification.style.position = 'absolute';
-  notification.style.marginBottom = 'px'; // Відступ між повідомленнями
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
   notification.classList.add('notification', type);
@@ -25,7 +24,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.remove();
-  }, 10082000);
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
@@ -36,6 +35,6 @@ pushNotification(160, 10, 'Title of Error message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'error');
 
-pushNotification(285, 10, 'Title of Warning message',
+pushNotification(283, 10, 'Title of Warning message',
   'Message example.\n '
   + 'Notification should contain title and description.', 'warning');
