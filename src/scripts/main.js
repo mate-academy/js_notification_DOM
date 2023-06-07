@@ -2,60 +2,45 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const elementParent = document.querySelector('body');
-
-  elementParent.style.position = 'relative';
-
-  const successElement = document.createElement('div');
-
-  successElement.classList.add('notification-success');
+  const notificationElement = document.createElement('div');
 
   const titleEl = document.createElement('h2');
 
   titleEl.classList.add('title');
   titleEl.textContent = title;
-  successElement.appendChild(titleEl);
+  notificationElement.appendChild(titleEl);
 
   const paragraph = document.createElement('p');
 
   paragraph.classList.add('description');
   paragraph.textContent = description;
-  successElement.appendChild(paragraph);
+  notificationElement.appendChild(paragraph);
 
-  elementParent.appendChild(successElement);
+  elementParent.appendChild(notificationElement);
 
-  successElement.style.position = 'absolute';
-  successElement.style.width = '200px';
-  successElement.style.height = '100px';
-  successElement.style.marginBottom = '5px';
-  successElement.style.fontSize = '12px';
-  successElement.style.color = 'black';
-  successElement.style.borderRadius = '15px';
-  successElement.style.padding = '12px';
+  notificationElement.classList.add('notification');
+  notificationElement.style.boxSizing = 'content-box';
 
   if (type === 'success') {
-    successElement.style.top = `${posTop}px`;
-    successElement.style.right = `${posRight}px`;
-    successElement.style.backgroundColor = 'green';
+    notificationElement.style.top = `${posTop}px`;
+    notificationElement.style.right = `${posRight}px`;
+    notificationElement.classList.add('success');
   }
 
   if (type === 'error') {
-    successElement.style.top = `${posTop}px`;
-    successElement.style.right = `${posRight}px`;
-    successElement.style.backgroundColor = 'red';
+    notificationElement.style.top = `${posTop}px`;
+    notificationElement.style.right = `${posRight}px`;
+    notificationElement.classList.add('error');
   }
 
   if (type === 'warning') {
-    successElement.style.top = `${posTop}px`;
-    successElement.style.right = `${posRight}px`;
-    successElement.style.backgroundColor = 'yellow';
+    notificationElement.style.top = `${posTop}px`;
+    notificationElement.style.right = `${posRight}px`;
+    notificationElement.classList.add('warning');
   }
 
-  const elems = document.querySelectorAll('div');
-
-  setTimeout(function() {
-    for (const e of elems) {
-      e.remove();
-    }
+  setTimeout(() => {
+    notificationElement.remove();
   }, 2000);
 };
 
