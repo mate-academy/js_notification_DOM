@@ -19,25 +19,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   elementParent.appendChild(notificationElement);
 
   notificationElement.classList.add('notification');
+  notificationElement.classList.add(`${type}`);
   notificationElement.style.boxSizing = 'content-box';
-
-  if (type === 'success') {
-    notificationElement.style.top = `${posTop}px`;
-    notificationElement.style.right = `${posRight}px`;
-    notificationElement.classList.add('success');
-  }
-
-  if (type === 'error') {
-    notificationElement.style.top = `${posTop}px`;
-    notificationElement.style.right = `${posRight}px`;
-    notificationElement.classList.add('error');
-  }
-
-  if (type === 'warning') {
-    notificationElement.style.top = `${posTop}px`;
-    notificationElement.style.right = `${posRight}px`;
-    notificationElement.classList.add('warning');
-  }
+  notificationElement.style.top = `${posTop}px`;
+  notificationElement.style.right = `${posRight}px`;
 
   setTimeout(() => {
     notificationElement.remove();
