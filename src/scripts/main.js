@@ -1,7 +1,40 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const body = document.querySelector('body');
+  const notificationBody = document.createElement('div');
+  const notificationTitle = document.createElement('h2');
+  const notificationText = document.createElement('p');
+
+  switch (type) {
+    case 'success': {
+      notificationBody.classList.add('success');
+      break;
+    }
+
+    case 'warning': {
+      notificationBody.classList.add('warning');
+      break;
+    }
+
+    case 'error': {
+      notificationBody.classList.add('error');
+      break;
+    }
+  }
+
+  notificationBody.classList.add('notification');
+  notificationBody.style.top = `${posTop}px`;
+  notificationBody.style.right = `${posRight}px`;
+
+  notificationTitle.classList.add('title');
+  notificationTitle.innerText = title;
+  notificationBody.append(notificationTitle);
+
+  notificationText.innerText = description;
+  notificationBody.append(notificationText);
+
+  body.prepend(notificationBody);
 };
 
 pushNotification(10, 10, 'Title of Success message',
