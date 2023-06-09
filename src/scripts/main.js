@@ -18,6 +18,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationBody.append(notificationText);
 
   body.prepend(notificationBody);
+
+  setTimeout(() => {
+    notificationBody.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
