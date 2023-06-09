@@ -20,18 +20,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }, 2000);
 };
 
+const notificationTitle = 'Message example.\n ';
+const notificationDescription
+  = 'Notification should contain title and description.';
+
 pushNotification(10, 10, 'Title of Success message',
-  'Message example.\n '
-  + 'Notification should contain title and description.', 'success');
+  notificationTitle + notificationDescription, 'success');
 
-setTimeout(() => {
-  pushNotification(150, 10, 'Title of Error message',
-    'Message example.\n '
-    + 'Notification should contain title and description.', 'error');
-}, 1000);
+pushNotification(150, 10, 'Title of Error message',
+  notificationTitle + notificationDescription, 'error');
 
-setTimeout(() => {
-  pushNotification(290, 10, 'Title of Warning message',
-    'Message example.\n '
-    + 'Notification should contain title and description.', 'warning');
-}, 2000);
+pushNotification(290, 10, 'Title of Warning message',
+  notificationTitle + notificationDescription, 'warning');
