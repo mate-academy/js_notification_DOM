@@ -10,6 +10,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   descriptionElem.textContent = description;
 
   blockElem.className = `notification ${type}`;
+  titleElem.className = 'title';
 
   blockElem.style.cssText = `position: absolute;`
    + `top: ${posTop}px; right: ${posRight}px`;
