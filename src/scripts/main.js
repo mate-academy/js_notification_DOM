@@ -1,14 +1,14 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const h1 = document.querySelector('h1');
+  const body = document.querySelector('body');
+  const notification = document.createElement('div');
 
-  h1.insertAdjacentHTML('afterend',
-    `<div class='notification ${type}'>
-      <h2 class='title'>${title}</h2>
-      <p>${description}</p>
-    </div>`
-  );
+  notification.classList.add('notification', type);
+
+  notification.innerHTML
+    = `<h2 class='title'>${title}</h2><p>${description}</p>`;
+  body.append(notification);
 
   const element = document.querySelector(`.${type}`);
 
