@@ -9,23 +9,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   descriptionOfNot.textContent = description;
 
   notification.classList.add('notification');
+  notification.classList.add(type);
   titleOfNot.classList.add('title');
 
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
   notification.append(titleOfNot, descriptionOfNot);
-
-  switch (type) {
-    case 'success':
-      notification.classList.add(type);
-      break;
-    case 'error':
-      notification.classList.add(type);
-      break;
-    default:
-      notification.classList.add(type);
-  }
 
   document.body.appendChild(notification);
 
