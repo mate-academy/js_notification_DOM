@@ -8,8 +8,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.classList.add('notification');
   notification.classList.add(type);
 
-  notification.style.top = posTop + 'px';
-  notification.style.right = posRight + 'px';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
   notificationTitle.className = 'title';
   notificationTitle.textContent = title;
