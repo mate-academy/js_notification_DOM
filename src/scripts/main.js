@@ -1,33 +1,20 @@
 'use strict';
 
-function getBackgroundColor(typeOfMessage) {
-  switch (typeOfMessage) {
-    case 'success':
-      return '#c0ddb6';
-
-    case 'error':
-      return '#ecb5b1';
-
-    case 'warning':
-      return '#f1e5bf';
-  }
-}
-
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+  notification.classList.add(type);
+
   const styles = notification.style;
 
-  styles.position = 'fixed';
   styles.top = posTop + 'px';
   styles.right = posRight + 'px';
-  styles.paddingInline = '10px';
-  styles.maxWidth = '300px';
-  styles.borderRadius = '10px';
-  styles.backgroundColor = getBackgroundColor(type);
 
   const h2 = document.createElement('h2');
   const p = document.createElement('p');
 
+  h2.classList.add('title');
   h2.innerText = title;
   p.innerText = description;
 
