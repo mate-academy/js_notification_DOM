@@ -10,20 +10,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   paragraph.textContent = description;
 
   message.classList.add('notification', type);
-  
-
   message.style.top = `${posTop}px`;
   message.style.right = `${posRight}px`;
   header.style.fontSize = '16px';
 
   message.append(header, paragraph);
   document.body.append(message);
-
-  setTimeout(() => {
-    message.remove();
-  }, 2000);
-};
-
+setTimeout(() => message.remove(), 2000);
+ };
 
 pushNotification(10, 10, 'Title of Success message',
   'Message example.\n '
