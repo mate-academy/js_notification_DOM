@@ -13,16 +13,16 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageTitle.textContent = title;
   messageDescription.textContent = description;
 
+  infoBlock.style.width = '315px';
+  infoBlock.style.right = `${posRight}px`;
+  infoBlock.style.top = `${posTop}px`;
+
   infoBlock.appendChild(messageTitle);
   infoBlock.appendChild(messageDescription);
-
-  infoBlock.style.width = '315px';
+  body.appendChild(infoBlock);
 
   setTimeout(() => {
-    infoBlock.style.right = `${posRight}px`;
-    infoBlock.style.top = `${posTop}px`;
-
-    body.appendChild(infoBlock);
+    body.removeChild(infoBlock);
   }, 2000);
 };
 
