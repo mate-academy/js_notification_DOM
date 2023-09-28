@@ -6,13 +6,17 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const paragraphElement = document.createElement('p');
 
   titltElement.classList.add('title');
-  notification.classList.add(type);
+  notification.classList.add('notification', type);
 
   titltElement.textContent = title;
   paragraphElement.textContent = description;
 
   notification.appendChild(titltElement);
   notification.appendChild(paragraphElement);
+
+  notification.style.position = 'fixed';
+  notification.style.right = posRight + 'px';
+  notification.style.top = posTop + 'px';
 
   document.body.appendChild(notification);
 
