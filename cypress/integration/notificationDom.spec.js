@@ -28,8 +28,8 @@ describe('Notifications app', () => {
   });
 
   it('messages should disappear in 2 seconds', () => {
-    cy.get('@success', { timeout: 2000 }).should('not.visible');
-    cy.get('@error', { timeout: 2000 }).should('not.visible');
-    cy.get('@warning', { timeout: 2000 }).should('not.visible');
+    cy.get('@success', { timeout: 2000 }).should('not.exist');
+    cy.get('@error', { timeout: 2000 }).should('not.exist');
+    cy.get('@warning', { timeout: 2000 }).should('not.exist');
   });
 });
