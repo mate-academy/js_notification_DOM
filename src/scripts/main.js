@@ -1,7 +1,34 @@
+/* eslint-disable padding-line-between-statements */
 'use strict';
 
+const body = document.querySelector('body');
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+  notification.className = `notification + ${type}`;
+
+  const nTitle = document.createElement('h2');
+  nTitle.className = 'title';
+  nTitle.textContent = title;
+
+  const nDescription = document.createElement('p');
+  const descriptionLines = description.split('\n');
+
+  descriptionLines.forEach(line => {
+    nDescription.appendChild(document.createTextNode(line));
+    nDescription.appendChild(document.createElement('br'));
+  });
+
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  notification.append(nTitle);
+  notification.append(nDescription);
+  body.append(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
