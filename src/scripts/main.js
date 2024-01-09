@@ -25,6 +25,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationElem.append(titleElem);
   notificationElem.append(descriptionElem);
   body.append(notificationElem);
+
+  setTimeout(() => {
+    notificationElem.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(10, 10, 'Title of Success message',
