@@ -6,24 +6,18 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const element = document.createElement('div');
 
   setTimeout(() => {
-    element.style.display = 'none';
+    element.remove();
   }, 2000);
 
   element.style.top = `${posTop}px`;
   element.style.right = `${posRight}px`;
 
-  element.classList.add('notification');
-  element.classList.add(type);
-
-  const firtsPart = description.split('\n')[0];
-  const secondPart = description.split('\n')[1];
+  element.className = `notification ${type}`;
 
   element.insertAdjacentHTML('beforeend', `
       <h2 class="title">${title}</h2>
       <p>
-        ${firtsPart}
-        <br>
-        ${secondPart}
+        ${description}
       </p>
     `);
 
