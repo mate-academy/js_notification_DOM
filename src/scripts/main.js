@@ -3,8 +3,6 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const element = document.createElement('div');
 
-  // document.documentElement.prepend(element);
-
   document.body.prepend(element);
 
   element.innerHTML = `
@@ -12,11 +10,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description.replace('\n', '<br />')}</p>
   `;
 
-  const titles = document.querySelector('.title');
+  const messageTitle = document.querySelector('.title');
 
-  titles.style.fontSize = '18px';
-
-  // console.log(titles);
+  messageTitle.style.fontSize = '18px';
 
   element.classList.add('notification');
   element.classList.add(`${type}`);
