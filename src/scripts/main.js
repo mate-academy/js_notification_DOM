@@ -5,8 +5,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const messageTitle = document.createElement('h2');
   const messageDescription = document.createElement('p');
 
-  message.classList.add('.notification');
-  messageTitle.classList.add('.title');
+  message.classList.add('notification');
+  messageTitle.classList.add('title');
   message.appendChild(messageTitle);
   message.appendChild(messageDescription);
 
@@ -17,15 +17,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   switch (type) {
     case 'warning':
-      message.classList.add('.warning');
+      message.classList.add('warning');
       break;
 
     case 'success':
-      message.classList.add('.success');
+      message.classList.add('success');
       break;
 
     case 'error':
-      message.classList.add('.error');
+      message.classList.add('error');
       break;
   }
 
