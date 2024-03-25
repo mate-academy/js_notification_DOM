@@ -15,6 +15,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   mess.style.top = `${posTop}px`;
   mess.style.right = `${posRight}px`;
+
+  setTimeout(() => {
+    mess.remove();
+  }, 2000);
 };
 
 pushNotification(
