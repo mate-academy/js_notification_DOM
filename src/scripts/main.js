@@ -1,7 +1,20 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    `
+    <div class="notification ${type}">
+    <h1>${title}</h1>
+    <p>${description}</p>
+    </div>
+    `,
+  );
+
+  const mess = document.querySelector('.notification:last-child');
+
+  mess.style.top = `${posTop}px`;
+  mess.style.right = `${posRight}px`;
 };
 
 pushNotification(
@@ -13,7 +26,7 @@ pushNotification(
 );
 
 pushNotification(
-  150,
+  180,
   10,
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
@@ -21,7 +34,7 @@ pushNotification(
 );
 
 pushNotification(
-  290,
+  350,
   10,
   'Title of Warning message',
   'Message example.\n ' + 'Notification should contain title and description.',
