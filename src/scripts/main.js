@@ -20,9 +20,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.appendChild(p);
   document.body.appendChild(div);
 
-  // setTimeout(() => {
-  //   div.style.visibility = 'hidden';
-  // }, 2000);
+  setTimeout(() => {
+    div.style.visibility = 'hidden';
+  }, 2000);
 };
 
 pushNotification(
