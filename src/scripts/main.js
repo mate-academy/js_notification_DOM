@@ -2,37 +2,25 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const message = document.createElement('div');
+
+  message.className = `notification ${type}`;
+  message.style.cssText = `top: ${posTop}px; right: ${posRight}px`;
+
   const messageTitle = document.createElement('h2');
+
+  messageTitle.classList.add('title');
+  messageTitle.textContent = title;
+
   const messageDescription = document.createElement('p');
 
-  message.classList.add('notification');
-  messageTitle.classList.add('title');
+  messageDescription.textContent = description;
   message.appendChild(messageTitle);
   message.appendChild(messageDescription);
-
-  message.style.top = posTop + 'px';
-  message.style.right = posRight + 'px';
-  messageTitle.textContent = title;
-  messageDescription.textContent = description;
-
-  switch (type) {
-    case 'warning':
-      message.classList.add('warning');
-      break;
-
-    case 'success':
-      message.classList.add('success');
-      break;
-
-    case 'error':
-      message.classList.add('error');
-      break;
-  }
 
   document.body.appendChild(message);
 
   setTimeout(() => {
-    message.style.visibility = 'hidden';
+    document.body.removeChild(message);
   }, 2000);
 };
 
