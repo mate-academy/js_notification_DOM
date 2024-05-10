@@ -31,7 +31,7 @@ pushNotification(
 );
 
 pushNotification(
-  150,
+  164,
   10,
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
