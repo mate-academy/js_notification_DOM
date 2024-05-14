@@ -1,7 +1,24 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    `
+    <div class="notification ${type}">
+      <h2 class="title">${title}</h2>
+      <p>${description}</p>
+    </div>
+  `,
+  );
+
+  const notificationBlock = document.querySelector('.notification:last-child');
+
+  notificationBlock.style.top = posTop + 'px';
+  notificationBlock.style.right = posRight + 'px';
+
+  setTimeout(() => {
+    notificationBlock.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
