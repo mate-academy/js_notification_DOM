@@ -1,7 +1,33 @@
 'use strict';
 
+const createNotificationDiv = (posTop, posRight, type) => {
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  return notification;
+};
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notificationDiv = createNotificationDiv(posTop, posRight, type);
+
+  const newLineIndex = description.indexOf('\n');
+
+  const markup = `
+    <h2 class='title' >${title}</h2>
+    <p>
+      ${description.slice(0, newLineIndex)}
+      <br>
+      ${description.slice(newLineIndex)}
+    </p>
+  `;
+
+  notificationDiv.insertAdjacentHTML('afterbegin', markup);
+  document.body.append(notificationDiv);
+
+  setTimeout(() => notificationDiv.remove(), 2000);
 };
 
 pushNotification(
