@@ -11,14 +11,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   `;
 
   notification.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class='title'>${title}</h2>
     <p>${description}</p>
   `;
 
   document.querySelector('body').append(notification);
 
   window.setTimeout(() => {
-    document.querySelector('body').removeChild(notification);
+    notification.style.display = 'none';
   }, 2000);
 };
 
