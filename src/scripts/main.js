@@ -23,11 +23,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.appendChild(block);
 
-  if (type === 'error') {
-    setTimeout(() => {
-      document.body.removeChild(block);
-    }, 2000);
-  }
+  setTimeout(() => {
+    document.body.removeChild(block);
+  }, 2000);
 };
 
 pushNotification(
