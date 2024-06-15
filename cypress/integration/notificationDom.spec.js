@@ -1,8 +1,11 @@
 'use strict';
 
 Cypress.Commands.add('hasNotification', (selector, posTop, posRight) => {
-  cy.get(selector)
-    .should('have.attr', 'style', `top: ${posTop}px; right: ${posRight}px;`);
+  cy.get(selector).should(
+    'have.attr',
+    'style',
+    `top: ${posTop}px; right: ${posRight}px;`,
+  );
   cy.get(selector).children('h2').should('have.attr', 'class', 'title');
   cy.get(selector).children('p');
 });
