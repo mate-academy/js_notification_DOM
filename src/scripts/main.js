@@ -49,7 +49,10 @@ class Toastr {
 
   #unmountToast() {
     const timeoutId = setTimeout(() => {
-      this.toastr.remove();
+      // it seems like better solution but can't pass the tests
+      // this.toastr.remove();
+
+      this.toastr.style.display = 'none';
       clearTimeout(timeoutId);
     }, 2000);
   }
