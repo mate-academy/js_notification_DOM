@@ -20,7 +20,9 @@ class Toastr {
   }
 
   #createTitle(title) {
-    const titleEl = document.createElement('h3');
+    const titleEl = document.createElement('h2');
+
+    titleEl.classList.add('title');
 
     titleEl.textContent = title;
 
@@ -41,27 +43,39 @@ class Toastr {
 
   #mountToastr() {
     document.body.append(this.toastr);
+
+    return this;
+  }
+
+  #unmountToast() {
+    const timeoutId = setTimeout(() => {
+      this.toastr.remove();
+      clearTimeout(timeoutId);
+    }, 2000);
   }
 
   success({ title, message, options }) {
     this.#createToastr(Toastr.TOASTR_TYPE_SUCCESS, options)
       .#createTitle(title)
       .#createMessage(message)
-      .#mountToastr();
+      .#mountToastr()
+      .#unmountToast();
   }
 
   warning({ title, message, options }) {
     this.#createToastr(Toastr.TOASTR_TYPE_WARNING, options)
       .#createTitle(title)
       .#createMessage(message)
-      .#mountToastr();
+      .#mountToastr()
+      .#unmountToast();
   }
 
   error({ title, message, options }) {
     this.#createToastr(Toastr.TOASTR_TYPE_ERROR, options)
       .#createTitle(title)
       .#createMessage(message)
-      .#mountToastr();
+      .#mountToastr()
+      .#unmountToast();
   }
 }
 
