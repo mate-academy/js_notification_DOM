@@ -5,7 +5,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const containerTitle = document.createElement('h2');
   const containerDescr = document.createElement('p');
 
-  container.classList.add('notification', type);
+  if (type === 'success' || type === 'error' || type === 'warning') {
+    container.classList.add('notification', type);
+  }
   container.style.top = `${posTop}px`;
   container.style.right = `${posRight}px`;
   containerTitle.classList.add('title');
@@ -17,7 +19,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(container);
 
   setTimeout(() => {
-    document.body.removeChild(container);
+    if (document.body.contains(container)) {
+      document.body.removeChild(container);
+    }
   }, 2000);
 };
 
