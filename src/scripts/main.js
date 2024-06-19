@@ -7,7 +7,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const newBlock = document.createElement('div');
 
   newBlock.classList.add('notification', type);
-  newBlock.style.position = 'absolute';
   newBlock.style.top = `${posTop}px`;
   newBlock.style.right = `${posRight}px`;
 
@@ -24,6 +23,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   newBlock.appendChild(newText);
 
   root.appendChild(newBlock);
+
+  setTimeout(() => (newBlock.style.visibility = 'hidden'), 2000);
 };
 
 pushNotification(
