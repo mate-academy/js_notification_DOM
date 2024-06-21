@@ -5,11 +5,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   const div = getMessage(title, description, type);
 
-  div.style.top = `${posTop}px`;
-  div.style.rigth = `${posRight}px`;
-
   body.append(div);
 
+  div.style.top = `${posTop}px`;
+  div.style.rigth = `${posRight}px`;
   setTimeout(() => div.remove(), 2000);
 };
 
@@ -28,17 +27,7 @@ function getMessage(title, description, type) {
   desc.innerText = `${description}`;
   msgBlock.append(titleMsg, desc);
 
-  switch (type) {
-    case 'success':
-      msgBlock.className += ` ${type}`;
-      break;
-    case 'warning':
-      msgBlock.className += ` ${type}`;
-      break;
-    default:
-      msgBlock.className += ` ${type}`;
-      break;
-  }
+  msgBlock.className += ` ${type}`;
 
   return msgBlock;
 }
