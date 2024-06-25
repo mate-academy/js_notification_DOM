@@ -1,8 +1,10 @@
 'use strict';
+/* eslint-disable function-paren-newline */
 
 const clearNotification = () =>
   [...document.querySelectorAll(`.notification`)].forEach((element) =>
-    setTimeout(() => element.remove(), 2000),);
+    setTimeout(() => element.remove(), 2000),
+  );
 
 /**
  * @function pushNotification
