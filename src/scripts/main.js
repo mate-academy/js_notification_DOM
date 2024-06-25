@@ -1,7 +1,29 @@
 'use strict';
+/* eslint-disable function-paren-newline */
 
+const clearNotification = () =>
+  [...document.querySelectorAll(`.notification`)].forEach((element) =>
+    setTimeout(() => element.remove(), 2000),
+  );
+
+/**
+ * @function pushNotification
+ * @param {number} posTop
+ * @param {number} posRight
+ * @param {string} title
+ * @param {string} description
+ * @param {string} type
+ */
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notificationHTML = `
+          <div class="notification ${type}"
+              style="position: absolute; top: ${posTop}px; right: ${posRight}px">
+            <h2 class="title">${title}</h2>
+            <p>${description}</p>
+          </div>`;
+
+  document.body.innerHTML += notificationHTML;
+  clearNotification();
 };
 
 pushNotification(
