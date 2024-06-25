@@ -1,7 +1,25 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const nottifocation = document.createElement('div');
+
+  document.querySelector('body').append(nottifocation);
+
+  nottifocation.classList.add('notification');
+  nottifocation.classList.add(type);
+  nottifocation.style.top = `${posTop}px`;
+  nottifocation.style.right = `${posRight}px`;
+
+  nottifocation.insertAdjacentHTML(
+    'beforeend',
+    `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>`,
+  );
+
+  setTimeout(() => {
+    nottifocation.remove();
+  }, 2000);
 };
 
 pushNotification(
