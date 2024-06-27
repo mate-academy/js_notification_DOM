@@ -19,19 +19,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   element.style.top = `${posTop}px`;
   element.style.right = `${posRight}px`;
 
-  if (type === 'success') {
-    element.classList.add('success');
-  }
+  element.classList.add(type);
 
-  if (type === 'error') {
-    element.classList.add('error');
-  }
-
-  if (type === 'warning') {
-    element.classList.add('warning');
-  }
-
-  setTimeout(() => (element.style.display = 'none'), 2000);
+  setTimeout(() => element.remove(), 2000);
 };
 
 pushNotification(
