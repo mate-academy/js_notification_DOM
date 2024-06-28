@@ -1,7 +1,21 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const logo = document.querySelector('.logo');
+  const notificationBlock = document.createElement('div');
+
+  notificationBlock.classList.add('notification');
+  notificationBlock.classList.add(`${type}`);
+  notificationBlock.style.top = posTop + 'px';
+  notificationBlock.style.right = posRight + 'px';
+
+  const info = `
+      <h2 class="title">${title}</h2>
+      <p>${description}</p>
+`;
+
+  notificationBlock.insertAdjacentHTML('afterbegin', info);
+  logo.insertAdjacentElement('afterend', notificationBlock);
 };
 
 pushNotification(
@@ -27,3 +41,4 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
 );
+
