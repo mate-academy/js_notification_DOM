@@ -11,6 +11,7 @@ To inform the user about the success of the operation, or any errors, websites u
 
 Your task: Create function `pushNotification`, which takes coordinates of the message, title, description, and type
 (success, error and warning). `pushNotification` creates an element to display the message, appends it to the document, and removes it from the DOM after 2 seconds.
+
 Do not write any CSS styles or HTML code in this task. You should modify only `main.js` file.
 
 Implementation tips:
