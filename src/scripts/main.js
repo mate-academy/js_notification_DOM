@@ -5,13 +5,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const messageTitle = document.createElement('h2');
   const messageDescription = document.createElement('p');
 
-  message.classList.add('notification', type);
-  messageTitle.classList.add('title');
+  message.setAttribute('class', `notification ${type}`);
+  messageTitle.setAttribute('class', 'title');
 
   messageTitle.textContent = title;
   messageDescription.textContent = description;
 
-  message.style.cssText = `position: fixed; top: ${posTop}px; right: ${posRight}px; width: 320px`;
+  message.style.cssText = `position: fixed; top: ${posTop}px; right: ${posRight}px;`;
 
   messageDescription.innerHTML =
     'Message example. <br> Notification should contain title and description.';
