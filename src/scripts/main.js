@@ -13,15 +13,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   message.style.cssText = `position: fixed; top: ${posTop}px; right: ${posRight}px;`;
 
-  messageDescription.innerHTML =
-    'Message example. <br> Notification should contain title and description.';
-
   message.append(messageTitle, messageDescription);
 
-  document.body.append(message);
+  document.body.appendChild(message);
 
   setTimeout(() => {
-    message.remove();
+    message.style.visibility = 'hidden';
   }, '2000');
 };
 
