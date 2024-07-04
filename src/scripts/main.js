@@ -1,7 +1,39 @@
 'use strict';
 
+const body = document.querySelector('body');
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  if (!type) {
+    return;
+  }
+
+  const topPx = `${posTop}px`;
+  const rightPx = `${posRight}px`;
+
+  const notification = document.createElement('div');
+  const titleElement = document.createElement('h2');
+  const descriptionElement = document.createElement('p');
+
+  notification.classList.add('notification', type);
+  titleElement.classList.add('title');
+
+  titleElement.innerText = title;
+  descriptionElement.innerText = description;
+
+  notification.style.top = topPx;
+  notification.style.right = rightPx;
+
+  notification.appendChild(titleElement);
+  notification.appendChild(descriptionElement);
+  body.appendChild(notification);
+
+  hiddenNotification(notification);
+};
+
+const hiddenNotification = (elem) => {
+  setTimeout(() => {
+    elem.style.visibility = 'hidden';
+  }, 2000);
 };
 
 pushNotification(
