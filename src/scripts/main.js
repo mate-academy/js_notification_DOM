@@ -4,16 +4,18 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const div = document.createElement('div');
 
   div.classList.add('notification', type);
-  div.style.position = 'absolute';
+  // div.style.position = 'absolute';
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
 
   const titles = document.createElement('h2');
+
   titles.className = 'title';
   titles.textContent = title;
   div.appendChild(titles);
 
   const descriptions = document.createElement('p');
+
   descriptions.textContent = description;
   div.appendChild(descriptions);
 
