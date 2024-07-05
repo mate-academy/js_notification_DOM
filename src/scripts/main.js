@@ -10,6 +10,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageElem.style.right = posRight + 'px';
 
   titleEl.textContent = title;
+  titleEl.style.whiteSpace = 'nowrap';
   titleEl.classList.add('title');
 
   descr.textContent = description;
@@ -18,6 +19,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageElem.append(descr);
 
   document.querySelector('body')?.append(messageElem);
+
+  setTimeout(() => {
+    messageElem.style.visibility = 'hidden';
+  }, 200000);
 };
 
 pushNotification(
