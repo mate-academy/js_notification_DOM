@@ -1,38 +1,28 @@
 'use strict';
 
-function pushNotification(posTop, posRight, title, description, type) {
-  const notification = document.createElement('div');
+const pushNotification = (posTop, posRight, title, description, type) => {
+  const body = document.querySelector('body');
 
-  notification.classList.add('notification', type);
+  const container = document.createElement('div');
 
-  notification.style.position = 'absolute';
-  notification.style.right = `${posRight}px`;
-  notification.style.top = `${posTop}px`;
+  container.className = `notification ${type}`;
+  container.style.cssText = `top: ${posTop}px; right: ${posRight}px;`;
 
-  const titleElement = document.createElement('h2');
+  container.innerHTML = `
+      <h2 class="title">${title}</h2>
+      <p>${description}</p>
+    `;
 
-  titleElement.classList.add('title');
-  titleElement.textContent = title;
+  body.appendChild(container);
 
-  const descriptionElement = document.createElement('p');
-
-  descriptionElement.textContent = description;
-
-  notification.appendChild(titleElement);
-  notification.appendChild(descriptionElement);
-
-  document.body.appendChild(notification);
-
-  setTimeout(() => {
-    notification.remove();
-  }, 2000);
-}
+  setTimeout(() => (container.style.visibility = 'hidden'), 2000);
+};
 
 pushNotification(
   10,
   10,
   'Title of Success message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\n Notification should contain title and description.',
   'success',
 );
 
