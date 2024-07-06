@@ -22,7 +22,7 @@ pushNotification(
   10,
   10,
   'Title of Success message',
-  'Message example.\n' + 'Notification should contain title and description.',
+  'Message example.\n ' + 'Notification should contain title and description.',
   'success',
 );
 
