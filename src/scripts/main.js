@@ -2,7 +2,7 @@
 
 let notifications = [];
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+function pushNotification(posTop, posRight, title, description, type) {
   const notification = document.createElement('div');
 
   notification.classList.add('notification', type);
@@ -47,7 +47,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       notif.style.top = `${posTop + index * (notif.clientHeight + 20)}px`;
     });
   }, 2000);
-};
+}
 
 pushNotification(
   10,
