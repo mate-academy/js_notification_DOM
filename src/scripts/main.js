@@ -39,7 +39,7 @@ pushNotification(
 );
 
 pushNotification(
-  305,
+  290,
   10,
   'Title of Warning message',
   'Message example.\n ' + 'Notification should contain title and description.',
