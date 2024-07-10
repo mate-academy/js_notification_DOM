@@ -8,7 +8,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.className = `notification ${type}`;
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
-  notification.style.boxSizing = 'inherit';
+  notification.style.boxSizing = '';
   h2.className = 'title';
   h2.textContent = title;
   p.innerHTML = description.replace(/\n/g, '<br>');
@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(p);
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.display = 'none';
   }, 2000);
 };
 
