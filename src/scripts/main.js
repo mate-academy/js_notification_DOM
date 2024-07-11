@@ -4,20 +4,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const div = document.createElement('div');
 
   div.className = 'notification';
-
-  switch (type) {
-    case 'success':
-      div.classList.add('success');
-      break;
-    case 'error':
-      div.classList.add('error');
-      break;
-    case 'warning':
-      div.classList.add('warning');
-      break;
-    default:
-      break;
-  }
+  div.classList.add(type);
 
   const h2 = document.createElement('h2');
   const p = document.createElement('p');
