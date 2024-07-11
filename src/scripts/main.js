@@ -1,7 +1,41 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const div = document.createElement('div');
+
+  div.className = 'notification';
+
+  switch (type) {
+    case 'success':
+      div.classList.add('success');
+      break;
+    case 'error':
+      div.classList.add('error');
+      break;
+    case 'warning':
+      div.classList.add('warning');
+      break;
+    default:
+      break;
+  }
+
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+
+  h2.textContent = title;
+  h2.className = 'title';
+  p.textContent = description;
+
+  div.append(h2);
+  div.append(p);
+  document.documentElement.append(div);
+
+  div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
+
+  setTimeout(() => {
+    div.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
