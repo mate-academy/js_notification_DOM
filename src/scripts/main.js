@@ -1,7 +1,24 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const div = document.createElement('div');
+
+  div.classList.add('notification');
+  div.classList.add(type);
+  div.style.marginTop = `${posTop}px`;
+  div.style.marginRight = `${posRight}px`;
+  document.body.append(div);
+
+  const h2 = document.createElement('h2');
+
+  h2.classList.add('title');
+  h2.textContent = title;
+  div.append(h2);
+
+  const p = document.createElement('p');
+
+  p.textContent = description;
+  div.append(p);
 };
 
 pushNotification(
@@ -27,3 +44,5 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
 );
+
+setTimeout(pushNotification, 2.0 * 1000);
