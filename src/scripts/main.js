@@ -1,7 +1,25 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const message = document.createElement('div');
+
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
+  message.classList.add('notification', `${type}`);
+
+  message.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `,
+  );
+
+  document.body.append(message);
+
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
@@ -13,7 +31,7 @@ pushNotification(
 );
 
 pushNotification(
-  150,
+  165,
   10,
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
