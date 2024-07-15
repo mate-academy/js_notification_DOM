@@ -19,6 +19,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   p.textContent = description;
   div.append(p);
+
+  setTimeout(function () {
+    div.remove();
+  }, 2000);
 };
 
 pushNotification(
@@ -44,5 +48,3 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
 );
-
-setTimeout(pushNotification, 2.0 * 1000);
