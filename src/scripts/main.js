@@ -11,7 +11,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(blockTitle);
   block.append(blockDesc);
 
-  block.style.position = 'absolute';
   block.style.top = `${posTop}px`;
   block.style.right = `${posRight}px`;
 
