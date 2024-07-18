@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.appendChild(block);
 
   setTimeout(() => {
-    block.style.display = 'none';
+    block.remove();
   }, 2000);
 };
 
