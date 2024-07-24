@@ -23,7 +23,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.width = '320px';
 
   document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 };
+
+
 
 pushNotification(
   10,
