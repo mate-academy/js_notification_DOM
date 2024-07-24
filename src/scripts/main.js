@@ -22,9 +22,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.appendChild(notification);
 
-  // setTimeout(() => {
-  //   document.body.removeChild(notification);
-  // }, 2000);
+  setTimeout(() => {
+    document.body.removeChild(notification);
+  }, 2000);
 };
 
 pushNotification(
