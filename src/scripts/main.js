@@ -1,7 +1,28 @@
+/* eslint-disable no-template-curly-in-string */
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+
+  const notTitle = document.createElement('h2');
+
+  notTitle.classList.add('title');
+  notTitle.textContent = title;
+  notification.appendChild(notTitle);
+
+  const notDescription = document.createElement('p');
+
+  notDescription.textContent = description;
+  notification.appendChild(notDescription);
+
+  notification.style.position = 'absolute';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+  notification.style.width = '320px';
+
+  document.body.appendChild(notification);
 };
 
 pushNotification(
