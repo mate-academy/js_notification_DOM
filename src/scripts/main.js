@@ -18,11 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     notification.appendChild(titleElement);
     notification.appendChild(descriptionElement);
 
-    notification.style.position = 'absolute';
     notification.style.top = `${posTop}px`;
     notification.style.right = `${posRight}px`;
 
     document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.style.display = 'none';
+    }, 2000);
   };
 
   pushNotification(
