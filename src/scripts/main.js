@@ -7,8 +7,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const innerH2 = document.createTextNode(title);
   const innerP = document.createTextNode(description);
 
-  div.style.right = `${posRight}px`;
   div.style.top = `${posTop}px`;
+  div.style.right = `${posRight}px`;
   h2.setAttribute('class', 'title');
   div.setAttribute('class', 'notification');
   h2.appendChild(innerH2);
@@ -31,7 +31,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }
 
   setTimeout(() => {
-    div.style.display = 'none';
+    div.style.visibility = 'hidden';
   }, 2000);
 };
 
