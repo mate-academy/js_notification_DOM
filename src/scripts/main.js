@@ -17,7 +17,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   container.style.top = posTop + 'px';
 
   setTimeout(() => {
-    container.style.display = 'none';
+    container.remove();
   }, 1800);
 };
 
