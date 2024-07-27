@@ -7,7 +7,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   const h2 = document.createElement('h2');
 
-  h2.classList = 'title';
+  h2.classList.add('title');
   h2.textContent = title;
   div.appendChild(h2);
 
@@ -20,7 +20,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.top = posTop + 'px';
   div.style.right = posRight + 'px';
 
-  document.body.append(div);
+  document.body.appendChild(div);
 
   setTimeout(() => {
     document.body.removeChild(div);
