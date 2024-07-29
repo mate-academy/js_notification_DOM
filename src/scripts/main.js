@@ -3,7 +3,7 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const message = document.createElement('div');
   const messageTitle = document.createElement('h2');
-  const descriptionTitle = document.createElement('p');
+  const messageDescription = document.createElement('p');
 
   message.classList.add('notification');
   message.classList.add(type);
@@ -13,11 +13,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageTitle.classList.add('title');
   messageTitle.textContent = title;
 
-  descriptionTitle.textContent = description;
+  messageDescription.textContent = description;
 
   document.body.appendChild(message);
   message.appendChild(messageTitle);
-  message.appendChild(descriptionTitle);
+  message.appendChild(messageDescription);
+
+  setTimeout(() => {
+    message.style.visibility = 'hidden';
+  }, 2000);
 };
 
 pushNotification(
