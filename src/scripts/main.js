@@ -3,27 +3,24 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const newDiv = document.createElement('div');
 
-  newDiv.classList.add('notification');
-
-  newDiv.classList.add(type);
-  newDiv.style.right = `${posRight}px`;
+  newDiv.className = `notification ${type}`;
   newDiv.style.top = `${posTop}px`;
+  newDiv.style.right = `${posRight}px`;
 
   const newH = document.createElement('h2');
 
-  newH.classList.add('title');
+  newH.className = 'title';
   newH.textContent = title;
-  newDiv.append(newH);
+  newDiv.appendChild(newH);
 
   const newP = document.createElement('p');
 
   newP.textContent = description;
-  newDiv.append(newP);
-
+  newDiv.appendChild(newP);
   document.body.appendChild(newDiv);
 
   setTimeout(() => {
-    newDiv.remove();
+    newDiv.style.visibility = 'hidden';
   }, 2000);
 };
 
