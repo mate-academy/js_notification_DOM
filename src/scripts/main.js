@@ -12,17 +12,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.style.right = `${posRight}px`;
   message.style.width = '320px';
 
-  if (type === 'success') {
-    message.setAttribute('class', 'notification success');
-  }
-
-  if (type === 'error') {
-    message.setAttribute('class', 'notification error');
-  }
-
-  if (type === 'warning') {
-    message.setAttribute('class', 'notification warning');
-  }
+  message.setAttribute('class', `notification ${type}`);
 
   document.body.append(message);
   message.append(elementTitle);
