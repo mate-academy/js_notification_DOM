@@ -2,41 +2,9 @@
 
 const body = document.body;
 
-function fadeIn(element) {
-  element.style.opacity = 0;
-  element.style.display = 'block';
-
-  let opacity = 0;
-  const interval = setInterval(() => {
-    opacity += 0.05;
-
-    if (opacity >= 1) {
-      opacity = 1;
-      clearInterval(interval);
-    }
-    element.style.opacity = opacity;
-  }, 50);
-}
-
-function fadeOut(element) {
-  let opacity = 1;
-  const interval = setInterval(() => {
-    opacity -= 0.05;
-
-    if (opacity <= 0) {
-      opacity = 0;
-      element.style.display = 'none';
-      clearInterval(interval);
-    }
-    element.style.opacity = opacity;
-  }, 50);
-}
-
 const pushNotification = (posTop, posRight, title, description, type) => {
   const head = document.createElement('h2');
   const notification = document.createElement('div');
-
-  notification.style.opacity = 0;
 
   notification.className = 'notification';
   notification.style.top = posTop + 'px';
@@ -67,10 +35,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(desc);
   body.appendChild(notification);
 
-  fadeIn(notification);
-
   setTimeout(() => {
-    fadeOut(notification);
+    notification.style.visibility = 'hidden';
   }, 2000);
 };
 
