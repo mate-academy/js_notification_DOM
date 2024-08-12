@@ -1,7 +1,77 @@
 'use strict';
 
+const body = document.body;
+
+function fadeIn(element) {
+  element.style.opacity = 0;
+  element.style.display = 'block';
+
+  let opacity = 0;
+  const interval = setInterval(() => {
+    opacity += 0.05;
+
+    if (opacity >= 1) {
+      opacity = 1;
+      clearInterval(interval);
+    }
+    element.style.opacity = opacity;
+  }, 50);
+}
+
+function fadeOut(element) {
+  let opacity = 1;
+  const interval = setInterval(() => {
+    opacity -= 0.05;
+
+    if (opacity <= 0) {
+      opacity = 0;
+      element.style.display = 'none';
+      clearInterval(interval);
+    }
+    element.style.opacity = opacity;
+  }, 50);
+}
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const head = document.createElement('h2');
+  const notification = document.createElement('div');
+
+  notification.style.opacity = 0;
+
+  notification.className = 'notification';
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
+
+  head.innerText = title;
+  head.className = 'title';
+
+  switch (type) {
+    case 'warning':
+      notification.className += ' warning';
+      break;
+
+    case 'success':
+      notification.className += ' success';
+      break;
+
+    case 'error':
+      notification.className += ' error';
+      break;
+  }
+
+  const desc = document.createElement('p');
+
+  desc.innerText = description;
+
+  notification.appendChild(head);
+  notification.appendChild(desc);
+  body.appendChild(notification);
+
+  fadeIn(notification);
+
+  setTimeout(() => {
+    fadeOut(notification);
+  }, 2000);
 };
 
 pushNotification(
