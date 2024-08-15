@@ -19,8 +19,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.insertAdjacentElement('afterbegin', divCreating);
 
   setTimeout(() => {
-    divCreating.style.opacity = 0;
-  }, 3000);
+    divCreating.style.visibility = 'hidden';
+  }, 2000);
 };
 
 pushNotification(
