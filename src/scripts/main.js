@@ -12,14 +12,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const formattedDescription = description.replace(/\n/g, '<br>');
 
   divCreating.innerHTML = `
-    <h2 class="title" font-weight: 700;>${title}</h2>
+    <h2 class="title" >${title}</h2>
     <p>${formattedDescription}</p>
   `;
 
   body.insertAdjacentElement('afterbegin', divCreating);
 
   setTimeout(() => {
-    divCreating.remove();
+    divCreating.style.opacity = 0;
   }, 3000);
 };
 
