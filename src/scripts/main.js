@@ -12,7 +12,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   titleElement.innerText = title;
   descriptionElement.innerText = description;
 
-  message.style.position = 'absolute';
   message.style.top = `${posTop}px`;
   message.style.right = `${posRight}px`;
 
@@ -22,7 +21,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.append(message);
 
   setTimeout(() => {
-    message.remove();
+    // message.remove();
+    message.style.display = 'none';
   }, 2000);
 };
 
