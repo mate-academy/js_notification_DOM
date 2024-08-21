@@ -16,19 +16,17 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationTitle = document.createElement('h2');
 
   notificationTitle.classList.add('title');
-  notificationTitle.innerText = title;
+  notificationTitle.textContent = title;
 
   const notificationDescription = document.createElement('p');
 
-  notificationDescription.innerText = description;
+  notificationDescription.textContent = description;
 
   notificationContainer.append(notificationTitle, notificationDescription);
 
-  document.body.appendChild(notificationContainer);
+  document.body.append(notificationContainer);
 
-  setTimeout(() => {
-    notificationContainer.remove();
-  }, 5000);
+  setTimeout(() => notificationContainer.remove(), 5000);
 };
 
 pushNotification(
