@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   msgText.innerHTML = description;
 
-  msgText.innerHTML = description.replace(/\n/g, '<br>');
+  // msgText.innerHTML = description.replace(/\n/g, '<br>');
 
   message.classList.add(type);
 
@@ -26,7 +26,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.append(msgTitle);
   message.append(msgText);
 
-  // setTimeout(() => (message.style.display = 'none'), 2000);
+  setTimeout(() => (message.style.display = 'none'), 2000);
 };
 
 pushNotification(
