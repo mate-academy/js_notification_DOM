@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   msgText.innerHTML = description;
 
-  // msgText.innerHTML = description.replace(/\n/g, '<br>');
+  msgText.innerHTML = description.replace(/\n/g, '<br>');
 
   message.classList.add(type);
 
