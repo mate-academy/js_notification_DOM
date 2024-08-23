@@ -2,29 +2,25 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
+  const titleElement = document.createElement('h2');
+  const descriptionElement = document.createElement('p');
 
   notification.classList.add('notification', type);
+  titleElement.classList.add('title');
 
-  notification.style.position = 'absolute';
   notification.style.top = posTop + 'px';
   notification.style.right = posRight + 'px';
 
-  const titleElement = document.createElement('h2');
-
-  titleElement.classList.add('title');
   titleElement.textContent = title;
-
-  const descriptionElement = document.createElement('p');
-
   descriptionElement.textContent = description;
 
-  notification.appendChild(titleElement);
-  notification.appendChild(descriptionElement);
+  titleElement.style.whiteSpace = 'nowrap';
 
-  document.body.appendChild(notification);
+  notification.append(titleElement, descriptionElement);
+  document.body.append(notification);
 
   setTimeout(() => {
-    document.body.removeChild(notification);
+    notification.style.visibility = 'hidden';
   }, 2000);
 };
 
