@@ -19,7 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(notTitle);
   notification.appendChild(notContent);
 
-  switch (type) {
+  switch (notification.classList.add(type)) {
     case 'success':
       notification.classList.add('success');
       break;
