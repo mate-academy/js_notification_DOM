@@ -7,8 +7,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleOfMessage = document.createElement('h2');
   const p = document.createElement('p');
 
-  div.className = `notification ${type}`;
-  titleOfMessage.className = 'title';
+  div.classList.add('notification', `${type}`);
+  titleOfMessage.classList.add('title');
 
   titleOfMessage.textContent = title;
   p.textContent = description;
@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.appendChild(p);
 
   setTimeout(() => {
-    div.remove();
+    div.style.visibility = 'hidden';
   }, 2000);
 };
 
