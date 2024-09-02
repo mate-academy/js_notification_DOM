@@ -20,7 +20,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = posRight + 'px';
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.visibility = 'hidden';
   }, 2000);
 };
 
