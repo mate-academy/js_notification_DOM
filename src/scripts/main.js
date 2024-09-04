@@ -20,11 +20,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
+  body.append(notification);
+  notification.appendChild(titleOfNotification);
+  notification.appendChild(descriptionOfNotification);
+
   setTimeout(() => {
-    body.append(notification);
-    notification.appendChild(titleOfNotification);
-    notification.appendChild(descriptionOfNotification);
-  }, '1000');
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(
