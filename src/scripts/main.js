@@ -7,21 +7,19 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notific.classList.add('notification');
   notific.classList.add(type);
+
+  notific.style.top = posTop + 'px';
+  notific.style.right = posRight + 'px';
+
   titleElement.classList.add('title');
-
-  titleElement.innerText = title;
+  titleElement.textContent = title;
   descriptionElement.innerText = description;
-
-  notific.style.top = `${posTop}px`;
-  notific.style.right = `${posRight}px`;
-
-  titleElement.style.whiteSpace = 'nowrap';
 
   notific.append(titleElement, descriptionElement);
   document.body.append(notific);
 
   setTimeout(() => {
-    pushNotification.remove();
+    notific.style.visibility = 'hidden';
   }, 2000);
 };
 
