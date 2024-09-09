@@ -17,8 +17,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       break;
   }
 
-  element.style.top = ${posTop}px;
-  element.style.right = ${posRight}px;
+  element.style.top = `${posTop}px`;
+  element.style.right = `${posRight}px`;
 
   const titleElement = document.createElement('h2');
 
