@@ -1,7 +1,30 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+  const notificationTitle = document.createElement('h2');
+  const notificationDescription = document.createElement('p');
+
+  notification.classList.add('notification', type);
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  notificationTitle.classList.add('title');
+
+  // Потому что 20px выходит за рамки блока
+  notificationTitle.style.fontSize = '18px';
+
+  notificationTitle.textContent = title;
+
+  notificationDescription.innerHTML = description.replace('\n', '</br>');
+
+  notification.append(notificationTitle);
+  notification.append(notificationDescription);
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
