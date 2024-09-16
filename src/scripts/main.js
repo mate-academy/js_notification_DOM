@@ -12,8 +12,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   titleElement.textContent = title;
   descriptionElement.textContent = description;
 
-  notification.style.top = posTop + 'px';
-  notification.style.right = posRight + 'px';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
   document.body.append(notification);
 
