@@ -12,7 +12,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(mess);
 
   setTimeout(() => {
-    document.body.removeChild(mess);
+    mess.style.display = 'none';
   }, 2000);
 };
 
