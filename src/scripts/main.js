@@ -1,7 +1,19 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const mess = document.createElement('div');
+
+  mess.className = `notification ${type}`;
+  mess.style.top = `${posTop}px`;
+  mess.style.right = `${posRight}px`;
+
+  mess.innerHTML = `<h2 class="title">${title}</h2><p class='description'>${description}</p>`;
+
+  document.body.appendChild(mess);
+
+  setTimeout(() => {
+    document.body.removeChild(mess);
+  }, 2000);
 };
 
 pushNotification(
