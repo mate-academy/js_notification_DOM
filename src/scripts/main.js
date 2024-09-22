@@ -7,6 +7,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.position = 'absolute';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
+  notification.style.visibility = 'visible';
 
   const notificationTitle = document.createElement('h2');
 
@@ -22,7 +23,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(notification);
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.visibility = 'hidden';
   }, 2000);
 };
 
