@@ -52,7 +52,7 @@ pushNotification(
 );
 
 pushNotification(
-  160,
+  150,
   10,
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
@@ -60,7 +60,7 @@ pushNotification(
 );
 
 pushNotification(
-  282,
+  290,
   10,
   'Title of Warning message',
   'Message example.\n ' + 'Notification should contain title and description.',
