@@ -1,7 +1,29 @@
 'use strict';
 
+/**
+ * Prints a notification method and then removes it in 2 seconds.
+ * @param {number} posTop distance from the top.
+ * @param {number} posRight distance from the right.
+ * @param {string} title title of the message.
+ * @param {string} description text of the message.
+ * @param {string} type type of the message (either success, warning or error).
+ */
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const message = document.createElement('div');
+
+  message.classList.add('notification', type);
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
+
+  const messageHTML = `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `;
+
+  message.insertAdjacentHTML('afterbegin', messageHTML);
+  document.querySelector('body').appendChild(message);
+
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(
