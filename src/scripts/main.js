@@ -13,15 +13,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   block.append(header, text);
 
   block.style.position = 'fixed';
-  block.style.top = `${posTop}vh`;
-  block.style.right = `${posRight}vh`;
+  block.style.top = `${posTop}px`;
+  block.style.right = `${posRight}px`;
   block.style.borderRadius = '16px';
   block.style.padding = '10px';
 
   if (type === 'success') {
     block.style.backgroundColor = 'green';
   } else if (type === 'error') {
-    block.style.backgroundColor = 'yelow';
+    block.style.backgroundColor = 'yellow';
   } else if (type === 'warning') {
     block.style.backgroundColor = 'red';
   }
