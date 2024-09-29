@@ -1,34 +1,24 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const block = document.createElement('div');
-  const header = document.createElement('h2');
-  const text = document.createElement('p');
+  const message = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
 
-  block.setAttribute('class', `nonfication ${type}`);
-  header.setAttribute('class', title);
-  text.textContent = description;
+  h2.textContent = title;
+  p.textContent = description;
 
-  document.body.append(block);
-  block.append(header, text);
+  message.className = `notification ${type}`;
+  h2.className = 'title';
+  p.className = 'description';
 
-  block.style.position = 'fixed';
-  block.style.top = `${posTop}px`;
-  block.style.right = `${posRight}px`;
-  block.style.borderRadius = '16px';
-  block.style.padding = '10px';
+  message.style.top = `${posTop}px`;
+  message.style.right = `${posRight}px`;
 
-  if (type === 'success') {
-    block.style.backgroundColor = 'green';
-  } else if (type === 'error') {
-    block.style.backgroundColor = 'yellow';
-  } else if (type === 'warning') {
-    block.style.backgroundColor = 'red';
-  }
+  message.append(h2, p);
+  document.body.append(message);
 
-  setTimeout(() => {
-    block.style.visibility = 'hidden';
-  }, 2000);
+  setTimeout(() => message.remove(), 2000);
 };
 
 pushNotification(
