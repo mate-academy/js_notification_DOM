@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.append(h2, p);
   document.body.append(message);
 
-  setTimeout(() => message.remove(), 2000);
+  setTimeout(() => (message.style.visibility = 'hidden'), 2000);
 };
 
 pushNotification(
