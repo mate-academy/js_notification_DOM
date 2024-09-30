@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationBody.append(notificationDescription);
 
   setTimeout(() => {
-    notificationBody.remove();
+    notificationBody.style.display = 'none';
   }, 2000);
 };
 
