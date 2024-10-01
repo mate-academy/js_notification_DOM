@@ -2,6 +2,14 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification');
+  notification.classList.add(type);
+  notification.innerHTML = `<h2 class="title">${title}</h2><p>${description}</p>`;
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
+  document.body.append(notification);
 };
 
 pushNotification(
