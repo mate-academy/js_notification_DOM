@@ -5,7 +5,7 @@
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
     - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
 
-### Task: Create a notification
+#### Task: Create a notification
 
 To inform the user about the success of the operation, or any errors, websites usually use messages that appear for a while on the screen.
 
