@@ -2,6 +2,24 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const logo = document.querySelector('.logo');
+
+  const notification = document.createElement('div');
+
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  notification.className = `notification ${type}`;
+
+  notification.innerHTML = `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `;
+  logo.insertAdjacentElement('afterend', notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
