@@ -1,39 +1,52 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  const createNotificationElement = () => {
-    const notification = document.createElement('div');
+const createNotification = (posTop, posRight, title, description, type) => {
+  const notification = document.createElement('div');
 
-    notification.className = `notification ${type}`;
-    notification.style.position = 'fixed';
-    notification.style.top = `${posTop}px`;
-    notification.style.right = `${posRight}px`;
+  notification.className = `notification ${type}`;
+  notification.style.position = 'fixed';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
-    const titleElement = document.createElement('h2');
+  const titleElement = document.createElement('h2');
 
-    titleElement.className = 'title';
-    titleElement.textContent = title;
-    notification.appendChild(titleElement);
+  titleElement.className = 'title';
+  titleElement.textContent = title;
+  notification.appendChild(titleElement);
 
-    const descriptionElement = document.createElement('p');
+  const descriptionElement = document.createElement('p');
 
-    descriptionElement.textContent = description;
-    notification.appendChild(descriptionElement);
+  descriptionElement.textContent = description;
+  notification.appendChild(descriptionElement);
 
-    return notification;
-  };
+  return notification;
+};
 
-  const showNotification = (element) => {
-    document.body.appendChild(element);
+const showNotification = (notification, duration) => {
+  document.body.appendChild(notification);
 
-    setTimeout(() => {
-      document.body.removeChild(element);
-    }, 2000);
-  };
+  setTimeout(() => {
+    document.body.removeChild(notification);
+  }, duration);
+};
 
-  const notificationElement = createNotificationElement();
+const pushNotification = (
+  posTop,
+  posRight,
+  title,
+  description,
+  type,
+  duration = 2000,
+) => {
+  const notification = createNotification(
+    posTop,
+    posRight,
+    title,
+    description,
+    type,
+  );
 
-  showNotification(notificationElement);
+  showNotification(notification, duration);
 };
 
 pushNotification(
