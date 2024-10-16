@@ -1,58 +1,81 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+const pushNotification = (
+  posTop,
+  posRight,
+  title,
+  description,
+  type,
+  duration = 1000,
+) => {
   const validTypes = ['success', 'error', 'warning'];
 
   if (!validTypes.includes(type)) {
     throw new Error(
-      `Invalid notification type: "${type}". Expected one of ${validTypes.join(', ')}.`,
+      `Invalid notification type: "${type}". Expected one of the following types: ${validTypes.join(', ')}.`,
     );
   }
 
-  const div = document.createElement('div');
+  const notification = document.createElement('div');
 
-  div.classList.add('notification', type);
-  div.style.top = `${posTop}px`;
-  div.style.right = `${posRight}px`;
+  notification.classList.add('notification', type);
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
-  const titles = document.createElement('h2');
+  const titleElement = document.createElement('h2');
 
-  titles.className = 'title';
-  titles.textContent = title;
-  div.appendChild(titles);
+  titleElement.className = 'title';
+  titleElement.textContent = title;
+  notification.appendChild(titleElement);
 
-  const descriptions = document.createElement('p');
+  const descriptionElement = document.createElement('p');
 
-  descriptions.textContent = description;
-  div.appendChild(descriptions);
+  descriptionElement.textContent = description;
+  notification.appendChild(descriptionElement);
 
-  document.body.appendChild(div);
+  document.body.appendChild(notification);
 
   setTimeout(() => {
-    div.style.display = 'none';
-  }, 2000);
+    notification.remove();
+  }, duration);
 };
 
-pushNotification(
-  10,
-  10,
-  'Title of Success message',
-  `Message example. Notification should contain title and description.`,
-  'success',
-);
+const showNotifications = (notifications) => {
+  notifications.forEach(
+    ({ posTop, posRight, title, description, type, duration }) => {
+      try {
+        pushNotification(posTop, posRight, title, description, type, duration);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error.message);
+      }
+    },
+  );
+};
 
-pushNotification(
-  150,
-  10,
-  'Title of Error message',
-  `Message example. Notification should contain title and description.`,
-  'error',
-);
-
-pushNotification(
-  290,
-  10,
-  'Title of Warning message',
-  `Message example. Notification should contain title and description.`,
-  'warning',
-);
+showNotifications([
+  {
+    posTop: 10,
+    posRight: 10,
+    title: 'Title of Success message',
+    description: `Message example. Notification should contain title and description.`,
+    type: 'success',
+    duration: 3000,
+  },
+  {
+    posTop: 150,
+    posRight: 10,
+    title: 'Title of Error message',
+    description: `Message example. Notification should contain title and description.`,
+    type: 'error',
+    duration: 3000,
+  },
+  {
+    posTop: 290,
+    posRight: 10,
+    title: 'Title of Warning message',
+    description: `Message example. Notification should contain title and description.`,
+    type: 'warning',
+    duration: 3000,
+  },
+]);
