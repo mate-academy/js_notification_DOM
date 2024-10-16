@@ -4,12 +4,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const validTypes = ['success', 'error', 'warning'];
 
   if (!validTypes.includes(type)) {
-    // eslint-disable-next-line no-console
-    console.error(
+    throw new Error(
       `Invalid notification type: "${type}". Expected one of ${validTypes.join(', ')}.`,
     );
-
-    return;
   }
 
   const div = document.createElement('div');
