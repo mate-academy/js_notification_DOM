@@ -6,7 +6,7 @@ const pushNotification = (
   title,
   description,
   type,
-  duration = 1000,
+  duration = 2000,
 ) => {
   const validTypes = ['success', 'error', 'warning'];
 
@@ -36,7 +36,7 @@ const pushNotification = (
   document.body.appendChild(notification);
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.display = 'none';
   }, duration);
 };
 
@@ -60,7 +60,7 @@ showNotifications([
     title: 'Title of Success message',
     description: `Message example. Notification should contain title and description.`,
     type: 'success',
-    duration: 3000,
+    duration: 2000,
   },
   {
     posTop: 150,
@@ -68,7 +68,7 @@ showNotifications([
     title: 'Title of Error message',
     description: `Message example. Notification should contain title and description.`,
     type: 'error',
-    duration: 3000,
+    duration: 2000,
   },
   {
     posTop: 290,
@@ -76,6 +76,6 @@ showNotifications([
     title: 'Title of Warning message',
     description: `Message example. Notification should contain title and description.`,
     type: 'warning',
-    duration: 3000,
+    duration: 2000,
   },
 ]);
