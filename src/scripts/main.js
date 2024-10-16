@@ -5,8 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleMessage = document.createElement('h2');
   const textMessage = document.createElement('p');
 
-  message.classList.add(`notification`);
-  message.classList.add(type);
+  message.classList.add(`notification ${type}`);
   titleMessage.classList.add('title');
 
   message.style.right = posRight + 'px';
@@ -20,7 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.append(message);
 
   setTimeout(() => {
-    document.body.removeChild(document.querySelector('.notification'));
+    document.body.remove(document.querySelector('.notification'));
   }, 2000);
 };
 
