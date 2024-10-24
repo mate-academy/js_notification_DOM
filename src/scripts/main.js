@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.append(h2, p);
   document.body.append(div);
 
-  setInterval(() => {
+  setTimeout(() => {
     div.style.display = 'none';
   }, 2000);
 };
