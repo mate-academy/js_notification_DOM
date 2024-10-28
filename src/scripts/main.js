@@ -1,43 +1,21 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const element = document.createElement('div');
-
-  element.classList.add('notification');
-  element.style.position = 'absolute';
-  element.style.top = posTop + 'px';
-  element.style.right = posRight + 'px';
-
-  const elementTitle = document.createElement('h2');
-
-  elementTitle.textContent = title;
-
-  const elementContent = document.createElement('p');
-
-  elementContent.innerHTML = description.replace(/\n/g, '<br>');
-
-  element.appendChild(elementTitle);
-  element.appendChild(elementContent);
-
-  if (type === 'success') {
-    element.classList.add('success');
-    element.style.backgroundColor = 'green';
-  }
-
-  if (type === 'error') {
-    element.classList.add('error');
-    element.style.backgroundColor = 'red';
-  }
-
-  if (type === 'warning') {
-    element.classList.add('warning');
-    element.style.backgroundColor = 'yellow';
-  }
-
-  document.body.appendChild(element);
-
+  const notification = document.createElement('div');
+  notification.classList.add('notification', type);
+  const titleElement = document.createElement('h2');
+  titleElement.classList.add('title');
+  titleElement.textContent = title;
+  notification.appendChild(titleElement);
+  const descriptionElement = document.createElement('p');
+  descriptionElement.classList.add('description');
+  descriptionElement.textContent = description;
+  notification.appendChild(descriptionElement);
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+  document.body.appendChild(notification);
   setTimeout(() => {
-    element.remove();
+    notification.style.visibility = 'hidden';
   }, 2000);
 };
 
