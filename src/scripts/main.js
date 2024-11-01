@@ -17,8 +17,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(titleElement);
   notification.appendChild(descriptionElement);
 
-  notification.style.top = `${[posTop]}px`;
-  notification.style.right = `${[posRight]}px`;
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
   document.body.appendChild(notification);
 
