@@ -1,13 +1,30 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  let element;
+const pushNotification = (x, y, title, description, type) => {
+  // Створюємо контейнер для повідомлення
+  const notification = document.createElement('div');
 
+  notification.classList.add('notification', type);
+
+  // Додаємо заголовок
+  const titleElement = document.createElement('h4');
+
+  titleElement.textContent = title;
+  notification.appendChild(titleElement);
+
+  // Додаємо опис
+  const descriptionElement = document.createElement('p');
+
+  descriptionElement.textContent = description;
+  notification.appendChild(descriptionElement);
+
+  // Додаємо повідомлення до документа
+  document.body.appendChild(notification);
+
+  // Видаляємо повідомлення з DOM через 2 секунди
   setTimeout(() => {
-    element = document.createElement('div');
-  }, 2 * 1000);
-
-  clearTimeout(element);
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(
