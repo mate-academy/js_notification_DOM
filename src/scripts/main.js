@@ -1,7 +1,13 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  let element;
+
+  setTimeout(() => {
+    element = document.createElement('div');
+  }, 2 * 1000);
+
+  clearTimeout(element);
 };
 
 pushNotification(
