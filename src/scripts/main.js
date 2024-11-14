@@ -14,7 +14,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   const notificationMessage = document.createElement('p');
 
-  notificationMessage.innerHTML = description;
+  notificationMessage.textContent = description;
 
   notification.append(notificationTitle, notificationMessage);
   document.body.appendChild(notification);
