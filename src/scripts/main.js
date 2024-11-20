@@ -13,7 +13,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = `${posRight}px`;
 
   // додаю заголовок
-  const titleElement = document.createElement('h3');
+  const titleElement = document.createElement('h2');
 
   titleElement.classList.add('title');
   titleElement.textContent = title;
