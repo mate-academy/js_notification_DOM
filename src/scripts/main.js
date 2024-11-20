@@ -31,7 +31,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // видалення елемента через 2 с
   setTimeout(() => {
     notification.remove();
-  }, 200000000);
+  }, 2000);
 };
 
 pushNotification(
