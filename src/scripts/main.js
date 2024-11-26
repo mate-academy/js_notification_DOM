@@ -17,7 +17,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleOfNotification = document.createElement('h2');
 
   titleOfNotification.textContent = title;
-
   titleOfNotification.className = 'title';
 
   const descriptionOfNotification = document.createElement('p');
