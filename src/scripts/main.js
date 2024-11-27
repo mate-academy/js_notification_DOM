@@ -10,7 +10,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.classList.add(type);
   div.style.top = posTop + 'px';
   div.style.right = posRight + 'px';
-  div.visibility = 'visible';
+  div.style.visibility = 'visible';
   h2.textContent = title;
   h2.className = 'title';
   p.textContent = description;
