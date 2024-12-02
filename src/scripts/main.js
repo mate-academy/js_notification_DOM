@@ -24,8 +24,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(mes);
 
   setTimeout(() => {
-    mes.style.display = 'none';
-  }, 200000);
+    mes.remove();
+  }, 2000);
 };
 
 pushNotification(
