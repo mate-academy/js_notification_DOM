@@ -3,14 +3,14 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
-  notification.setAttribute('class', `notification ${type}`);
+  notification.className = `notification ${type}`;
   notification.style.position = 'absolute';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
-  const titleElement = document.createElement('h1');
+  const titleElement = document.createElement('h');
 
-  titleElement.setAttribute('class', 'title');
+  titleElement.className = 'title';
   titleElement.textContent = title;
 
   const descriptionElement = document.createElement('p');
