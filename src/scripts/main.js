@@ -3,7 +3,7 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
-  // Creating HTML-element of notofication, adding classes and child elements
+  // Creating HTML-element of notification, adding classes and child elements
   document.body.appendChild(notification);
 
   notification.classList.add('notification', type);
@@ -21,20 +21,16 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(notificationMessage);
 
   // Positioning of the notification element
-  notification.style.position = 'absolute';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
-  // Timeout for notificatoon disappearing
+  // Timeout for notification disappearing
   setTimeout(() => {
-    document.body.removeChild(notification);
+    notification.style.display = `none`;
   }, 2000);
 };
 
-// Function calls with timeouts
-setTimeout(
-  pushNotification,
-  1000,
+pushNotification(
   10,
   10,
   'Title of Success message',
@@ -42,24 +38,18 @@ setTimeout(
   'success',
 );
 
-setTimeout(() => {
-  pushNotification(
-    150,
-    10,
-    'Title of Error message',
-    'Message example.\n ' +
-      'Notification should contain title and description.',
-    'error',
-  );
-}, 2000);
+pushNotification(
+  150,
+  10,
+  'Title of Error message',
+  'Message example.\n ' + 'Notification should contain title and description.',
+  'error',
+);
 
-setTimeout(() => {
-  pushNotification(
-    290,
-    10,
-    'Title of Warning message',
-    'Message example.\n ' +
-      'Notification should contain title and description.',
-    'warning',
-  );
-}, 3000);
+pushNotification(
+  290,
+  10,
+  'Title of Warning message',
+  'Message example.\n ' + 'Notification should contain title and description.',
+  'warning',
+);
