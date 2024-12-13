@@ -1,7 +1,35 @@
 'use strict';
 
+function hideDiv(div) {
+  div.style.display = 'none';
+}
+
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const mess = document.createElement('div');
+
+  mess.setAttribute('class', `notification ${type}`);
+
+  // mess.style.position = 'absolute';
+  mess.style.top = posTop + 'px';
+  mess.style.right = posRight + 'px';
+
+  const titleEl = document.createElement('h2');
+
+  titleEl.textContent = title;
+  titleEl.setAttribute('class', 'title');
+  mess.appendChild(titleEl);
+
+  const desc = document.createElement('p');
+
+  desc.textContent = description;
+  mess.appendChild(desc);
+
+  const body = document.querySelector('body');
+
+  body.appendChild(mess);
+
+  setTimeout(hideDiv, 2000, mess);
 };
 
 pushNotification(
