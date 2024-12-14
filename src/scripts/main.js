@@ -19,6 +19,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // blockEl.style.display = 'none';
 
   document.body.appendChild(blockEl);
+
+  window.setTimeout(() => (blockEl.style.display = 'none'), 2000);
 };
 
 pushNotification(
