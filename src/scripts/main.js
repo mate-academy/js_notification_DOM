@@ -22,11 +22,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(message);
 
   setTimeout(() => {
-    message.remove();
+    message.style.visibility = 'hidden';
   }, 2000);
-
-  // eslint-disable-next-line
-  console.log(message);
 };
 
 pushNotification(
