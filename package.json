@@ -18,7 +18,9 @@
     "postinstall": "npm run update",
     "test": "npm run lint && npm run test:only"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@lmdb/lmdb-win32-x64": "^3.2.0"
+  },
   "devDependencies": {
     "@linthtml/linthtml": "^0.9.6",
     "@mate-academy/eslint-config": "latest",
