@@ -2,11 +2,9 @@ body {
   background: #eee;
   font-family: Roboto, sans-serif;
   margin: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 100vh;
 }
 
@@ -15,6 +13,8 @@ body {
   background-color: #fc4b3b;
   color: white;
   border-radius: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   width: 70px;
   height: 70px;
@@ -29,28 +29,26 @@ body {
   min-height: 100px;
   padding: 0 16px;
   box-sizing: border-box;
-
   border-radius: 10px;
   background: rgba(132, 132, 132, 0.3);
-
   top: 10px;
   right: 10px;
-
-  .title {
-    display: block;
-    font-size: 18px;
-    font-weight: 900;
-  }
-
-  &.warning {
-    background: rgba(255, 212, 39, 0.3);
-  }
-
-  &.success {
-    background: rgba(10, 189, 0, 0.3);
-  }
-
-  &.error {
-    background: rgba(253, 0, 0, 0.3);
-  }
 }
+
+.notification .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.notification.warning {
+  background: rgba(255, 212, 39, 0.3);
+}
+
+.notification.success {
+  background: rgba(10, 189, 0, 0.3);
+}
+
+.notification.error {
+  background: rgba(253, 0, 0, 0.3);
+} /*# sourceMappingURL=main.css.map */
