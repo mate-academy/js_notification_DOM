@@ -7,12 +7,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationTitle = document.createElement('h2');
   const notificationMessage = document.createElement('p');
 
-  notification.className = `notification ${type}`;
-  notification.style.display = 'block';
+  notification.classList.add('notification', type);
   notificationTitle.textContent = title;
   notificationTitle.className = 'title';
   notificationTitle.style.whiteSpace = 'nowrap';
-  notificationMessage.innerHTML = description.replace(/\n/g, '<br>');
+  notificationMessage.innerHTML = description;
+  notificationMessage.style.whiteSpace = 'pre-line';
   notification.appendChild(notificationTitle);
   notification.appendChild(notificationMessage);
   notification.style.top = `${posTop}px`;
@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.style.display = 'none';
-  }, 2000);
+  }, 20000);
 };
 
 pushNotification(
