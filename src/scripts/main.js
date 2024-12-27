@@ -18,17 +18,23 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.append(messageTitle, messageDescription);
   document.body.append(message);
 
+  // Встановлення стилів для позиціонування
   message.style.position = 'absolute';
 
   message.style.left =
-    document.offSetWidth - posRight - message.clientWidth + 'px';
+    document.documentElement.clientWidth -
+    posRight -
+    message.offsetWidth +
+    'px';
   message.style.top = posTop + 'px';
 
+  // Автоматичне видалення повідомлення через 2 секунди
   setTimeout(() => {
     message.remove();
   }, 2000);
 };
 
+// Виклик функції з різними повідомленнями
 pushNotification(
   10,
   10,
