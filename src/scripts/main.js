@@ -1,9 +1,21 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+const pushNotification = (
+  posTop,
+  posRight,
+  title,
+  description,
+  type,
+  duration = 2000,
+) => {
   const notification = document.createElement('div');
 
-  notification.classList.add('notification', type);
+  notification.classList.add('notification');
+
+  if (['success', 'error', 'warning'].includes(type)) {
+    notification.classList.add(type);
+  }
+
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
@@ -18,11 +30,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   message.innerHTML = description;
   notification.append(message);
 
-  document.body.append(notification);
+  if (!document.body.contains(notification)) {
+    document.body.append(notification);
+  }
 
   setTimeout(() => {
     notification.remove();
-  }, 2000);
+  }, duration);
 };
 
 pushNotification(
