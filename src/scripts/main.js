@@ -9,9 +9,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.classList.add('notification', type);
   div.style.top = posTop + 'px';
   div.style.right = posRight + 'px';
+  div.style.whiteSpace = 'pre-line';
 
   h2.classList.add('title');
   h2.textContent = title;
+  h2.style.whiteSpace = 'nowrap';
   p.textContent = description;
 
   div.appendChild(h2);
