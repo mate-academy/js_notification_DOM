@@ -3,7 +3,9 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const message = document.createElement('div');
 
-  message.classList.add('notification', type);
+  if (type === 'success' || type === 'error' || type === 'warning') {
+    message.classList.add('notification', type);
+  }
 
   message.innerHTML = `<h2 class="title">${title}</h2>
   <p>${description}</p>`;
