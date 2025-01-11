@@ -5,10 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.className = `notification ${type}`;
 
-  Object.assign(notification.style, {
-    top: `${posTop}px`,
-    right: `${posRight}px`,
-  });
+  notification.setAttribute('style', `top: ${posTop}px; right: ${posRight}px;`);
 
   notification.innerHTML = `
     <h2 class="title">${title}</h2>
