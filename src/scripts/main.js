@@ -9,6 +9,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <div class='notification ${type}'>
       <h2 class='title'>${title}</h2>
       <p>${description}</p>
+    </div>
     `,
   );
 
