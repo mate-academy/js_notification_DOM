@@ -30,9 +30,9 @@ const pushNotification = (
 
   document.body.appendChild(div);
 
-  // setTimeout(() => {
-  //   document.body.removeChild(div)
-  // }, 2000);
+  setTimeout(() => {
+    document.body.removeChild(div)
+  }, 2000);
 };
 
 pushNotification(
