@@ -5,7 +5,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.classList.add('notification', type);
 
-  // Створюємо заголовок повідомлення
   const notificationTitle = document.createElement('div');
 
   notificationTitle.classList.add('notification-title');
