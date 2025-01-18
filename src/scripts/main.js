@@ -11,7 +11,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationTitle.textContent = title;
   notificationTitle.className = 'title';
   notificationTitle.style.whiteSpace = 'nowrap';
-  notificationMessage.innerHTML = description;
+  notificationMessage.textContent = description;
   notificationMessage.style.whiteSpace = 'pre-line';
   notification.appendChild(notificationTitle);
   notification.appendChild(notificationMessage);
