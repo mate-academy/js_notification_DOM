@@ -1,7 +1,27 @@
 'use strict';
 
+document.body.style.position = 'relative';
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+  const notificationTitle = document.createElement('h2');
+  const notificationMessage = document.createElement('p');
+
+  notification.classList.add('notification', type);
+  notificationTitle.textContent = title;
+  notificationTitle.className = 'title';
+  notificationTitle.style.whiteSpace = 'nowrap';
+  notificationMessage.textContent = description;
+  notificationMessage.style.whiteSpace = 'pre-line';
+  notification.appendChild(notificationTitle);
+  notification.appendChild(notificationMessage);
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
