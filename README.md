@@ -2,7 +2,7 @@
    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)sa
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
    - Run `npm run test` command to test your code;s
-   - Run `npm run test:only -- -n` to run fast test ignoring linter;gasdsa
+   - Run `npm run test:only -- -n` to run fast test ignoring linter;gasdsaasdasd
    - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
 
 ### Task: Create a notification
