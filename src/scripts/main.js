@@ -1,20 +1,20 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const elem = `
-    <div
-      class="notification ${type}"
-      style="top: ${posTop}; right: ${posRight};"
-    >
+  const elem =  document.createElement('div');
+  elem.className = `notification ${type}`;
+  elem.style.top = `${posTop}px`; // Добавляем единицы измерения
+  elem.style.right = `${posRight}px`;
+
+  elem.innerHTML= `
       <h2 class="title">${title}</h2>
       <p>${description}</p>
-    </div>
   `;
 
-  document.body.insertAdjacentHTML('beforeend', elem);
+  document.body.insertAdjacentElement('beforeend', elem);
 
   function removeElem() {
-    document.querySelector(`.${type}`).remove();
+    elem.remove();
   }
 
   setTimeout(removeElem, 2000);
