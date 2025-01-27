@@ -1,7 +1,24 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const elem = `
+    <div
+      class="notification ${type}"
+      style="top: ${posTop}; right: ${posRight};"
+    >
+      <h2 class="title">${title}</h2>
+      <p>${description}</p>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', elem);
+
+  function removeElem() {
+    document.querySelector(`.${type}`).remove();
+  }
+
+  setTimeout(removeElem, 2000);
+
 };
 
 pushNotification(
