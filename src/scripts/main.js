@@ -1,6 +1,13 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+const pushNotification = (
+  posTop,
+  posRight,
+  title,
+  description,
+  type,
+  timeout = 2000,
+) => {
   const notification = document.createElement('div');
 
   notification.classList.add('notification', type);
@@ -24,7 +31,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.remove();
-  }, 2000);
+  }, timeout);
 };
 
 pushNotification(
