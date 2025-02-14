@@ -7,7 +7,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.insertAdjacentHTML(
     'beforeend',
     `
-    <div id = "notification-${id}" class="notification ${type}"">
+    <div id = "notification-${id}" class="notification ${type}">
       <h2 class="title">${title}</h2>
       <p>${description}</p>
     </div>
