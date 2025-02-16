@@ -1,7 +1,42 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const body = document.querySelector('body');
+
+  const notificationContainer = document.createElement('div');
+  const notificationBody = document.createElement('div');
+
+  notificationContainer.style.position = 'fixed';
+  notificationContainer.style.top = posTop + 'px';
+  notificationContainer.style.right = posRight + 'px';
+  notificationBody.type = type;
+
+  switch (notificationBody.type) {
+    case 'success':
+      notificationBody.style.backgroundColor = 'green';
+      break;
+    case 'error':
+      notificationBody.style.backgroundColor = 'red';
+      break;
+    case 'warning':
+      notificationBody.style.backgroundColor = 'yellow';
+      break;
+  }
+
+  const notificationTitle = document.createElement('div');
+
+  notificationTitle.textContent = title;
+  notificationTitle.style.fontWeight = 'bold';
+
+  const notificationDescription = document.createElement('div');
+
+  notificationDescription.textContent = description;
+
+  notificationContainer.append(notificationBody);
+
+  notificationBody.append(notificationTitle);
+  notificationBody.append(notificationDescription);
+  body.append(notificationContainer);
 };
 
 pushNotification(
