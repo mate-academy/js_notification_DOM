@@ -1,25 +1,27 @@
-1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
-2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-    - Run `npm run test` command to test your code;
-    - Run `npm run test:only -- -n` to run fast test ignoring linter;
-    - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
+# Create a notification
 
-### Task: Create a notification
+## 🎮 About the Project
+This project implements a function that dynamically creates a notification message on the screen. The function takes coordinates, title, description, and message type (`success`, `error`, or `warning`), creates an element, appends it to the document, and automatically hides it after 2 seconds.
 
-To inform the user about the success of the operation, or any errors, websites usually use messages that appear for a while on the screen.
+## 🚀 Tech Stack
+- **HTML** (BEM methodology for structured markup)
+- **CSS** (Basic styling)
+- **JavaScript** (For creating and handling notifications)
 
-Your task: Create function `pushNotification`, which takes coordinates of the message, title, description, and type 
-(success, error and warning). `pushNotification` creates an element to display the message, appends it to the document, and hides it from the DOM after 2 seconds.
-Do not write any CSS styles or HTML code in this task. You should modify only `main.js` file.
+## 🛠️ Tools & Dependencies
+- **ESLint** – Ensuring code quality  
+- **Prettier** – Code formatting for readability  
+- **Cypress** – End-to-end testing  
+- **Mochawesome** – Test reporting  
+- **Parcel** – Web application bundler  
 
-Implementation tips:
-- Print three messages: `success`, `error`, `warning` (call methods already exist in `main.js` file);
-- The message is block element with class `notification` + class which depends on the input parameter type (`success`, `error`, `warning`); 
-- The message should have a title with class `title` (prefer `h2` element);
-- The message should have description (prefer tag `p`).
+## 📌 Features
+✅ Created a function that generates dynamic notifications  
+✅ Supports different notification types (success, error, warning)  
+✅ Automatically removes notifications after 2 seconds  
 
-Hint: use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) for execute a function or specified piece of code once the timer expires.
+## 🌐 Demo
+🔗 [Live Demo](https://AndriiZakharenko.github.io/notification/)
 
-It's an expected result of your job:
-![Result](./src/images/result.png)
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/js_notification_DOM)
