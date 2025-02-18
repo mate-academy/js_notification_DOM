@@ -1,28 +1,27 @@
 # Create a notification
 
-### Description
+## 🎮 About the Project
+This project implements a function that dynamically creates a notification message on the screen. The function takes coordinates, title, description, and message type (`success`, `error`, or `warning`), creates an element, appends it to the document, and automatically hides it after 2 seconds.
 
-- Created function `pushNotification`, which takes coordinates of the message, title, description, and type  (success, error and warning)
-- `pushNotification` creates an element to display the message, appends it to the document, and hides it from the DOM after 2 seconds.
+## 🚀 Tech Stack
+- **HTML** (BEM methodology for structured markup)
+- **CSS** (Basic styling)
+- **JavaScript** (For creating and handling notifications)
 
-### Stack
+## 🛠️ Tools & Dependencies
+- **ESLint** – Ensuring code quality  
+- **Prettier** – Code formatting for readability  
+- **Cypress** – End-to-end testing  
+- **Mochawesome** – Test reporting  
+- **Parcel** – Web application bundler  
 
-- HTML (BEM)
-- CSS
-- JS
+## 📌 Features
+✅ Created a function that generates dynamic notifications  
+✅ Supports different notification types (success, error, warning)  
+✅ Automatically removes notifications after 2 seconds  
 
-### Tools
+## 🌐 Demo
+🔗 [Live Demo](https://AndriiZakharenko.github.io/notification/)
 
-- ESlint
-- Prettier
-- Cypress
-- Mochawesome
-- Parcel
-
-### Demo links
-
-- [Demo](https://AndriiZakharenko.github.io/notification/)
-
-### Reference Image
-
-<img src="./src/images/result.png" alt="reference image" width="300px" />
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/js_notification_DOM)
