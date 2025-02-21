@@ -1,7 +1,47 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const createdElement = document.createElement('div');
+  const someTitle = document.createElement('h2');
+  const message = document.createElement('p');
+
+  someTitle.setAttribute('class', 'title');
+  createdElement.append(someTitle);
+  createdElement.append(message);
+  document.body.append(createdElement);
+
+  switch (type) {
+    case 'success':
+      someTitle.textContent = title;
+      message.textContent = description;
+      createdElement.setAttribute('class', 'notification success');
+      createdElement.style.top = posTop + 'px';
+      createdElement.style.right = posRight + 'px';
+
+      break;
+
+    case 'error':
+      someTitle.textContent = title;
+      message.textContent = description;
+      createdElement.setAttribute('class', 'notification error');
+      createdElement.style.top = posTop + 'px';
+      createdElement.style.right = posRight + 'px';
+
+      break;
+
+    case 'warning':
+      someTitle.textContent = title;
+      message.textContent = description;
+      createdElement.setAttribute('class', 'notification warning');
+      createdElement.style.top = posTop + 'px';
+      createdElement.style.right = posRight + 'px';
+
+      break;
+  }
+
+  setTimeout(() => {
+    createdElement.remove();
+  }, 2000);
 };
 
 pushNotification(
