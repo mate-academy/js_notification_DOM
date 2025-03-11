@@ -1,7 +1,28 @@
 'use strict';
 
+const firstChild = document.body.firstElementChild;
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const createMessage = document.createElement('div');
+  const createTitle = document.createElement('h2');
+  const createTextMessage = document.createElement('p');
+
+  firstChild.insertAdjacentElement('afterend', createMessage);
+  createMessage.classList.add('notification');
+  createMessage.classList.add(`${type}`);
+  createMessage.style.top = posTop + 'px';
+  createMessage.style.right = posRight + 'px';
+
+  createMessage.append(createTitle);
+  createTitle.classList.add('title');
+  createTitle.insertAdjacentText('afterbegin', title);
+
+  createMessage.append(createTextMessage);
+  createTextMessage.insertAdjacentText('afterbegin', description);
+
+  setTimeout(() => {
+    createMessage.remove();
+  }, 2000);
 };
 
 pushNotification(
