@@ -1,16 +1,19 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const bodyEl = document.querySelector('body');
   const divEl = document.createElement('div');
+
   divEl.classList.add('notification', type);
   divEl.style.top = `${posTop}px`;
   divEl.style.right = `${posRight}px`;
 
   const h2El = document.createElement('h2');
+
   h2El.className = 'title';
   h2El.textContent = title;
   divEl.append(h2El);
 
   const pEl = document.createElement('p');
+
   pEl.textContent = description;
   divEl.append(pEl);
 
