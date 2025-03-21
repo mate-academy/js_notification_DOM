@@ -22,7 +22,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageElement.append(descriptionElement);
 
   setTimeout(() => {
-    messageElement.style.visibility = 'hidden';
+    messageElement.remove();
   }, 2 * 1000);
 };
 
