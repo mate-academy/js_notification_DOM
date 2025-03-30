@@ -8,7 +8,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = `${posRight}px`;
 
   notification.innerHTML = `
-            <strong>${title}</strong>
+            <h2>${title}</h2>
             <p>${description}</p>
         `;
   document.body.appendChild(notification);
