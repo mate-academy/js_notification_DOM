@@ -9,13 +9,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.style.right = `${posRight}px`;
 
   notification.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class="title">${title}</h2>
     <p>${description}</p>
   `;
   document.body.appendChild(notification);
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.display = 'none';
   }, 2000);
 };
 
