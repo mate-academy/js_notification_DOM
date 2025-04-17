@@ -29,8 +29,8 @@ const pushNotification = (
   document.body.appendChild(notification);
 
   setTimeout(() => {
-    notification.remove();
-  }, 2200);
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
