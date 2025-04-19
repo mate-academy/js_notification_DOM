@@ -11,7 +11,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   heading.classList.add('title');
   heading.innerText = title;
   text.innerText = description;
-  notification.prepend(heading, text);
+  notification.appendChild(heading);
+  notification.appendChild(text);
 
   switch (type) {
     case 'success':
