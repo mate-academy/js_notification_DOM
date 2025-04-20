@@ -1,7 +1,34 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  // Створюємо елемент повідомлення
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+  notification.style.position = 'absolute';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  // Створюємо заголовок
+  const titleElement = document.createElement('h2');
+
+  titleElement.classList.add('title');
+  titleElement.textContent = title;
+  notification.appendChild(titleElement);
+
+  // Створюємо опис
+  const descriptionElement = document.createElement('p');
+
+  descriptionElement.textContent = description;
+  notification.appendChild(descriptionElement);
+
+  // Додаємо повідомлення до body
+  document.body.appendChild(notification);
+
+  // Видаляємо повідомлення через 2 секунди
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(
