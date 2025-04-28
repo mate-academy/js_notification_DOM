@@ -22,8 +22,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     div.style.visibility = 'hidden';
   }, appendsTime * 1000);
 
-  body.append(div);
   div.append(h2, p);
+  body.append(div);
 };
 
 pushNotification(
