@@ -29,7 +29,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notifDesc = document.createElement('p');
 
   notifDesc.classList.add('description');
-  notifDesc.innerHTML = description.replace(/\n/g, '</br>');
+  notifDesc.textContent = description;
+  notifDesc.style.whiteSpace = 'pre-line';
 
   notif.append(notifTitle, notifDesc);
   document.body.append(notif);
