@@ -4,19 +4,16 @@ const body = document.querySelector('body');
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notificationCard = document.createElement('div');
-
   notificationCard.classList.add('notification');
 
   notificationCard.style.top = `${posTop}px`;
   notificationCard.style.right = `${posRight}px`;
 
   const notificationTitle = document.createElement('h2');
-
   notificationTitle.classList.add('title');
   notificationTitle.textContent = title;
 
   const notificationInfo = document.createElement('p');
-
   notificationInfo.innerText = description;
 
   notificationCard.appendChild(notificationTitle);
@@ -33,7 +30,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }
 
   setTimeout(() => {
-    notificationCard.style.display = 'none';
+    notificationCard.remove();
   }, 2000);
 };
 
