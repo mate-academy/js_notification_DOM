@@ -9,12 +9,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   blockElement.style.top = `${posTop}px`;
   blockElement.style.right = `${posRight}px`;
 
-  const titleElemen = document.createElement('h2');
+  const titleElement = document.createElement('h2');
 
-  blockElement.append(titleElemen);
+  blockElement.append(titleElement);
 
-  titleElemen.className = 'title';
-  titleElemen.textContent = title;
+  titleElement.className = 'title';
+  titleElement.textContent = title;
 
   const descriptionElement = document.createElement('p');
 
