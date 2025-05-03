@@ -20,7 +20,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.querySelector('body').append(notification);
 
   window.setTimeout(() => {
-    notification.style.visibility = 'hidden';
+    notification.style.display = 'none';
   }, 2000);
 };
 
