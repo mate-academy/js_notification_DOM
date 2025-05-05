@@ -14,8 +14,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   h2.innerText = title;
 
   p.innerHTML = description;
-  setTimeout(() => (div.style.display = 'none'), 2000);
-
+  setTimeout(() => div.remove(), 2000);
 
   div.append(h2);
   div.append(p);
