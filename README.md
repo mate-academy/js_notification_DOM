@@ -12,7 +12,7 @@ Implementation guideline:
 - The message should have a title with class `title` (prefer `h2` element);
 - The message should have a description (prefer tag `p`);
 - Use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to execute a function or specified piece of code once the timer expires;
-- Do not remove elements from the DOM; instead, use style attributes to visually hide messages.
+- **Important:** Do not remove elements from the DOM; instead, use style attributes to visually hide messages.
 
 It's an expected result of your job:
 ![Result](./src/images/result.png)
