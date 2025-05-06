@@ -6,13 +6,11 @@ Your task: Create a function `pushNotification`, which takes the coordinates of 
 (success, error and warning). `pushNotification` creates an element to display the message, appends it to the document, and hides it from the DOM after 2 seconds.
 Do not write any CSS styles or HTML code in this task. You should modify only the `main.js` file.
 
-Implementation tips:
+Implementation guideline:
 - Print three messages: `success`, `error`, `warning` (call methods already exist in the `main.js` file);
 - The message is a block element with class `notification` + class, which depends on the input parameter type (`success`, `error`, `warning`); 
 - The message should have a title with class `title` (prefer `h2` element);
-- The message should have a description (prefer tag `p`).
-
-Hints: 
+- The message should have a description (prefer tag `p`);
 - Use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to execute a function or specified piece of code once the timer expires;
 - Do not remove elements from the DOM; instead, use style attributes to visually hide messages.
 
