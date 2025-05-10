@@ -1,7 +1,28 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const page = document.body;
+  const notification = document.createElement('DIV');
+
+  notification.className = `notification ${type}`;
+  notification.style.top = `${posTop}px`;
+
+  notification.insertAdjacentHTML('afterbegin', `
+      <h2 class="title">
+        ${title}
+      </h2>
+      <p class="${type}">
+        ${description.slice(0, 16)}
+        <br>
+        ${description.slice(16)}
+      </p>
+  `);
+
+  page.prepend(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
 };
 
 pushNotification(
