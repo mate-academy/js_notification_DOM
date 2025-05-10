@@ -1,7 +1,20 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const windowNotification = document.createElement('section');
+
+  windowNotification.className = `notification ${type}`;
+  windowNotification.style.top = `${posTop}px`;
+  windowNotification.style.right = `${posRight}px`;
+
+  windowNotification.insertAdjacentHTML('afterbegin', `
+    <h2 class="title">${title}</h2>
+    <p>${description}</p>
+  `);
+
+  document.body.append(windowNotification);
+
+  setTimeout(() => windowNotification.remove(), 2000);
 };
 
 pushNotification(
