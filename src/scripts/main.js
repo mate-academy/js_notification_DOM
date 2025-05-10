@@ -1,7 +1,33 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const position = document.querySelector('body');
+  const elementToAdd = document.createElement('div');
+  const titleElement = document.createElement('h2');
+  const descriptionElement = document.createElement('p');
+
+  elementToAdd.classList = `notification ${type}`;
+
+  titleElement.innerText = title;
+  titleElement.classList = 'title';
+  titleElement.style.fontSize = '18px';
+  descriptionElement.innerText = description;
+
+  elementToAdd.append(titleElement);
+  elementToAdd.append(descriptionElement);
+  position.append(elementToAdd);
+
+  elementToAdd.style.right = `${posRight}px`;
+  elementToAdd.style.top = `${posTop}px`;
+
+  setTimeout(() => {
+    elementToAdd.style.transition = 'transform 2s ease-out';
+    elementToAdd.style.transform = 'translateY(-400%)';
+
+    setTimeout(() => {
+      elementToAdd.remove();
+    }, 2000);
+  }, 2000);
 };
 
 pushNotification(
