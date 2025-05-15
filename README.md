@@ -21,6 +21,8 @@ It's an expected result of your job:
 
 1. Replace `<your_account>` with your GitHub username in the link
     - [DEMO LINK](https://PastushenkoVik.github.io/js_notification_DOM/)
+
+
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;

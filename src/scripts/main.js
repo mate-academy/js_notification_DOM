@@ -13,6 +13,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 <p>${description}</p>`;
 
   body.prepend(notification);
+
   setTimeout(() => (notification.style.visibility = 'hidden'), 2000);
 };
 
