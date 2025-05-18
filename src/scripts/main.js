@@ -17,8 +17,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   paragraph.textContent = description;
 
-  document.body.appendChild(elementDiv);
   elementDiv.append(header, paragraph);
+  document.body.appendChild(elementDiv);
 
   setTimeout(() => {
     elementDiv.style.display = 'none';
