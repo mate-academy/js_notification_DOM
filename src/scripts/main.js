@@ -1,7 +1,35 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const messageAlert = document.createElement('div');
+
+  messageAlert.classList.add('notification', type);
+
+  const titleAlert = document.createElement('h2');
+
+  titleAlert.classList.add('title');
+  messageAlert.append(titleAlert);
+
+  const titleText = title;
+
+  titleAlert.textContent = titleText;
+
+  const descriptionAlert = document.createElement('p');
+  const descriptionText = description;
+
+  messageAlert.append(descriptionAlert);
+  descriptionAlert.textContent = descriptionText;
+  document.body.appendChild(messageAlert);
+
+
+
+  messageAlert.style.position = 'absolute';
+  messageAlert.style.top = posTop + 'px';
+  messageAlert.style.right = posRight + 'px';
+  
+  // setTimeout(() => {
+  //   messageAlert.style.display = 'none';
+  // }, 2000);
 };
 
 pushNotification(
