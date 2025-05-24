@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(notification);
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.display = 'none';
   }, 2000);
 };
 
@@ -31,7 +31,7 @@ pushNotification(
 );
 
 pushNotification(
-  160,
+  150,
   10,
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
