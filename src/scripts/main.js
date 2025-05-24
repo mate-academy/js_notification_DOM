@@ -21,15 +21,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   descriptionAlert.textContent = descriptionText;
   document.body.appendChild(messageAlert);
 
-
-
   messageAlert.style.position = 'absolute';
   messageAlert.style.top = posTop + 'px';
   messageAlert.style.right = posRight + 'px';
-  
-  // setTimeout(() => {
-  //   messageAlert.style.display = 'none';
-  // }, 2000);
+
+  setTimeout(() => {
+    messageAlert.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
