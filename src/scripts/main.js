@@ -1,6 +1,6 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+function pushNotification(posTop, posRight, title, description, type) {
   // Create notification container
   const notification = document.createElement('div');
 
@@ -30,14 +30,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // Hide notification after 2 seconds using style visibility
   setTimeout(() => {
     notification.style.visibility = 'hidden';
-  }, 4000);
-};
+  }, 2000);
+}
 
+// Example calls
 pushNotification(
   10,
   10,
   'Title of Success message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'success',
 );
 
@@ -45,7 +46,7 @@ pushNotification(
   150,
   10,
   'Title of Error message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'error',
 );
 
@@ -53,6 +54,6 @@ pushNotification(
   290,
   10,
   'Title of Warning message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'warning',
 );
