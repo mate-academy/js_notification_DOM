@@ -15,10 +15,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   titles.textContent = title;
   block.appendChild(titles);
 
-  const descriptions = document.createElement('p');
+  const descriptionArr = description.split('\n');
 
-  descriptions.textContent = description;
-  block.appendChild(descriptions);
+  block.innerHTML = `<p>${descriptionArr[0]}<br>${descriptionArr[1]}</p>`;
 
   setTimeout(() => {
     block.style.display = 'none';
