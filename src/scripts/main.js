@@ -6,7 +6,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const message = document.createElement('p');
 
   if (type === 'success') {
-    notification.className = 'notification, notification success';
+    notification.className = 'notification success';
 
     header.className = 'title';
     header.textContent = title;
@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }
 
   if (type === 'error') {
-    notification.className = 'notification, notification error';
+    notification.className = 'notification error';
 
     header.className = 'title';
     header.textContent = title;
@@ -36,7 +36,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   }
 
   if (type === 'warning') {
-    notification.className = 'notification, notification warning';
+    notification.className = 'notification warning';
 
     notification.style.top = posTop + 'px';
     notification.style.right = posRight + 'px';
@@ -54,7 +54,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.style.opacity = 0;
-  }, 1000);
+  }, 2000);
 };
 
 pushNotification(
