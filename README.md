@@ -1,6 +1,6 @@
 ## Task: Create a notification
 
-To inform the user about the success of the operation or any errors, websites usually use messages that appear for a while on the screen.
+To inform the user about the success of the operation or any errors, websites typically use messages that appear on the screen for a short period.
 
 Your task: Create a function `pushNotification`, which takes the coordinates of the message, title, description, and type 
 (success, error and warning). `pushNotification` creates an element to display the message, appends it to the document, and hides it from the DOM after 2 seconds.
@@ -12,7 +12,7 @@ Implementation guideline:
 - The message should have a title with class `title` (prefer `h2` element);
 - The message should have a description (prefer tag `p`);
 - Use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to execute a function or specified piece of code once the timer expires;
-- **Important:** Do not remove elements from the DOM; instead, use style attributes to visually hide messages.
+- **Important:** Do not remove elements from the DOM in this task; instead, use style attributes just to hide messages visually (f.e, `display` or `visibility` properties).
 
 It's an expected result of your job:
 ![Result](./src/images/result.png)
