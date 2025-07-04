@@ -36,8 +36,6 @@ body {
   box-sizing: border-box;
   border-radius: 10px;
   background: rgba(132, 132, 132, 0.3);
-  top: 10px;
-  right: 10px;
 }
 
 .notification .title {
@@ -58,10 +56,4 @@ body {
   background: rgba(253, 0, 0, 0.3);
 }
 
-@font-face {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  src: url('../fonts/Roboto-Regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 /*# sourceMappingURL=main.css.map */

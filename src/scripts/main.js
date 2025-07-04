@@ -22,7 +22,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   h2.classList.add('title');
 
   setTimeout(() => {
-    notification.remove();
+    notification.style.display = 'none';
   }, 2000);
 };
 
