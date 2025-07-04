@@ -4,7 +4,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
   const body = document.querySelector('body');
 
-  body.insertAdjacentElement('beforeend', notification);
+  body.appendChild(notification);
 
   const h2 = document.createElement('h2');
 
@@ -22,7 +22,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   h2.classList.add('title');
 
   setTimeout(() => {
-    notification.style.display = 'none';
+    notification.remove();
   }, 2000);
 };
 
