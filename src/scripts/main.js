@@ -2,6 +2,33 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const notification = document.createElement('div');
+
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  if (type === 'success' || type === 'error' || type === 'warning') {
+    notification.classList.add('notification', type);
+  } else {
+    return 'Invalid notification type. Use "success", "error", or "warning".';
+  }
+
+  const h2Title = document.createElement('h2');
+
+  h2Title.textContent = title;
+  h2Title.classList.add('title');
+  notification.prepend(h2Title);
+
+  const pDescription = document.createElement('p');
+
+  pDescription.textContent = description;
+  notification.append(pDescription);
+
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
