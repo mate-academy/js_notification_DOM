@@ -1,8 +1,11 @@
 'use strict';
 
 Cypress.Commands.add('hasNotification', (selector, posTop, posRight) => {
-  cy.get(selector)
-    .should('have.attr', 'style', `top: ${posTop}px; right: ${posRight}px;`);
+  cy.get(selector).should(
+    'have.attr',
+    'style',
+    `top: ${posTop}px; right: ${posRight}px;`,
+  );
   cy.get(selector).children('h2').should('have.attr', 'class', 'title');
   cy.get(selector).children('p');
 });
@@ -14,7 +17,7 @@ describe('Notifications app', () => {
   });
 
   afterEach(() => {
-    cy.clock().then(clock => clock.restore());
+    cy.clock().then((clock) => clock.restore());
   });
 
   it('should print `success` message', () => {
@@ -30,7 +33,7 @@ describe('Notifications app', () => {
   });
 
   it('messages should disappear in 2 seconds', () => {
-    cy.tick(2200)
+    cy.tick(2200);
     cy.get('.notification.success').should('not.visible');
     cy.get('.notification.error').should('not.visible');
     cy.get('.notification.warning').should('not.visible');
