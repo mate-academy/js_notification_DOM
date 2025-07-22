@@ -37,8 +37,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   titleEl.classList.add('title');
 
   block.appendChild(titleEl);
-  body[0].appendChild(block);
   block.appendChild(descriptionAd);
+  body[0].appendChild(block);
 
   setTimeout(() => {
     block.style.display = 'none';
