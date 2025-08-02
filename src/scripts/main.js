@@ -1,7 +1,37 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  let typeClass;
+
+  if (type === 'success') {
+    typeClass = 'success';
+  }
+
+  if (type === 'error') {
+    typeClass = 'error';
+  }
+
+  if (type === 'warning') {
+    typeClass = 'warning';
+  }
+
+  const uniqueId = `notification-${Date.now()}-${Math.random()}`;
+
+  document.querySelector('body').insertAdjacentHTML(
+    'beforeend',
+    `
+      <div id="${uniqueId}" class="notification ${typeClass}" style="top: ${posTop}px; right: ${posRight}px;">
+        <h2 class="title">${title}</h2>
+        <p>${description}</p>
+      </div>
+    `,
+  );
+
+  const notification = document.getElementById(uniqueId);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
