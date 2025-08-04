@@ -15,19 +15,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.right = `${posRight}px`;
   document.body.appendChild(div);
 
-  const notifications = document.querySelectorAll('.notification');
-
-  if (notifications.length > 1) {
-    const lastNot = notifications[notifications.length - 2];
-    const lastBottom = lastNot.offsetTop + lastNot.offsetHeight;
-
-    div.style.top = `${lastBottom + 10}px`;
-  } else {
-    div.style.top = `${posTop}px`;
-  }
-
   setTimeout(() => {
-    div.remove();
+    div.style.display = 'none';
   }, 2000);
 };
 
