@@ -23,7 +23,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.prepend(message);
   message.append(messageTitle, text);
 
-  // Таймер
+  // Функція-таймер
   setTimeout(() => {
     message.style.display = 'none';
   }, 2000);
