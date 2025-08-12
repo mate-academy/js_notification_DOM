@@ -1,7 +1,32 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  // Створення елементів
+  const body = document.querySelector('body');
+  const message = document.createElement('div');
+  const messageTitle = document.createElement('h2');
+  const text = document.createElement('p');
+
+  // Додавання класів
+  message.classList.add('notification', type);
+  messageTitle.classList.add('title');
+
+  // Позиціонування
+  message.style.top = posTop + 'px';
+  message.style.right = posRight + 'px';
+
+  // Додавання контенту
+  messageTitle.textContent = title;
+  text.innerHTML = description.replace(/\n/g, '<br>');
+
+  // Додвання в DOM
+  body.prepend(message);
+  message.append(messageTitle, text);
+
+  // Функція-таймер
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
