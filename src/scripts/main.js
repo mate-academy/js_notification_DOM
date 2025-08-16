@@ -1,7 +1,21 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const body = document.querySelector('body');
+  const newDiv = document.createElement('div');
+
+  newDiv.className = `notification ${type}`;
+  newDiv.style.top = `${posTop}px`;
+  newDiv.style.right = `${posRight}px`;
+
+  newDiv.innerHTML = `
+    <h2 class = "title">${title}</h2>
+    <p>${description}</p>
+  `;
+
+  body.insertBefore(newDiv, body.lastChild);
+
+  setTimeout(() => newDiv.remove(), 2000);
 };
 
 pushNotification(
