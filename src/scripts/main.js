@@ -1,29 +1,45 @@
-'use strict';
+function pushNotification(x, y, title, description, type) {
+  const notification = document.createElement('div');
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
-};
+  notification.classList.add('notification', type);
+
+  notification.style.position = 'absolute';
+  notification.style.left = `${x}px`;
+  notification.style.top = `${y}px`;
+
+  const notificationTitle = document.createElement('h2');
+
+  notificationTitle.classList.add('title');
+  notificationTitle.textContent = title;
+
+  const notificationDescription = document.createElement('p');
+
+  notificationDescription.textContent = description;
+
+  notification.appendChild(notificationTitle);
+  notification.appendChild(notificationDescription);
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
+}
 
 pushNotification(
-  10,
-  10,
-  'Title of Success message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  100,
+  100,
+  'Sukces!',
+  'Operacja zakończona sukcesem.',
   'success',
 );
 
-pushNotification(
-  150,
-  10,
-  'Title of Error message',
-  'Message example.\n ' + 'Notification should contain title and description.',
-  'error',
-);
+pushNotification(200, 200, 'Błąd!', 'Coś poszło nie tak.', 'error');
 
 pushNotification(
-  290,
-  10,
-  'Title of Warning message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  300,
+  300,
+  'Uwaga!',
+  'To jest komunikat ostrzegawczy.',
   'warning',
 );
