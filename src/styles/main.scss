@@ -35,10 +35,12 @@ body {
 
   top: 10px;
   right: 10px;
+  opacity: 1;
+  transition: 3s;
 
   .title {
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
   }
 
@@ -53,4 +55,8 @@ body {
   &.error {
     background: rgba(253, 0, 0, 0.3);
   }
+}
+
+.fade {
+  opacity: 0;
 }
