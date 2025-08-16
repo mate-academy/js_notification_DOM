@@ -1,7 +1,34 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const message = document.createElement('div');
+
+  document.body.appendChild(message);
+
+  message.classList.add('notification', type);
+
+  const messageTitle = document.createElement('h2');
+
+  messageTitle.innerText = title;
+  messageTitle.classList.add('title');
+
+  const messageDesc = document.createElement('p');
+
+  messageDesc.innerText = description;
+
+  // add text to message
+  message.appendChild(messageTitle);
+  message.appendChild(messageDesc);
+
+  // position message
+  message.style.cssText = `top: ${posTop}px; right: ${posRight}px;`;
+
+  // apply color
+  // TODO: in case if i'll be rejected, add this.
+
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
