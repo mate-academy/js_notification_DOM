@@ -1,7 +1,30 @@
 'use strict';
 
+const body = document.body;
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const newDiv = document.createElement('div');
+  const newHeading = document.createElement('h2');
+  const newParagraph = document.createElement('p');
+
+  newDiv.style.top = `${posTop}px`;
+  newDiv.style.right = `${posRight}px`;
+
+  newDiv.classList.add('notification');
+  newDiv.classList.add(type);
+  newHeading.classList.add('title');
+  newParagraph.classList.add('description');
+
+  newHeading.textContent = title;
+  newParagraph.textContent = description;
+
+  newDiv.appendChild(newHeading);
+  newDiv.appendChild(newParagraph);
+  body.appendChild(newDiv);
+
+  setTimeout(() => {
+    newDiv.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
