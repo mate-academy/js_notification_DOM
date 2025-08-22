@@ -1,37 +1,34 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // створюємо контейнер для повідомлення
-  const notification = document.createElement('div');
+  // Створюємо головний div-елемент для сповіщення
+  const notificationElement = document.createElement('div');
 
-  notification.classList.add('notification', type);
+  notificationElement.className = `notification ${type}`;
+  notificationElement.style.top = `${posTop}px`;
+  notificationElement.style.right = `${posRight}px`;
 
-  // позиціонуємо елемент
-  notification.style.position = 'absolute';
-  notification.style.top = `${posTop}px`;
-  notification.style.right = `${posRight}px`;
+  // Створюємо h2-елемент для заголовка та додаємо текст
+  const titleElement = document.createElement('h2');
 
-  // створюємо заголовок
-  const notificationTitle = document.createElement('h2');
+  titleElement.className = 'title';
+  titleElement.textContent = title;
 
-  notificationTitle.classList.add('title');
-  notificationTitle.textContent = title;
+  // Створюємо p-елемент для опису та додаємо текст
+  const descriptionElement = document.createElement('p');
 
-  // створюємо опис
-  const notificationDescription = document.createElement('p');
+  descriptionElement.textContent = description;
 
-  notificationDescription.textContent = description;
+  // Додаємо заголовок та опис до div-елемента сповіщення
+  notificationElement.appendChild(titleElement);
+  notificationElement.appendChild(descriptionElement);
 
-  // додаємо елементи у повідомлення
-  notification.appendChild(notificationTitle);
-  notification.appendChild(notificationDescription);
+  // Додаємо сповіщення до body документа
+  document.body.appendChild(notificationElement);
 
-  // додаємо повідомлення у DOM
-  document.body.appendChild(notification);
-
-  // приховуємо повідомлення через 2 секунди
+  // Приховуємо сповіщення через 2 секунди
   setTimeout(() => {
-    notification.style.display = 'none';
+    notificationElement.style.visibility = 'hidden';
   }, 2000);
 };
 
