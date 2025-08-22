@@ -4,6 +4,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // Створюємо головний div-елемент для сповіщення
   const notificationElement = document.createElement('div');
 
+  // КРИТИЧНЕ ВИПРАВЛЕННЯ: Явно встановлюємо відображення блоку
+  notificationElement.style.display = 'block';
+
   notificationElement.className = `notification ${type}`;
   notificationElement.style.top = `${posTop}px`;
   notificationElement.style.right = `${posRight}px`;
