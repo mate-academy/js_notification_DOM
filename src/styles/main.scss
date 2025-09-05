@@ -23,6 +23,10 @@ body {
   justify-content: center;
 }
 
+.notification-container {
+  position: fixed;
+}
+
 .notification {
   position: absolute;
   width: 300px;
