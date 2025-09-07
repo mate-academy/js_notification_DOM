@@ -8,12 +8,13 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleOfMessage = document.createElement('h2');
   const infoOfMessage = document.createElement('p');
 
-  titleOfMessage.classList += 'title ';
-  bodyOfMessage.classList += 'notification ';
+  titleOfMessage.classList.add('title');
+  bodyOfMessage.classList('notification');
 
   titleOfMessage.textContent = title;
   infoOfMessage.textContent = description;
 
+  bodyOfMessage.style.position = 'absolute';
   bodyOfMessage.style.top = `${posTop}px`;
   bodyOfMessage.style.right = `${posRight}px`;
 
@@ -22,11 +23,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.appendChild(bodyOfMessage);
 
   if (type === 'success') {
-    bodyOfMessage.classList += 'success';
+    bodyOfMessage.classList.add('success');
   } else if (type === 'warning') {
-    bodyOfMessage.classList += 'warning';
+    bodyOfMessage.classList.add('warning');
   } else {
-    bodyOfMessage.classList += 'error';
+    bodyOfMessage.classList.add('error');
   }
 
   setTimeout(() => {
