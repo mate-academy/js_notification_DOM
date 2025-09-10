@@ -1,6 +1,7 @@
 'use strict';
 
 const NOTIFICATION_TIME = 2000;
+const NOTIFICATION_TYPES = ['success', 'error', 'warning'];
 
 function hideNotification(el) {
   if (!el) {
@@ -17,7 +18,7 @@ const pushNotification = (
   description,
   type,
 ) => {
-  if (!type) {
+  if (!NOTIFICATION_TYPES.includes(type)) {
     return;
   }
 
@@ -42,7 +43,7 @@ const pushNotification = (
   - 'position: absolute; top: 10px; right: 10px;'
   + 'top: 10px; right: 10px;'
   */
-
+  notificationElement.style.position = 'absolute';
   notificationElement.style.top = posTop + 'px';
   notificationElement.style.right = posRight + 'px';
 
