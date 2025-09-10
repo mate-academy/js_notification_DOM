@@ -3,7 +3,17 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
-  notification.classList.add('notification', type);
+  notification.classList.add('notification');
+
+  const checkForType = ['success', 'error', 'warning'];
+
+  if (checkForType.includes(type)) {
+    notification.classList.add(type);
+  } else {
+    notification.classList.add('error');
+  }
+
+  notification.style.position = 'fixed';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
