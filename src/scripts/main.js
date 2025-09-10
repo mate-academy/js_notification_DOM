@@ -1,7 +1,46 @@
 'use strict';
 
+const NOTIFICATION_TIME = 2000;
+
+function hideNotification(el) {
+  if (!el) {
+    return;
+  }
+
+  el.style.display = 'none';
+}
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  if (!posTop || !posRight || !type) {
+    return;
+  }
+
+  const notificationElement = document.createElement('div');
+
+  notificationElement.classList.add('notification');
+  notificationElement.classList.add(type);
+  notificationElement.style.top = posTop + 'px';
+  notificationElement.style.right = posRight + 'px';
+
+  if (title) {
+    const titleElement = document.createElement('h2');
+
+    titleElement.classList.add('title');
+    titleElement.textContent = title;
+    notificationElement.append(titleElement);
+  }
+
+  if (description) {
+    const descriptionElement = document.createElement('p');
+
+    descriptionElement.textContent = description;
+    notificationElement.append(descriptionElement);
+  }
+
+  document.body.append(notificationElement);
+
+  // Hide notification after a certain time
+  setTimeout(() => hideNotification(notificationElement), NOTIFICATION_TIME);
 };
 
 pushNotification(
