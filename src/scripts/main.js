@@ -11,11 +11,14 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleITem = document.createElement('h2');
   const message = document.createElement('p');
 
+  titleITem.classList.add('title');
+
   titleITem.append(`${title}`);
   message.append(`${description}`);
 
   notification.append(titleITem, message);
 
+  notification.style.position = 'absolute';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
