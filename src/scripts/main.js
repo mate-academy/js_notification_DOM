@@ -1,7 +1,71 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+const NOTIFICATION_TIME = 2000;
+const NOTIFICATION_TYPES = ['success', 'error', 'warning'];
+
+function hideNotification(el) {
+  if (!el) {
+    return;
+  }
+
+  el.style.display = 'none';
+}
+
+const pushNotification = (
+  posTop = 0,
+  posRight = 0,
+  title,
+  description,
+  type,
+) => {
+  if (!NOTIFICATION_TYPES.includes(type)) {
+    return;
+  }
+
+  const notificationElement = document.createElement('div');
+
+  notificationElement.classList.add('notification');
+  notificationElement.classList.add(type);
+
+  /*
+  I CAN'T ADD position = 'absolute' BECAUSE OF TESTS
+  notificationElement.style.position = 'absolute';
+
+  This happens if i add: notificationElement.style.position = 'absolute';
+
+    AssertionError: Timed out retrying after 4000ms: expected
+    '<div.notification.success>' to have attribute 'style' with the value
+    'top: 10px; right: 10px;', but the value was 'position: absolute;
+    top: 10px; right: 10px;' at Context.eval (webpack://js_notification_DOM/
+    ./cypress/integration/notificationDom.spec.js:5:5)
+  + expected- actual
+
+  - 'position: absolute; top: 10px; right: 10px;'
+  + 'top: 10px; right: 10px;'
+  */
+  notificationElement.style.position = 'absolute';
+  notificationElement.style.top = posTop + 'px';
+  notificationElement.style.right = posRight + 'px';
+
+  if (title) {
+    const titleElement = document.createElement('h2');
+
+    titleElement.classList.add('title');
+    titleElement.textContent = title;
+    notificationElement.append(titleElement);
+  }
+
+  if (description) {
+    const descriptionElement = document.createElement('p');
+
+    descriptionElement.textContent = description;
+    notificationElement.append(descriptionElement);
+  }
+
+  document.body.append(notificationElement);
+
+  // Hide notification after a certain time
+  setTimeout(() => hideNotification(notificationElement), NOTIFICATION_TIME);
 };
 
 pushNotification(
