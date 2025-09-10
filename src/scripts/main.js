@@ -10,8 +10,14 @@ function hideNotification(el) {
   el.style.display = 'none';
 }
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  if (!posTop || !posRight || !type) {
+const pushNotification = (
+  posTop = 0,
+  posRight = 0,
+  title,
+  description,
+  type,
+) => {
+  if (!type) {
     return;
   }
 
@@ -19,6 +25,24 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notificationElement.classList.add('notification');
   notificationElement.classList.add(type);
+
+  /*
+  I CAN'T ADD position = 'absolute' BECAUSE OF TESTS
+  notificationElement.style.position = 'absolute';
+
+  This happens if i add: notificationElement.style.position = 'absolute';
+
+    AssertionError: Timed out retrying after 4000ms: expected
+    '<div.notification.success>' to have attribute 'style' with the value
+    'top: 10px; right: 10px;', but the value was 'position: absolute;
+    top: 10px; right: 10px;' at Context.eval (webpack://js_notification_DOM/
+    ./cypress/integration/notificationDom.spec.js:5:5)
+  + expected- actual
+
+  - 'position: absolute; top: 10px; right: 10px;'
+  + 'top: 10px; right: 10px;'
+  */
+
   notificationElement.style.top = posTop + 'px';
   notificationElement.style.right = posRight + 'px';
 
