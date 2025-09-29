@@ -3,7 +3,11 @@
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
-  notification.className = `notification ${type}`;
+  notification.classList.add('notification');
+
+  if (['success', 'error', 'warning'].includes(type)) {
+    notification.classList.add(type);
+  }
   notification.style.position = 'absolute';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
@@ -44,6 +48,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     notification.style.visibility = 'hidden';
   }, 2000);
 };
+
+window.pushNotification = pushNotification;
 
 pushNotification(
   10,
