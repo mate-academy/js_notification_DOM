@@ -17,10 +17,26 @@ Implementation guideline:
 It's an expected result of your job:
 ![Result](./src/images/result.png)
 
+Щоб повідомити користувача про успіх операції або будь-які помилки, веб-сайти зазвичай використовують повідомлення, які з'являються на екрані протягом короткого періоду.
+
+Ваше завдання: Створіть функцію `pushNotification`, яка приймає координати повідомлення, заголовок, опис та тип `(success, error та warning). `pushNotification` створює елемент для відображення повідомлення, додає його до документа та приховує його з DOM через 2 секунди.
+Не пишіть жодних стилів CSS чи HTML-коду в цьому завданні. Вам слід змінити лише файл `main.js`.
+
+Рекомендація щодо реалізації:
+- Виведіть три повідомлення: `success`, `error`, `warning` (методи виклику вже існують у файлі `main.js`);
+- Повідомлення є блоковим елементом з класом `notification` + клас, який залежить від типу вхідного параметра (`success`, `error`, `warning`);
+- Повідомлення повинно мати заголовок з класом `title` (бажано елемент `h2`);
+- Повідомлення повинно мати опис (бажано використовувати тег `p`);
+- Використовуйте [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) для виконання функції або вказаного фрагмента коду після закінчення часу таймера;
+- **Важливо:** Не видаляйте елементи з DOM у цьому завданні; натомість використовуйте атрибути стилю лише для візуального приховування повідомлень (наприклад, властивості `display` або `visibility`).
+
+Це очікуваний результат вашої роботи:
+![Результат](./src/images/result.png)
+
 ### General instructions
 
 1. Replace `<your_account>` with your GitHub username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
+    - [DEMO LINK](https://ElinaMrachkovska.github.io/js_notification_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
