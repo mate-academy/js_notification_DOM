@@ -7,7 +7,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   container.classList.add('notification');
 
-  if (type) {
+  if (['success', 'error', 'warning'].includes(type)) {
     container.classList.add(type);
   }
   container.style.top = `${posTop}px`;
