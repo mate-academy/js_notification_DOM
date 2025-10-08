@@ -18,6 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   div.append(tagP);
 
+  div.style.position = 'fixed';
   div.style.top = posTop + 'px';
   div.style.right = posRight + 'px';
   document.body.append(div);
