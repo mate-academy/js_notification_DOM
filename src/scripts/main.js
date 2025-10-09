@@ -6,6 +6,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const p = document.createElement('p');
 
   allert.style.cssText = `
+  position: fixed;
   top: ${posTop}px;
   right: ${posRight}px;
   `;
@@ -20,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   allert.append(h2, p);
   document.body.append(allert);
 
-  setTimeout(() => (allert.style.display = 'none'), 1000);
+  setTimeout(() => (allert.style.display = 'none'), 2000);
 };
 
 pushNotification(
