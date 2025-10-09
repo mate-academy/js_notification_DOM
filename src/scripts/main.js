@@ -9,6 +9,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   top: ${posTop}px;
   right: ${posRight}px;
   `;
+
   allert.className = `notification ${type}`;
 
   h2.textContent = title;
