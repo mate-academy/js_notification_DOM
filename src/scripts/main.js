@@ -2,6 +2,39 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  // Створюємо контейнер для повідомлення
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+
+  // Встановлюємо позицію на екрані
+  notification.style.position = 'absolute';
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
+  notification.style.zIndex = '1000';
+
+  // Створюємо заголовок
+  const titleElement = document.createElement('h2');
+
+  titleElement.classList.add('title');
+  titleElement.textContent = title;
+
+  // Створюємо опис
+  const descriptionElement = document.createElement('p');
+
+  descriptionElement.textContent = description;
+
+  // Додаємо елементи в контейнер
+  notification.appendChild(titleElement);
+  notification.appendChild(descriptionElement);
+
+  // Додаємо повідомлення в документ
+  document.body.appendChild(notification);
+
+  // Ховаємо повідомлення через 2 секунди (не видаляємо)
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
