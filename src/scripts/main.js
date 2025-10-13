@@ -13,11 +13,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   } else {
     normalizedType = 'success';
   }
-
   container.classList.add(normalizedType);
 
-  container.style.top = `${Number(posTop)}px`;
-  container.style.right = `${Number(posRight)}px`;
+  container.style.position = 'fixed';
+  container.style.top = `${isNaN(posTop) ? 0 : Number(posTop)}px`;
+  container.style.right = `${isNaN(posRight) ? 0 : Number(posRight)}px`;
 
   const heading = document.createElement('h2');
 
@@ -34,6 +34,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       : '';
 
   container.append(heading, desc);
+
+  container.setAttribute('role', 'status');
+  container.setAttribute('aria-live', 'polite');
+
   document.body.appendChild(container);
 
   setTimeout(() => {
