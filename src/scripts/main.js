@@ -1,6 +1,6 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
+const pushNotification = (coords, title, description, type) => {
   document.body.style.position = 'relative';
 
   const notificationTag = document.createElement('div');
@@ -44,8 +44,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notificationTag.appendChild(notificationH2);
   notificationTag.appendChild(notificationP);
 
-  notificationTag.style.top = posTop + 'px';
-  notificationTag.style.right = posRight + 'px';
+  notificationTag.style.top = coords['top'] + 'px';
+  notificationTag.style.right = coords['right'] + 'px';
   document.body.prepend(notificationTag);
 
   setTimeout(() => {
@@ -54,24 +54,21 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 };
 
 pushNotification(
-  10,
-  10,
+  { top: 10, right: 10 },
   'Title of Success message',
   'Message example.\n ' + 'Notification should contain title and description.',
   'success',
 );
 
 pushNotification(
-  150,
-  10,
+  { top: 150, right: 10 },
   'Title of Error message',
   'Message example.\n ' + 'Notification should contain title and description.',
   'error',
 );
 
 pushNotification(
-  290,
-  10,
+  { top: 290, right: 10 },
   'Title of Warning message',
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
