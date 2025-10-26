@@ -1,29 +1,49 @@
 'use strict';
 
-const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+const pushNotification = (coordinates, title, description, type) => {
+  const notification = document.createElement('div');
+
+  notification.className = `notification ${type}`;
+
+  notification.setAttribute(
+    'style',
+    `top: ${coordinates.top}px; right: ${coordinates.right}px;`,
+  );
+
+  const titleFirst = document.createElement('h2');
+
+  titleFirst.className = 'title';
+  titleFirst.textContent = title;
+
+  const descriptionFirst = document.createElement('p');
+
+  descriptionFirst.textContent = description;
+
+  notification.append(titleFirst, descriptionFirst);
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
-  10,
-  10,
+  { top: 10, right: 10 },
   'Title of Success message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\n Notification should contain title and description.',
   'success',
 );
 
 pushNotification(
-  150,
-  10,
+  { top: 150, right: 10 },
   'Title of Error message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\n Notification should contain title and description.',
   'error',
 );
 
 pushNotification(
-  290,
-  10,
+  { top: 290, right: 10 },
   'Title of Warning message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\n Notification should contain title and description.',
   'warning',
 );
