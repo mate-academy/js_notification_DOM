@@ -6,10 +6,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   // додаю class('notification' - важливо коли додаю клас крапку не ставлю)
   container.classList.add('notification');
-
   container.style.position = 'absolute';
 
-  // container.style.position = 'fixed';
+  
   container.style.top = posTop + 'px';
   container.style.right = posRight + 'px';
   container.style.opacity = '0.5';
@@ -17,9 +16,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   if (type === 'success') {
     container.classList.add('success');
     container.style.background = 'green';
-
-    container.style.top = posTop + 'px';
-    container.style.right = posRight + 'px';
   }
 
   if (type === 'error') {
@@ -32,8 +28,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     container.style.background = 'yellow';
   }
 
-  const h2 = document.createElement('h2');
-
+  const h2 = document.createElement('h2')
+  h2.classList.add('title');
   h2.textContent = title;
   container.appendChild(h2);
 
@@ -44,9 +40,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   document.body.appendChild(container);
 
-  // setTimeout(() => {
-  //   container.style.display = 'none'
-  // }, 2000)
+  setTimeout(() => {
+    container.style.display = 'none'
+  }, 2000)
 };
 
 pushNotification(
