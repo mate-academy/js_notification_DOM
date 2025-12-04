@@ -1,7 +1,52 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  // створюю div
+  const container = document.createElement('div');
+
+  // додаю class('notification' - важливо коли додаю клас крапку не ставлю)
+  container.classList.add('notification');
+
+  container.style.position = 'absolute';
+
+  // container.style.position = 'fixed';
+  container.style.top = posTop + 'px';
+  container.style.right = posRight + 'px';
+  container.style.opacity = '0.5';
+
+  if (type === 'success') {
+    container.classList.add('success');
+    container.style.background = 'green';
+
+    container.style.top = posTop + 'px';
+    container.style.right = posRight + 'px';
+  }
+
+  if (type === 'error') {
+    container.classList.add('error');
+    container.style.background = 'red';
+  }
+
+  if (type === 'warning') {
+    container.classList.add('warning');
+    container.style.background = 'yellow';
+  }
+
+  const h2 = document.createElement('h2');
+
+  h2.textContent = title;
+  container.appendChild(h2);
+
+  const p = document.createElement('p');
+
+  p.textContent = description;
+  container.appendChild(p);
+
+  document.body.appendChild(container);
+
+  // setTimeout(() => {
+  //   container.style.display = 'none'
+  // }, 2000)
 };
 
 pushNotification(
