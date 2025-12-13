@@ -5,7 +5,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleText = document.createElement('h2');
   const descriptionPar = document.createElement('p');
 
-  descriptionPar.textContent = setStr(description);
+  descriptionPar.innerHTML = setStr(description);
   titleText.textContent = title;
 
   message.append(titleText, descriptionPar);
