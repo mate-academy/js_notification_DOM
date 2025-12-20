@@ -36,9 +36,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notificationContainer.appendChild(notification);
 
-  // setTimeout(() => {
-  //   notification.style.display = 'none';
-  // }, 2000);
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
