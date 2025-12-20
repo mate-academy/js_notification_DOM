@@ -2,16 +2,12 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
-  const notificationContainer = document.createElement('div');
-
-  notificationContainer.style.position = 'fixed';
-  notificationContainer.style.top = `${posTop}px`;
-  notificationContainer.style.right = `${posRight}px`;
-  document.body.appendChild(notificationContainer);
-
   const notification = document.createElement('div');
   const notificationTitle = document.createElement('h2');
   const notificationDescription = document.createElement('p');
+
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
   notificationTitle.textContent = title;
   notificationDescription.textContent = description;
@@ -34,7 +30,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
       break;
   }
 
-  notificationContainer.appendChild(notification);
+  document.body.appendChild(notification);
 
   setTimeout(() => {
     notification.style.display = 'none';
