@@ -1,7 +1,30 @@
 'use strict';
 
+const NOTIFICATION_DISPLAY_DURATION = 2000;
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const alertBox = document.createElement('div');
+
+  alertBox.classList.add('notification', `${type}`);
+  alertBox.style = `top: ${posTop}px; right: ${posRight}px;`;
+
+  const alertTitle = document.createElement('h2');
+
+  alertTitle.classList.add('title');
+  alertTitle.textContent = title;
+
+  const alertDescription = document.createElement('p');
+
+  alertDescription.textContent = description;
+
+  alertBox.appendChild(alertTitle);
+  alertBox.appendChild(alertDescription);
+
+  document.body.appendChild(alertBox);
+
+  setTimeout(() => {
+    alertBox.style.visibility = 'hidden';
+  }, NOTIFICATION_DISPLAY_DURATION);
 };
 
 pushNotification(
