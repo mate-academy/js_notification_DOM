@@ -15,6 +15,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.appendChild(h2);
   div.appendChild(p);
   h2.textContent = title;
+  h2.classList.add('title');
   p.textContent = description;
   div.classList.add('notification');
   div.classList.add(type);
