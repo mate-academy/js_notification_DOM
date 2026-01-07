@@ -1,7 +1,32 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const topValue = Number(posTop);
+  const rightValue = Number(posRight);
+
+  if (isNaN(topValue) || isNaN(rightValue)) {
+    return 0;
+  }
+
+  const div = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+
+  div.appendChild(h2);
+  div.appendChild(p);
+  h2.textContent = title;
+  h2.classList.add('title');
+  p.textContent = description;
+  div.classList.add('notification');
+  div.classList.add(type);
+  div.style.position = 'absolute';
+  div.style.top = topValue + 'px';
+  div.style.right = rightValue + 'px';
+  document.body.appendChild(div);
+
+  setTimeout(() => {
+    div.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
