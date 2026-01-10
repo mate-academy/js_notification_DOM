@@ -1,7 +1,37 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  if (
+    typeof title === 'string' &&
+    typeof description === 'string' &&
+    typeof type === 'string' &&
+    typeof posTop === 'number' &&
+    typeof posRight === 'number'
+  ) {
+    const div = document.createElement('div');
+
+    const titleMessage = document.createElement('h2');
+
+    titleMessage.classList.add('title');
+    titleMessage.textContent = title;
+    titleMessage.style.fontSize = '18px';
+
+    const p = document.createElement('p');
+
+    p.style.whiteSpace = 'pre-line';
+    p.textContent = description;
+
+    div.classList.add('notification', type);
+    div.style.top = posTop + 'px';
+    div.style.right = posRight + 'px';
+
+    div.append(titleMessage, p);
+    document.body.append(div);
+
+    setTimeout(() => {
+      div.style.display = 'none';
+    }, 2000);
+  }
 };
 
 pushNotification(
