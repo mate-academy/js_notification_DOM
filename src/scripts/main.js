@@ -7,8 +7,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const p = document.createElement('p');
 
   div.className = 'notification';
-  div.style.top = `${posTop}px`;
-  div.right = `${posRight}px`;
+  div.style.top = posTop + `px`;
+  div.style.right = posRight + `px`;
 
   if (type === 'success') {
     div.className = div.className + ' success';
