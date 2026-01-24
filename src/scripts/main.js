@@ -18,7 +18,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     element1.style.display = 'none';
-  }, 200);
+  }, 2000);
 };
 
 pushNotification(
