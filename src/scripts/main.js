@@ -12,17 +12,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   messageTitle.classList.add('title');
   message.append(messageTitle, messageDescription);
 
-  const lastAddedElement = document.body.lastElementChild;
-
-  if (lastAddedElement.classList.contains('notification')) {
-    const previousElementStyles = getComputedStyle(lastAddedElement);
-    const previousBottom =
-      parseFloat(previousElementStyles.top) +
-      parseFloat(previousElementStyles.height) +
-      10;
-
-    message.style.top = previousBottom + 'px';
-  }
+  message.style.top = posTop + 'px';
+  message.style.right = posRight + 'px';
   document.body.append(message);
   setTimeout(hideMessage, 2000, message);
 };
