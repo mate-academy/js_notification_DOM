@@ -2,6 +2,49 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  let varTop = posTop;
+  let varRight = posRight;
+  let safeType = type;
+
+  if (!Number.isFinite(posTop)) {
+    varTop = 10;
+  }
+
+  if (!Number.isFinite(posRight)) {
+    varRight = 10;
+  }
+
+  const allowedTypes = ['success', 'error', 'warning'];
+
+  if (!allowedTypes.includes(safeType)) {
+    safeType = 'success';
+  }
+
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', safeType);
+
+  notification.style.top = `${varTop}px`;
+  notification.style.right = `${varRight}px`;
+
+  const h2 = document.createElement('h2');
+
+  h2.classList.add('title');
+  h2.textContent = String(title);
+
+  const p = document.createElement('p');
+
+  p.classList.add('description');
+  p.textContent = String(description);
+
+  notification.append(h2);
+  notification.append(p);
+
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
