@@ -11,20 +11,19 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   if (type === 'success') {
     container.classList.add('success');
-    container.style.background = 'green';
   }
 
   if (type === 'error') {
     container.classList.add('error');
-    container.style.background = 'red';
   }
 
   if (type === 'warning') {
     container.classList.add('warning');
-    container.style.background = 'yellow';
   }
 
   const h2 = document.createElement('h2');
+
+  h2.classList.add('title');
 
   h2.textContent = title;
   container.appendChild(h2);
