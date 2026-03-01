@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   body.appendChild(elementMessage);
 
   setTimeout(() => {
-    elementMessage.hidden = true;
+    elementMessage.style.display = 'none';
   }, 2000);
 };
 
