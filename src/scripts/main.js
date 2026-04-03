@@ -15,7 +15,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   paragraph.textContent = description;
 
-  notification.style.position = 'fixed';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
