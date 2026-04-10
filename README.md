@@ -14,13 +14,15 @@ Implementation guideline:
 - Use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to execute a function or specified piece of code once the timer expires;
 - **Important:** Do not remove elements from the DOM in this task; instead, use style attributes just to hide messages visually (f.e, `display` or `visibility` properties).
 
+
+
 It's an expected result of your job:
 ![Result](./src/images/result.png)
 
 ### General instructions
 
 1. Replace `<your_account>` with your GitHub username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_notification_DOM/)
+    - [DEMO LINK](https://bodyafell.github.io/js_notification_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
