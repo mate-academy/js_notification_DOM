@@ -1,30 +1,30 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  const container = document.createElement('div');
+  const notification = document.createElement('div');
 
-  container.classList.add('notification');
-  container.classList.add(type);
+  notification.classList.add('notification');
+  notification.classList.add(type);
 
   const titleElement = document.createElement('h2');
 
   titleElement.classList.add('title');
   titleElement.textContent = title;
-  container.append(titleElement);
+  notification.append(titleElement);
 
   const notificationDescription = document.createElement('p');
 
   notificationDescription.textContent = description;
-  container.append(notificationDescription);
+  notification.append(notificationDescription);
 
-  container.style.position = 'absolute';
-  container.style.top = typeof posTop === 'number' ? posTop + 'px' : posTop;
-  // eslint-disable-next-line
-  container.style.right = typeof posRight === 'number' ? posRight + 'px' : posRight;
-  document.body.append(container);
+  const topValue = typeof posTop === 'number' ? `${posTop}px` : posTop;
+  const rightValue = typeof posRight === 'number' ? `${posRight}px` : posRight;
+
+  notification.setAttribute('style', `top: ${topValue}; right: ${rightValue};`);
+  document.body.append(notification);
 
   setTimeout(() => {
-    container.style.display = 'none';
+    notification.style.display = 'none';
   }, 2000);
 };
 
