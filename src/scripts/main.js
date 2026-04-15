@@ -6,7 +6,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const p = document.createElement('p');
 
   div.classList.add('notification', type);
-
   div.style.top = `${posTop}px`;
   div.style.right = `${posRight}px`;
   p.style.whiteSpace = 'pre-line';
@@ -18,7 +17,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.append(div);
 
   setTimeout(() => {
-    div.style.visibility = 'hidden';
+    div.style.display = 'none';
   }, 2000);
 };
 
