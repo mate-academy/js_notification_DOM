@@ -14,6 +14,8 @@ Implementation guideline:
 - Use [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) to execute a function or specified piece of code once the timer expires;
 - **Important:** Do not remove elements from the DOM in this task; instead, use style attributes just to hide messages visually (f.e, `display` or `visibility` properties).
 
+
+
 It's an expected result of your job:
 ![Result](./src/images/result.png)
 
