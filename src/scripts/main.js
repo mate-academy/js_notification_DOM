@@ -4,7 +4,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
 
   notification.classList.add('notification', type);
-  notification.style.position = 'fixed';
+
   notification.style.top = posTop + 'px';
   notification.style.right = posRight + 'px';
 
@@ -17,10 +17,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   descEl.textContent = description;
 
-  notification.append(titleEl);
-  notification.append(descEl);
+  notification.appendChild(titleEl);
+  notification.appendChild(descEl);
 
-  document.body.append(notification);
+  document.body.appendChild(notification);
 
   setTimeout(() => {
     notification.style.display = 'none';
