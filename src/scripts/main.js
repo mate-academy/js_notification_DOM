@@ -19,8 +19,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.appendChild(div);
 
   setTimeout(() => {
-    div.style.opacity = '0';
-    div.style.transition = 'opacity 0.5s ease-out';
+    div.style.display = 'none';
   }, 2000);
 };
 
