@@ -13,8 +13,8 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.appendChild(h2);
   div.appendChild(p);
   div.style.position = 'absolute';
-  div.style.top = posTop 'px';
-  div.style.right = posRight 'px';
+  div.style.top = posTop + 'px';
+  div.style.right = posRight + 'px';
   document.body.append(div);
   setTimeout(() => {
     div.style.display = 'none';
