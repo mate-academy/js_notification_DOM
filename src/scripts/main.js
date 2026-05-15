@@ -16,7 +16,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.append(titleEl, descEl);
 
-  notification.style.position = 'absolute';
+  // notification.style.position = 'absolute';
   notification.style.top = posTop + 'px';
   notification.style.right = posRight + 'px';
   document.body.append(notification);
@@ -49,3 +49,7 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
 );
+
+pushNotification(20, 20, 'Success!', 'Операція пройшла успішно.', 'success');
+pushNotification(80, 20, 'Error!', 'Щось пішло не так.', 'error');
+pushNotification(140, 20, 'Warning!', 'Увага, можливі проблеми.', 'warning');
