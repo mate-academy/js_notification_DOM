@@ -1,7 +1,29 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+
+  notification.className = `notification ${type}`;
+
+  const titleEl = document.createElement('h2');
+
+  titleEl.className = 'title';
+  titleEl.textContent = title;
+
+  const descEl = document.createElement('p');
+
+  descEl.textContent = description;
+
+  notification.append(titleEl, descEl);
+
+  // notification.style.position = 'absolute';
+  notification.style.top = posTop + 'px';
+  notification.style.right = posRight + 'px';
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
@@ -27,3 +49,7 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'warning',
 );
+
+pushNotification(20, 20, 'Success!', 'Операція пройшла успішно.', 'success');
+pushNotification(80, 20, 'Error!', 'Щось пішло не так.', 'error');
+pushNotification(140, 20, 'Warning!', 'Увага, можливі проблеми.', 'warning');
