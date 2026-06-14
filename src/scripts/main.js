@@ -1,7 +1,35 @@
 'use strict';
 
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+
+  notification.style.cssText = `top: ${posTop}px; right: ${posRight}px`;
+  // create card
+  //
+
+  const heading = document.createElement('h2');
+
+  heading.classList.add('title');
+
+  heading.textContent = title;
+  // create heading
+  //
+
+  const descr = document.createElement('p');
+
+  descr.style.whiteSpace = 'pre-line';
+
+  descr.textContent = description;
+  // create description
+  //
+
+  notification.append(heading, descr);
+
+  document.body.append(notification);
+
+  setTimeout(() => (notification.style.display = 'none'), 2000);
 };
 
 pushNotification(
