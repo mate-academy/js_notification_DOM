@@ -1,7 +1,33 @@
 'use strict';
 
+'use strict';
+
 const pushNotification = (posTop, posRight, title, description, type) => {
-  // write code here
+  const notification = document.createElement('div');
+
+  notification.classList.add('notification', type);
+
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
+  const titleElement = document.createElement('h2');
+
+  titleElement.classList.add('title');
+  titleElement.textContent = title;
+
+  const descElement = document.createElement('p');
+
+  descElement.classList.add('description');
+  descElement.textContent = description;
+
+  notification.appendChild(titleElement);
+  notification.appendChild(descElement);
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
