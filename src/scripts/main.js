@@ -2,6 +2,27 @@
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const element = document.createElement('div');
+  const notTitle = document.createElement('h2');
+  const notDescription = document.createElement('p');
+
+  element.className = 'notification';
+
+  element.classList.add(`${type}`);
+  element.style.top = `${posTop}px`;
+  element.style.right = `${posRight}px`;
+
+  notTitle.textContent = title;
+
+  notTitle.className = 'title';
+  notDescription.textContent = description;
+
+  element.append(notTitle, notDescription);
+  document.body.appendChild(element);
+
+  setTimeout(() => {
+    element.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
