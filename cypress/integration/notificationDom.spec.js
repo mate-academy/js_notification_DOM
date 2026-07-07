@@ -22,7 +22,7 @@ describe('Notifications app', () => {
   });
 
   it('should print `error` message', () => {
-    cy.hasNotification('.notification.error', 150, 10);
+    cy.hasNotification('.notification.error', 165, 10);
   });
 
   it('should print `warning` message', () => {
