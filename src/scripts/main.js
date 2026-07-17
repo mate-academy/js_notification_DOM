@@ -42,7 +42,7 @@ pushNotification(
   'Message example.\n ' + 'Notification should contain title and description.',
   'error',
 );
-//kmk
+// kmk
 
 pushNotification(
   290,
