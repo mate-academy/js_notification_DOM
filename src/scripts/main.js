@@ -5,9 +5,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.classList.add('notification', type);
 
-  notification.setAttribute('role', 'status');
-  notification.setAttribute('aria-live', 'polite');
-
   const titleElement = document.createElement('h2');
 
   titleElement.classList.add('title');
@@ -20,8 +17,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(titleElement);
   notification.appendChild(descriptionElement);
 
-  // Позиція повідомлення відносно вікна браузера
-  notification.style.position = 'fixed';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
@@ -29,10 +24,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.style.display = 'none';
-
-    setTimeout(() => {
-      notification.remove();
-    }, 500);
   }, 2000);
 };
 
