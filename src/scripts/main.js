@@ -5,14 +5,15 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.classList.add('notification', type);
 
+  notification.setAttribute('role', 'status');
+  notification.setAttribute('aria-live', 'polite');
+
   const titleElement = document.createElement('h2');
 
   titleElement.classList.add('title');
   titleElement.textContent = title;
 
   const descriptionElement = document.createElement('p');
-
-  descriptionElement.classList.add('description');
 
   descriptionElement.textContent = description;
 
@@ -34,7 +35,7 @@ pushNotification(
   10,
   10,
   'Title of Success message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'success',
 );
 
@@ -42,7 +43,7 @@ pushNotification(
   150,
   10,
   'Title of Error message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'error',
 );
 
@@ -50,6 +51,6 @@ pushNotification(
   290,
   10,
   'Title of Warning message',
-  'Message example.\n ' + 'Notification should contain title and description.',
+  'Message example.\nNotification should contain title and description.',
   'warning',
 );
