@@ -11,6 +11,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   const titleElement = document.createElement('h2');
 
   titleElement.classList.add('title');
+
   titleElement.textContent = title;
 
   const descriptionElement = document.createElement('p');
@@ -27,7 +28,12 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   document.body.append(notification);
 
   setTimeout(() => {
+    // Візуально приховуємо повідомлення
     notification.style.display = 'none';
+
+    setTimeout(() => {
+      notification.remove();
+    }, 500);
   }, 2000);
 };
 
