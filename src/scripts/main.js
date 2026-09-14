@@ -5,6 +5,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.classList.add('notification', type);
 
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
+
   const notificationTitle = document.createElement('h2');
 
   notificationTitle.className = 'title';
@@ -16,9 +19,11 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   notification.append(notificationTitle, notificationDescription);
 
-  notification.style.top = `${posTop}px`;
-  notification.style.right = `${posRight}px`;
-  notification.style.position = 'absolute';
+  document.body.append(notification);
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
