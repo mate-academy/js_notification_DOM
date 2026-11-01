@@ -9,7 +9,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   div.style.right = posRight + 'px';
 
   div.innerHTML = `
-    <h2>${title}</h2>
+    <h2 class="title">${title}</h2>
     <p>${description}</p>
   `;
   document.body.append(div);
