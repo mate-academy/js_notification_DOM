@@ -13,6 +13,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
     <p>${description}</p>
   `;
   document.body.append(div);
+
+  setTimeout(() => {
+    div.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
