@@ -1,6 +1,6 @@
 'use strict';
 
-const HIDE_DELAY_MS = 2000;
+const HIDE_DELAY = 2000;
 
 const pushNotification = (posTop, posRight, title, description, type) => {
   const notification = document.createElement('div');
@@ -21,7 +21,7 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   setTimeout(() => {
     notification.style.display = 'none';
-  }, HIDE_DELAY_MS);
+  }, HIDE_DELAY);
 };
 
 pushNotification(
