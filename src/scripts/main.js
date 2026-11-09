@@ -1,7 +1,31 @@
 'use strict';
 
+// const { createElement } = require("react");
+
 const pushNotification = (posTop, posRight, title, description, type) => {
   // write code here
+  const body = document.querySelector('body');
+  const notificationDiv = document.createElement('div');
+  notificationDiv.classList.add('notification', type);
+  notificationDiv.style.position = 'absolute';
+  notificationDiv.style.top = `${posTop}px`;
+  notificationDiv.style.right = `${posRight}px`;
+
+
+  const titleMsg = document.createElement('h2');
+  titleMsg.classList.add('title');
+  titleMsg.textContent = title;
+
+  notificationDiv.append(titleMsg);
+
+  const descriptionMsg = document.createElement('p');
+  descriptionMsg.textContent = description;
+
+  notificationDiv.append(descriptionMsg);
+  body.append(notificationDiv);
+  setTimeout(() => {
+    notificationDiv.style.display = 'none';
+  }, 2000);
 };
 
 pushNotification(
